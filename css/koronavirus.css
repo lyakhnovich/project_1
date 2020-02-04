@@ -1,0 +1,13 @@
+TABLE {
+    background: #C3BDFF;
+    border-collapse: collapse;
+   }
+   TD {
+    text-align: right;
+	height: 40px;
+	vertical-align: top;
+   }
+   TR.even {
+    background: #FFCFCF;
+   }
+   }
