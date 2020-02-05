@@ -1,8 +1,0 @@
-1. CSS
- - position
- - margin
- - padding
-
-
-2. Оформление
- - стандарт оформления CSS/HTML
