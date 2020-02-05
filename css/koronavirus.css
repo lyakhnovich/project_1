@@ -14,10 +14,10 @@ TR.even {
 }
 
 .block1 {
-  width: 200px;
+  width: 150px;
   background: #ccc;
-  padding: 5px;
-  padding-right: 20px;
+  padding: 300px;
+  padding-right: 120px;
   border: solid 1px black;
   float: left;
 }
