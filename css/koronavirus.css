@@ -47,3 +47,11 @@ TR.even {
   top: 40px;
   left: -70px;
 }
+
+.nowarning {
+  color: green;
+}
+
+.warning {
+  color: red;
+}

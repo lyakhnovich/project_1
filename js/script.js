@@ -3,9 +3,21 @@ console.warn('123');
 
 $(document).ready(function () {
 
-  $('input').on('input', function () {
+  $('#email').on('input', function () {
     console.log($(this).val());
   });
 
 
-})(jQuery);
+});
+
+$(function()
+{
+  $('#email').keyup(function()
+  {
+
+    var email=$(this).val();
+    if (email.length > 3) {
+      alert('соси жепу');
+    }
+  })
+})
