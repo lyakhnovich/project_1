@@ -1,5 +1,5 @@
 TABLE {
-  background: #C3BDFF;
+  background: #c3bdff;
   border-collapse: collapse;
 }
 
@@ -10,7 +10,7 @@ TD {
 }
 
 TR.even {
-  background: #FFCFCF;
+  background: #ffcfcf;
 }
 
 .block1 {
@@ -32,7 +32,7 @@ TR.even {
   float: left;
 
   left: 50%;
-  top:50%;
+  top: 50%;
   margin: -100px 0 0 -100px;
 }
 
@@ -48,10 +48,12 @@ TR.even {
   left: -70px;
 }
 
-.nowarning {
-  color: green;
+.valid {
+  color: #008000;
+  background-color: #0080000f;
 }
 
-.warning {
-  color: red;
+.invalid {
+  color: #f00;
+  background-color: #ff00000f;
 }
