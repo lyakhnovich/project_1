@@ -13,8 +13,11 @@ $(document).ready(function () {
       console.log(pole, value,  newValue);
 
       $('.log').append('<br> - ' + newValue );
+
     });
+
   }
+
   /*
   .on()
   .text()

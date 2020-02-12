@@ -57,3 +57,8 @@ TR.even {
   color: #f00;
   background-color: #ff00000f;
 }
+
+table td
+{
+  border:2px solid #0000ff;
+}
