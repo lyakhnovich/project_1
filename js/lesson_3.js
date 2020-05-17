@@ -30,3 +30,52 @@ var table = Array(5);
 for(var i = 0; i < table.length; i++){
   table[i] = Array(5);
 }
+
+table[0][0] = -11;
+table[0][1] = 12;
+table[0][2] = -28;
+table[0][3] = -14;
+table[0][4] = 39;
+
+table[1][0] = -38;
+table[1][1] = 70;
+table[1][2] = -68;
+table[1][3] = 87;
+table[1][4] = -70;
+
+table[2][0] = 74;
+table[2][1] = 44;
+table[2][2] = -99;
+table[2][3] = 59;
+table[2][4] = -68;
+
+table[3][0] = 48;
+table[3][1] = -34;
+table[3][2] = -99;
+table[3][3] = 34;
+table[3][4] = -33;
+
+table[4][0] = 48;
+table[4][1] = 37;
+table[4][2] = -88;
+table[4][3] = 84;
+table[4][4] = -54;
+
+for(var row = 0; row < table.length; row++) {
+  for(var col = 0; col < table.length; col++) {
+
+    if(row == col) {
+      if (table[row][col] > 0) {
+        table[row][col] = 1
+      }
+      else if(table[row][col] < 0) {
+        table[row][col] = 0;
+      }
+    }
+
+    document.write(table[row][col] + ' ');
+  }
+  document.write('</br>');
+}
+
+
