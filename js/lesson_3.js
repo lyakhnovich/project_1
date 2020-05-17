@@ -23,3 +23,10 @@ for(var i = 0; i <= massa.length; i++) {
 }
 document.write('<hr>');
 
+
+//многомерка
+var table = Array(5);
+
+for(var i = 0; i < table.length; i++){
+  table[i] = Array(5);
+}
