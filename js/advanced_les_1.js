@@ -1,3 +1,5 @@
+//пример различий работы переменных и объектов
+
 var simpleStr = "MyString";
 
 var objectStr = new String("some string object");
