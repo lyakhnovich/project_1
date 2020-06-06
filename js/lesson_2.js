@@ -1,3 +1,6 @@
+//Условные и циклические конструкции. ДЗ
+
+// Сумма чисел в промежутке
 // var a = 8,
 //   b = 15;
 // var sum = 0;
@@ -8,8 +11,8 @@
 //   }
 // }
 // document.write('сумма всех чисел в промежутке от ' + a + ' до ' + b + ' равна - ' + sum + '</br></br>');
-//
-//
+
+//Все нечетные значения в промежутке
 // var result = '';
 // for(var x = a; x < b; x++){
 //
@@ -18,9 +21,8 @@
 //   }
 // }
 // document.write(result + '</br>');
-//
-//
-//
+
+//Вывод возможных вариантов с помощью факториала (постановка задачи тупая, факториал - интересный)
 // var counter  = prompt('введите число'),
 //   factorial = 1;
 //
@@ -35,10 +37,9 @@
 // while(counter > 0);
 //
 // document.write('количество вариантов - ' + factorial);
-//
-//
-//
 
+
+// Рисование с помощью циклов. Один из вариантов. Дебильное задание
 //прямоугольник
 for(var i = 0; i < 8; i++){
 
@@ -129,8 +130,6 @@ for (var ActualLine = 1; ActualLine <= lines; ActualLine++){
   lowStar = lines - ActualLine;
   stars = ' ';
 
-
-  //alert(highStar + ' ' + lowStar + ' ' + highSpace + ' ' + lowSpace);
 
   for(var i = 0; i < highStar; i++){
     if(highStar < middle){
