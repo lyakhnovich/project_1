@@ -47,3 +47,24 @@ document.write('<p>' + person.firstName + ' ' + person.lastName);
 //Изменение свойств объекта
 person.age = 25;
 document.write('<p>Age: ' + person.age + ' years old.')
+
+
+//ВЛОЖЕННЫЕ ОБЪЕКТЫ
+
+var human = {
+  firtName: 'Hlamidioz',
+  secondName: 'Rodriguez',
+  age: 27,
+  //вложение
+  occupation: {
+    company: 'Joint Stock Ofes',
+    position: 'standing near the cooler'
+  }
+};
+
+document.write('<p>First Name: ' + human.firtName);
+document.write('<p>Second Name: ' + human.secondName);
+document.write('<p>Age: ' + human.age);
+//обращение ко вложению
+document.write('<p>Company: ' + human.occupation.company);
+document.write('<p>Position: ' + human.occupation.position);
