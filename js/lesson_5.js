@@ -49,6 +49,8 @@ person.age = 25;
 document.write('<p>Age: ' + person.age + ' years old.')
 
 
+
+document.write('<hr/>');
 //ВЛОЖЕННЫЕ ОБЪЕКТЫ
 
 var human = {
@@ -68,3 +70,34 @@ document.write('<p>Age: ' + human.age);
 //обращение ко вложению
 document.write('<p>Company: ' + human.occupation.company);
 document.write('<p>Position: ' + human.occupation.position);
+
+
+document.write('<hr/>');
+//СОЗДАНИЕ ВЛОЖЕННЫХ ОБЪЕКТОВ ЧЕРЕЗ КОНСТРУКТОР
+
+
+var dolboeb = new Object();
+
+dolboeb.firstName = 'Korona';
+dolboeb.secondName = 'Virus';
+dolboeb.age = 29;
+
+dolboeb.occupation.company = 'Apple';
+dolboeb.occupation.position = 'Your lanch';
+
+document.write('<p>First Name: ' + dolboeb.firtName);
+document.write('<p>Second Name: ' + dolboeb.secondName);
+document.write('<p>Age: ' + dolboeb.age);
+//обращение ко вложению
+document.write('<p>Company: ' + dolboeb.occupation.company);
+document.write('<p>Position: ' + dolboeb.occupation.position);
+
+
+
+
+
+
+
+
+
+
