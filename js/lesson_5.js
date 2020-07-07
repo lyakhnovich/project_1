@@ -102,7 +102,7 @@ var human3 = {
   firstName: 'Alex',
   secondName: 'Loh',
   age: 23,
-  occupation: "<img src = '\img\MS.jpg' width = '152' height = '38'/>",
+  occupation: "<img src = './img/MS.jpg' width = '152' height = '50'/>",
 
   // метод show() в блоке инициализации объекта
 
@@ -115,13 +115,16 @@ var human3 = {
 
 
   // метод SayGoodbye() в блоке инициализации объекта
-  // SayGoodbye: function (occupation) {
-  //   this.occupation = occupation;
-  // }
+  SayGoodbye: function (occupation) {
+    this.occupation = occupation;
+  }
+
+
 }
 
 human3.show();
-
+human3.SayGoodbye("<img src = './img/mak.jpg' width = '152' height = '100'/>");
+human3.show();
 
 
 
