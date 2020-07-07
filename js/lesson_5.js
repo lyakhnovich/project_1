@@ -156,13 +156,27 @@ builder.createFloor2();
 builder.createFloor2();
 builder.createFloor3();
 builder.createFloor2();
-builder.createFloor();
-builder.createFloor2();
 builder.createFloor2();
 builder.createFloor3();
 builder.createFloor2();
 builder.createFloor();
 builder.createFirstFloor();
+
+
+document.write('<hr/>');
+// FOR IN
+
+var house = {
+  anotherFloor: "<img src = './img/another_floor.jpg'/></br>",
+  anotherFloor2: "<img src = './img/another_floor_2.jpg'/></br>",
+  anotherFloor3: "<img src = './img/another_floor_3.jpg'/></br>",
+  firstFloor: "<img src = './img/first_floor.jpg'/></br>"
+}
+
+for (var property in navigator) {
+  document.write(house[property]);
+}
+
 
 
 
