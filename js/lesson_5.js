@@ -76,21 +76,25 @@ document.write('<hr/>');
 //СОЗДАНИЕ ВЛОЖЕННЫХ ОБЪЕКТОВ ЧЕРЕЗ КОНСТРУКТОР
 
 
-var dolboeb = new Object();
+var human2 = new Object();
 
-dolboeb.firstName = 'Korona';
-dolboeb.secondName = 'Virus';
-dolboeb.age = 29;
+human2.firstName = 'Korona';
+human2.secondName = 'Virus';
+human2.age = 29;
 
-dolboeb.occupation.company = 'Apple';
-dolboeb.occupation.position = 'Your lanch';
+// создание вложенного объекта
 
-document.write('<p>First Name: ' + dolboeb.firtName);
-document.write('<p>Second Name: ' + dolboeb.secondName);
-document.write('<p>Age: ' + dolboeb.age);
+human2.occupation = new Object();
+
+human2.occupation.company = 'Apple';
+human2.occupation.position = 'Your lanch';
+
+document.write('<p>First Name: ' + human2.firtName);
+document.write('<p>Second Name: ' + human2.secondName);
+document.write('<p>Age: ' + human2.age);
 //обращение ко вложению
-document.write('<p>Company: ' + dolboeb.occupation.company);
-document.write('<p>Position: ' + dolboeb.occupation.position);
+document.write('<p>Company: ' + human2.occupation.company);
+document.write('<p>Position: ' + human2.occupation.position);
 
 
 
