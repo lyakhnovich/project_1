@@ -33,7 +33,6 @@
 // docum.show();
 
 
-
 var person = {
   firstName: 'Kekovich',
   lastName: 'Virus',
@@ -75,7 +74,6 @@ document.write('<p>Position: ' + human.occupation.position);
 document.write('<hr/>');
 //СОЗДАНИЕ ВЛОЖЕННЫХ ОБЪЕКТОВ ЧЕРЕЗ КОНСТРУКТОР
 
-
 var human2 = new Object();
 
 human2.firstName = 'Korona';
@@ -95,6 +93,26 @@ document.write('<p>Age: ' + human2.age);
 //обращение ко вложению
 document.write('<p>Company: ' + human2.occupation.company);
 document.write('<p>Position: ' + human2.occupation.position);
+
+
+document.write('<hr/>');
+// МЕТОДЫ (функция принадлежащая объекту)
+
+var human3 = {
+  firstName: 'Alex',
+  secondName: 'Loh',
+  age: 23,
+  occupation: "<img src = 'C:\Users\lygy\Desktop\koronavirus\project_1\img.jpeg' width = '152' height = '38'/>",
+
+  // метод show() в блоке инициализации объекта
+
+  show: function () {
+    document.write('<p>First Name: ' + human3.firtName);
+    document.write('<p>Second Name: ' + human3.secondName);
+    document.write('<p>Age: ' + human3.age);
+    document.write(this.occupation + '</hr>');
+  }
+}
 
 
 
