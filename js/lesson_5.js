@@ -102,20 +102,25 @@ var human3 = {
   firstName: 'Alex',
   secondName: 'Loh',
   age: 23,
-  occupation: "<img src = 'C:\Users\lygy\Desktop\koronavirus\project_1\img.jpeg' width = '152' height = '38'/>",
+  occupation: "<img src = '\img\MS.jpg' width = '152' height = '38'/>",
 
   // метод show() в блоке инициализации объекта
 
   show: function () {
-    document.write('<p>First Name: ' + human3.firtName);
+    document.write('<p>First Name: ' + human3.firstName);
     document.write('<p>Second Name: ' + human3.secondName);
-    document.write('<p>Age: ' + human3.age);
+    document.write('<p>Age: ' + human3.age + '</br>');
     document.write(this.occupation + '</hr>');
-  }
+  },
+
+
+  // метод SayGoodbye() в блоке инициализации объекта
+  // SayGoodbye: function (occupation) {
+  //   this.occupation = occupation;
+  // }
 }
 
-
-
+human3.show();
 
 
 
