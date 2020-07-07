@@ -128,6 +128,42 @@ human3.show();
 
 
 
+document.write('<hr/>');
+// PANELKA
+
+var builder = new Object();
+
+builder.createFirstFloor = function () {
+  document.write("<img src = './img/first_floor.jpg' /></br>");
+};
+
+builder.createFloor = function () {
+  document.write("<img src = './img/another_floor.jpg'/></br>");
+};
+
+builder.createFloor2 = function () {
+  document.write("<img src = './img/another_floor_2.jpg'/></br>");
+};
+
+builder.createFloor3 = function () {
+  document.write("<img src = './img/another_floor_3.jpg' /></br>");
+};
+
+// строим панельку
+
+builder.createFloor();
+builder.createFloor2();
+builder.createFloor2();
+builder.createFloor3();
+builder.createFloor2();
+builder.createFloor();
+builder.createFloor2();
+builder.createFloor2();
+builder.createFloor3();
+builder.createFloor2();
+builder.createFloor();
+builder.createFirstFloor();
+
 
 
 
