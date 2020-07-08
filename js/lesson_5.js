@@ -166,14 +166,33 @@ var house = {
   anotherFloor2: "<img src = './img/another_floor_2.jpg'/></br>",
   anotherFloor3: "<img src = './img/another_floor_3.jpg'/></br>",
   firstFloor: "<img src = './img/first_floor.jpg'/></br>",
-  address: "<p style = 'color: green'> UK. London. Muswell Hill. N10<hr/>"
+  address: "<p style = 'color: green'> UK. London. Muswell Hill. N10"
 }
 
 for (property in house) {
   document.write(property + ' - ' + house[property] + "<br/>");
 }
+// * ОБЪЕКТ NAVIGATOR дает информацию об используемом браузере
 
 
+document.write('<hr/>');
+// Проверка существования свойства
+var house2 = {
+  anotherFloor: "<img src = './img/another_floor.jpg'/></br>",
+  anotherFloor2: "<img src = './img/another_floor_2.jpg'/></br>",
+  anotherFloor3: "<img src = './img/another_floor_3.jpg'/></br>",
+  firstFloor: "<img src = './img/first_floor.jpg'/></br>",
+  address: "<p style = 'color: green'> UK. London. Muswell Hill. N10<hr/>"
+}
 
+  //строительство
 
-
+  document.write(house2.anotherFloor);
+  if ("anotherFloor3" in house2) { //TO: строим 3й вариант этажа
+    document.write(house2["anotherFloor3"]);
+  }
+  else { // Иначе строим 2й вариант этажа
+    document.write(house2["anotherFloor2"]);
+  }
+  document.write(house2.anotherFloor3);
+  document.write(house2.firstFloor);
