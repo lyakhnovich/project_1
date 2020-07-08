@@ -235,7 +235,7 @@ document.write("<p>Массив после удаления: " + array.join(", "
 document.write('<hr/>');
 // Оператор with - создает новую область видимости и представляет свойства объекта "object" как локальные переменные (with - старье).
 // Strict Mode запрещает его использование (habrahabr.ru/post/118666)
-
+//"use strict";
 var house4 = {
   anotherFloor: "<img src = './img/another_floor.jpg'/></br>",
   anotherFloor2: "<img src = './img/another_floor_2.jpg'/></br>",
