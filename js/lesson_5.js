@@ -196,3 +196,62 @@ var house2 = {
   }
   document.write(house2.anotherFloor3);
   document.write(house2.firstFloor);
+
+
+  /////////////////////////////////
+document.write('<hr/>');
+// Delete - способен удалять свойство в объекте (delete имя_объекта.имя_свойства)
+
+var house3 = {
+  anotherFloor: "<img src = './img/another_floor.jpg'/></br>",
+  anotherFloor2: "<img src = './img/another_floor_2.jpg'/></br>",
+  anotherFloor3: "<img src = './img/another_floor_3.jpg'/></br>",
+  firstFloor: "<img src = './img/first_floor.jpg'/></br>"
+}
+
+if("firstFloor" in house3) {
+  delete house3.firstFloor;
+}
+
+for (element in house3) {
+  document.write(house3[element]);
+}
+
+/////////////////////////////////
+document.write('<hr/>');
+// delete в массивах
+
+var array = new Array(0, 1, 2, 3, 4, 5, 6, 7);
+
+document.write("<p>Массив до удаления: " + array.join(", "));
+var index = prompt("Выберите массив для удаления: " + array.join(", "));
+
+//УДОЛЕНИЕ по указанному массиву
+delete array[index];
+
+document.write("<p>Массив после удаления: " + array.join(", "));
+
+/////////////////////////////////
+document.write('<hr/>');
+// Оператор with - создает новую область видимости и представляет свойства объекта "object" как локальные переменные (with - старье)
+
+var house4 = {
+  anotherFloor: "<img src = './img/another_floor.jpg'/></br>",
+  anotherFloor2: "<img src = './img/another_floor_2.jpg'/></br>",
+  anotherFloor3: "<img src = './img/another_floor_3.jpg'/></br>",
+  firstFloor: "<img src = './img/first_floor.jpg'/></br>"
+}
+
+with (house4) {
+  document.write(anotherFloor);
+  document.write(anotherFloor2);
+  document.write(anotherFloor3);
+  document.write(firstFloor);
+}
+
+
+
+
+
+
+
