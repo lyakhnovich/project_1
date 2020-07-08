@@ -157,7 +157,7 @@ builder.createFloor2();
 builder.createFloor();
 builder.createFirstFloor();
 
-
+/////////////////////////////////////////////////////////////////////
 document.write('<hr/>');
 // FOR IN - используется для перебора элементов массива или
 
@@ -165,11 +165,12 @@ var house = {
   anotherFloor: "<img src = './img/another_floor.jpg'/></br>",
   anotherFloor2: "<img src = './img/another_floor_2.jpg'/></br>",
   anotherFloor3: "<img src = './img/another_floor_3.jpg'/></br>",
-  firstFloor: "<img src = './img/first_floor.jpg'/></br>"
+  firstFloor: "<img src = './img/first_floor.jpg'/></br>",
+  address: "<p style = 'color: green'> UK. London. Muswell Hill. N10<hr/>"
 }
 
-for (var property in navigator) {
-  document.write(house[property]);
+for (property in house) {
+  document.write(property + ' - ' + house[property] + "<br/>");
 }
 
 
