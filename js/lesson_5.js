@@ -96,7 +96,7 @@ document.write('<p>Position: ' + human2.occupation.position);
 
 
 document.write('<hr/>');
-// МЕТОДЫ (функция принадлежащая объекту)
+// МЕТОДЫ (функция принадлежащая объекту) - в блоке инициализации объекта (внутри т е)
 
 var human3 = {
   firstName: 'Alex',
@@ -112,14 +112,10 @@ var human3 = {
     document.write('<p>Age: ' + human3.age + '</br>');
     document.write(this.occupation + '</hr>');
   },
-
-
   // метод SayGoodbye() в блоке инициализации объекта
   SayGoodbye: function (occupation) {
     this.occupation = occupation;
   }
-
-
 }
 
 human3.show();
@@ -129,7 +125,7 @@ human3.show();
 
 
 document.write('<hr/>');
-// PANELKA
+// PANELKA - создание методов за блоком инициализации объекта
 
 var builder = new Object();
 
@@ -150,7 +146,6 @@ builder.createFloor3 = function () {
 };
 
 // строим панельку
-
 builder.createFloor();
 builder.createFloor2();
 builder.createFloor2();
@@ -164,7 +159,7 @@ builder.createFirstFloor();
 
 
 document.write('<hr/>');
-// FOR IN
+// FOR IN - используется для перебора элементов массива или
 
 var house = {
   anotherFloor: "<img src = './img/another_floor.jpg'/></br>",
