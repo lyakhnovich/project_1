@@ -20,3 +20,6 @@ document.write(objectStr.customProperty + "<br/>");
 //добавить свойство в переменную simpleStr невозможно
 simpleStr.customProperty2 = 123;
 document.write(simpleStr.customProperty2);
+
+
+//Конструкторы и прототипы
