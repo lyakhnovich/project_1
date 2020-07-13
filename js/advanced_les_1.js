@@ -73,11 +73,11 @@ newLine(objectStr);
 
 //добавлять новые свойства и методы можно только к объектам созданным через оператор NEW
 objectStr.customProperty = 123;
-document.write(customProperty + '<br/>');
+document.write(objectStr.customProperty + '<br/>');
 
 //ДОБАВИТЬ СВОЙСТВО В simpleStr НЕВОЗМОЖНО!!!
-//new String(simpleStr).customProperty2 = 1234;
-// document.write(simpleStr.customProperty2);
+simpleStr.customProperty2 = 1234;
+document.write(simpleStr.customProperty2);
 
 
 
