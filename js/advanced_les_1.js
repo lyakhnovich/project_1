@@ -88,6 +88,19 @@ document.write(simpleStr.customProperty2);
 //Конструктор Function()
 document.write('<hr/>');
 
+var func = new Function ('x', 'y', 'return x + y;');
+// в конструкторе function последний параметр - тело функции, все остальное - аргументы функции.
+var result = func(10, 25);
+
+alert('результат выполнения функции: ' + result);
+
+var func2 = new Function("alert('hello pidr!')");
+func2();
+
+
+
+
+
 
 
 
