@@ -56,5 +56,30 @@ document.write(c + '<br/>');
 
 
 
-//Конструктор Object()
+//Конструктор String()
 document.write('<hr/>');
+
+var simpleStr = 'MyString';
+
+var objectStr = new String('some string object');
+
+function  newLine(str) {
+  document.write(str + '<br/>');
+  document.write('<hr/>');
+}
+
+newLine(simpleStr);
+newLine(objectStr);
+
+//добавлять новые свойства и методы можно только к объектам созданным через оператор NEW
+objectStr.customProperty = 123;
+document.write(customProperty + '<br/>');
+
+//ДОБАВИТЬ СВОЙСТВО В simpleStr НЕВОЗМОЖНО!!!
+//new String(simpleStr).customProperty2 = 1234;
+// document.write(simpleStr.customProperty2);
+
+
+
+
+
