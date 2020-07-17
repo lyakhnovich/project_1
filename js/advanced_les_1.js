@@ -247,7 +247,7 @@ Rectangle2.prototype.getArea = function () {
 }
 
 var rect2 = new Rectangle2(20, 25);
-document.write('площадь прямоугольника ' + rect2.getArea() + '<br/>' );
+document.write('площадь прямоугольника ' + rect2.getArea() + '<br/><br/>' );
 
 
 
@@ -269,12 +269,16 @@ var rect1 = new Rectangle3(50, 5);
 var rect2 = new Rectangle3(50, 10);
 
 document.write('площадь прямоугольника 1 - ' + rect1.getArea() + '<br/>');
-document.write('площадь прямоугольника 2 - ' + rect2.getArea() + '<br/>');
+document.write('площадь прямоугольника 2 - ' + rect2.getArea() + '<br/><br/>');
 
 
 document.write('имя прямоугольника 1 - ' + rect1.name + '<br/>');
-document.write('имя прямоугольника 2 - ' + rect2.name + '<br/>');
+document.write('имя прямоугольника 2 - ' + rect2.name + '<br/><br/>');
 
+rect1.name = 'test';
 
+document.write('После смены имени объекта rect1 <br/>');
+document.write('имя прямоугольника 1 - ' + rect1.name + '<br/>'); //значение из прототипа перекрыто новым значением на самом экземпляре объекта
+document.write('имя прямоугольника 2 - ' + rect2.name + '<br/><br/>'); //значение берется из прототипа
 
 document.write('<hr/>');
