@@ -89,23 +89,23 @@ document.write(simpleStr.customProperty2);
 
 
 //Конструктор Function()
-document.write('<hr/>');
-
-var func = new Function ('x', 'y', 'return x + y;');
-// в конструкторе function последний параметр - тело функции, все остальное - аргументы функции.
-var result = func(10, 25);
-
-alert('результат выполнения функции: ' + result);
-
-var func2 = new Function("alert('hello pidr!')");
-func2();
+// document.write('<hr/>');
+//
+// var func = new Function ('x', 'y', 'return x + y;');
+// // в конструкторе function последний параметр - тело функции, все остальное - аргументы функции.
+// var result = func(10, 25);
+//
+// alert('результат выполнения функции: ' + result);
+//
+// var func2 = new Function("alert('hello pidr!')");
+// func2();
 
 
 
 
 ////////////////////пользовательские конструкторы///////////////////////
 
-//функция-конструктор для создания объектов Point
+//пользовательский конструктор. функция-конструктор для создания объектов Point
 
 function Point(x, y) {
   this.x = x;
@@ -125,3 +125,40 @@ document.write('Координаты треугольника: <br/><br/>');
 document.write('Координаты первой точки: ' + leftTop.x + ', ' + leftTop.y + '<br/>');
 document.write('Координаты второй точки: ' + topPoint.x + ', ' + topPoint.y + '<br/>');
 document.write('Координаты третьей точки: ' + rightBottom.x + ', ' + rightBottom.y + '<br/>');
+
+
+
+///////////пользовательский конструктор 2/////////
+document.write('<hr/>');
+
+function Human(name) {
+  //свойство
+  this.firstName = name;
+
+  //метод
+  this.sayHello = function() {
+    document.write('Hello, my name is ' + this.firstName + '<br/>');
+  }
+}
+
+//создание двух экземпляров типа Human
+
+var h = new Human('Kekovka');
+var l = new Human('Loh');
+
+//вызов метода sayHello() на созданных объектах
+
+h.sayHello();
+l.sayHello();
+
+
+
+
+
+
+
+
+
+
+
+
