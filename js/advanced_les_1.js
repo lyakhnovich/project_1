@@ -251,4 +251,30 @@ document.write('площадь прямоугольника ' + rect2.getArea() 
 
 
 
+// #3 (+ прототип)
+
+function Rectangle3(x, y) {
+  this.width = x;
+  this.height = y;
+}
+
+Rectangle3.prototype.getArea = function(){
+  return this.width * this.height;
+}
+
+//свойство прототипа, будет доступно всем экземплярам
+Rectangle3.prototype.name = 'Rectangle';
+
+var rect1 = new Rectangle3(50, 5);
+var rect2 = new Rectangle3(50, 10);
+
+document.write('площадь прямоугольника 1 - ' + rect1.getArea() + '<br/>');
+document.write('площадь прямоугольника 2 - ' + rect2.getArea() + '<br/>');
+
+
+document.write('имя прямоугольника 1 - ' + rect1.name + '<br/>');
+document.write('имя прямоугольника 2 - ' + rect2.name + '<br/>');
+
+
+
 document.write('<hr/>');
