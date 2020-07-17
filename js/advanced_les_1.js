@@ -215,10 +215,40 @@ Pnt.MaxPointCount = 10;
 Pnt.getOrigin().print();
 
 
-
-
 //////////////////////////////ПРОТОТИПЫ///////////////////////
 document.write('<hr/>');
 
 
+// #1
+function Rectangle(w, h) {
+  //свойства
+  this.width = w;
+  this.height = h;
 
+  //метод - !!!при создании объектов, этот метод будет дублироваться!!!
+  this.getArea = function () {
+    return this.width * this.height;
+  }
+}
+
+var rect = new Rectangle(500, 300);
+document.write('площадь прямоугольника ' + rect.getArea() + '<br/>');
+
+
+// #2 (+ прототип)
+
+function Rectangle2(x, y) {
+  this.width = x;
+  this.height = y;
+}
+//матод прототипа будет доступен каждому экземпляру, но храниться будет в прототипе
+Rectangle2.prototype.getArea = function () {
+  return this.width * this.height;
+}
+
+var rect2 = new Rectangle2(20, 25);
+document.write('площадь прямоугольника ' + rect2.getArea() + '<br/>' );
+
+
+
+document.write('<hr/>');
