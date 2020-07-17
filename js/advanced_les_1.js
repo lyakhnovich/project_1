@@ -276,9 +276,48 @@ document.write('имя прямоугольника 1 - ' + rect1.name + '<br/>'
 document.write('имя прямоугольника 2 - ' + rect2.name + '<br/><br/>');
 
 rect1.name = 'test';
+//Rectangle3.prototype.name = 'HUI'
+
 
 document.write('После смены имени объекта rect1 <br/>');
 document.write('имя прямоугольника 1 - ' + rect1.name + '<br/>'); //значение из прототипа перекрыто новым значением на самом экземпляре объекта
 document.write('имя прямоугольника 2 - ' + rect2.name + '<br/><br/>'); //значение берется из прототипа
 
 document.write('<hr/>');
+
+
+
+///////////Прототипы. Свойство CONSTRUCTOR////////////////
+
+var myArray = new Array(10);
+var myDate = new Date();
+var myString = new String('Some string value');
+var myObj = new Object();
+var myFunc = new Function('x', 'y', 'return x + y;');
+
+var myCtor = function (x, y) {
+  this.x = x;
+  this.y = y;
+}
+
+var myCtorObject = new myCtor(12, 3);
+
+function showCtor(obj, name) {
+  document.write('Конструктор объекта ' + name + ' это ' + obj.constructor + '<br/>');
+}
+
+document.write('=====================================================Значения кострукторов=====================================================<br/>');
+showCtor(myArray, 'myArray');
+showCtor(myDate, 'myDate');
+showCtor(myString, 'myString');
+showCtor(myObj, 'myObj');
+showCtor(myFunc, 'myFunc');
+showCtor(myCtorObject, 'myCtorObject');
+document.write('===============================================================================================================================<br/>');
+
+var someNewObject = new myDate.constructor(); //создание объекта конструктором, который создал myDate!!!!
+document.write('Значение объекта someNewObject: ' + someNewObject);
+
+
+
+
