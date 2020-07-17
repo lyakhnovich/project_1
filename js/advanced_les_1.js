@@ -179,9 +179,46 @@ var Friend = function (mood) {
 //
 // Lol.talk();
 
+//////////Свойства и методы//////////
+
+function Pnt(x, y) {
+  //свойства экземпляра
+  this.x = x;
+  this.y = y;
+
+  //метод экземпляра
+  this.print = function () {
+    document.write('(' + this.x + ', ' + this.y + ')<br/>');
+  }
+}
+
+//свойство функции конструктора (аналог статических свойств)
+Pnt.MaxPointCount = 100;
+//метод функции-конструктора (аналог статического метода)
+Pnt.getOrigin = function () {
+    return new Pnt(0, 0)
+}
+
+
+//создание экземпляров
+var p1 = new Pnt(100, 200);
+
+p1.x = 300;
+p1.y = 400;
+p1.print();
+
+
+var p2 = new Pnt(15,45);
+p2.print();
+
+Pnt.MaxPointCount = 10;
+Pnt.getOrigin().print();
 
 
 
+
+//////////////////////////////ПРОТОТИПЫ///////////////////////
+document.write('<hr/>');
 
 
 
