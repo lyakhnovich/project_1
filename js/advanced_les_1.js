@@ -105,10 +105,23 @@ func2();
 
 ////////////////////пользовательские конструкторы///////////////////////
 
+//функция-конструктор для создания объектов Point
+
+function Point(x, y) {
+  this.x = x;
+  this.y = y;
+}
 
 
+//создание трёх экземпляров класса Point
 
+var leftTop = new Point(0, 0);
+var topPoint = new Point(15, 30);
+var rightBottom = new Point(30, 30)
 
+//Вывод координат созданных точек
 
-
-
+document.write('Координаты треугольника: <br/><br/>');
+document.write('Координаты первой точки: ' + leftTop.x + ', ' + leftTop.y + '<br/>');
+document.write('Координаты второй точки: ' + topPoint.x + ', ' + topPoint.y + '<br/>');
+document.write('Координаты третьей точки: ' + rightBottom.x + ', ' + rightBottom.y + '<br/>');
