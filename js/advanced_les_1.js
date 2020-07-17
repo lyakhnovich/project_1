@@ -152,9 +152,32 @@ h.sayHello();
 l.sayHello();
 
 
+///////////пользовательский конструктор 3/////////
 
+var Friend = function (mood) {
+  this.mood = mood;
 
+  if(mood === 'nice') {
+    this.talk = function () {
+      alert('hello whatsup?');
+    };
+  }
+  else if(mood === 'bad') {
+    this.talk = function() {
+      alert('sry. gtfo..');
+    };
+  }
+  else {
+    this.talk = function () {
+      alert('hi');
+    };
+  }
+}
 
+// var friendMood = prompt('Type mood (nice/bad): ');
+// var Lol = new Friend(friendMood);
+//
+// Lol.talk();
 
 
 
