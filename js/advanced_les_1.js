@@ -444,7 +444,106 @@ document.write("<br/><br/>rect3 == rect1 -> " + res);
 
 
 
+document.write('<hr/>');
+/////////////////////////////////метод equals_method_after
+function Rectangle8(w, h) {
+  this.width = w;
+  this.height = h;
+}
 
+Rectangle8.prototype.getArea = function () {
+  return this.width * this.height
+}
+
+//переопределение метода toString из Object
+Rectangle8.prototype.toString = function () {
+  return "Прямоугольник W: " + this.width + " H: " + this.height
+}
+
+//переопределение метода  valueOf из Object
+Rectangle8.prototype.valueOf = function () {
+  return this.getArea();
+}
+
+//метод для проверки равенства объектов
+
+Rectangle8.prototype.equals = function (otherObj) {
+  if (this.width === otherObj.width && this.height === otherObj.height) {
+    return true;
+  }
+  return false;
+}
+
+// объекты имеют одинаковые значения!!!
+var rect1 = new Rectangle8(100, 200);
+var rect2 = new Rectangle8(100, 200);
+
+// проверка равенства объектов с помощью метода equals
+var res = rect1.equals(rect2);
+document.write("rect1 == rect2 -> " + res);
+
+var rect3 = rect1; //rect1 и rect3 ссылки на один и тот же объект в памяти
+res = rect3 == rect1;
+document.write("<br/><br/>rect3 == rect1 -> " + res);
+
+document.write('<hr/>');
+
+
+/////////////////////////////////метод compareTo
+function Rectangle9(w, h) {
+  this.width = w;
+  this.height = h;
+}
+
+Rectangle9.prototype.getArea = function () {
+  return this.width * this.height
+}
+
+//переопределение метода toString из Object
+Rectangle9.prototype.toString = function () {
+  return "Прямоугольник W: " + this.width + " H: " + this.height
+}
+
+//переопределение метода  valueOf из Object
+Rectangle9.prototype.valueOf = function () {
+  return this.getArea();
+}
+
+//метод для проверки равенства объектов
+
+Rectangle9.prototype.equals = function (otherObj) {
+  if (this.width === otherObj.width && this.height === otherObj.height) {
+    return true;
+  }
+  return false;
+}
+
+// метод для сравнения объектов
+// если текущий объект больше чем тот который передан в параметр - возвращаем значение > 0
+// если текущий объект меньше чем тот который передан в параметр - возвращаем значение > 0
+// если объекты равны возвращаем 0
+
+Rectangle9.prototype.compareTo = function(otherObject) {
+  if(this.getArea() > otherObject.getArea()) {
+    return 1;
+  }
+  else {
+    return 0;
+  }
+
+  return this.getArea() - otherObject.getArea();
+}
+
+// объекты имеют одинаковые значения!!!
+var rect1 = new Rectangle9(100, 200);
+var rect2 = new Rectangle9(100, 200);
+
+//при наличии метода valueOf, который возвращает простое значение
+
+
+
+
+document.write('<hr/>');
 
 
 
