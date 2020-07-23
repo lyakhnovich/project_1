@@ -410,13 +410,37 @@ document.write("'name' in rect1 " + ("name" in rect1) + "<br/>");
 
 
 document.write('<hr/>');
-/////////////////////////////////метод equals
+/////////////////////////////////метод equals_method_before
+function Rectangle7(w, h) {
+  this.width = w;
+  this.height = h;
+}
 
+Rectangle7.prototype.getArea = function () {
+  return this.width * this.height
+}
 
+//переопределение метода toString из Object
+Rectangle7.prototype.toString = function () {
+  return "Прямоугольник W: " + this.width + " H: " + this.height
+}
 
+//переопределение метода  valueOf из Object
+Rectangle7.prototype.valueOf = function () {
+  return this.getArea();
+}
 
+// объекты имеют одинаковые значения!!!
+var rect1 = new Rectangle7(100, 200);
+var rect2 = new Rectangle7(100, 200);
 
+// оператор сравнения проверяет равенство ссылок(!!!) а не равенство значений свойств объектов
+var res = rect1 == rect2;
+document.write("rect1 == rect2 -> " + res);
 
+var rect3 = rect1; //rect1 и rect3 ссылки на один и тот же объект в памяти
+res = rect3 == rect1;
+document.write("<br/><br/>rect3 == rect1 -> " + res);
 
 
 
