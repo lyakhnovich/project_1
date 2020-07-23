@@ -325,8 +325,7 @@
 //////////////////////////////Методы прототипа Object///////////////////////
 // document.write('<hr/>');
 
-//метод toString - объект в строковое представление
-
+/////////////////////////////////метод toString - объект в строковое представление
 function Rectangle4(w, h) {
   this.width = w;
   this.height = h;
@@ -351,8 +350,7 @@ document.write(rect2.toString() + '<br/>');
 
 document.write('<hr/>');
 
-//метод valueOf
-
+/////////////////////////////////метод valueOf
 function Rectangle5(w, h) {
   this.width = w;
   this.height = h;
@@ -387,8 +385,7 @@ document.write(rect1 + rect2);
 
 document.write('<hr/>');
 
-//метод valueOf
-
+/////////////////////////////////метод hasOwnProperty
 function Rectangle6(w, h) {
   this.width = w;
   this.height = h;
@@ -398,11 +395,11 @@ Rectangle6.prototype.getArea = function () {
   return this.width * this.height
 }
 
-Rectangle6.prototype.name = 'Rectangle';
+Rectangle6.prototype.name = 'Rectangle666';
 
 var rect1 = new Rectangle6(100, 200);
 
-//hasOwnProperty метод из Object с его помощью можно проверить существует ли свойство у конкретного
+//hasOwnProperty метод из Object с его помощью можно проверить существует ли свойство у конкретного объекта
 document.write("hasOwnProperty('width') " + rect1.hasOwnProperty("width") + "<br/>");
 document.write("hasOwnProperty('name') " + rect1.hasOwnProperty("name") + "<br/>");
 
@@ -412,9 +409,8 @@ document.write("'name' in rect1 " + ("name" in rect1) + "<br/>");
 
 
 
-
-
-
+document.write('<hr/>');
+/////////////////////////////////метод equals
 
 
 
