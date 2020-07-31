@@ -545,17 +545,27 @@ var rect2 = new Rectangle9(100, 200);
 
 document.write('<hr/>');
 
-function Max(a, b, c) {
+// function Max(a, b, c) {
+//
+//   var maxValue = Number.NEGATIVE_INFINITY;
+//
+//   for (var i = 0; i < arguments.length; i++) {
+//     if (arguments[i] > maxValue) {
+//       maxValue = arguments[i];
+//     }
+//   }
+//   document.write(maxValue);
+//   return maxValue;
+// }
+//
+// Max(3, 10, 9);
 
-  var maxValue = Number.NEGATIVE_INFINITY;
 
-  for (var i = 0; i < arguments.length; i++) {
-    if (arguments[i] > maxValue) {
-      maxValue = arguments[i];
-    }
-  }
-  document.write(maxValue);
-  return maxValue;
+function f(counter) {
+  counter--;
+  document.write(counter + "<br/>");
+  if (counter != 0)
+    f(counter);
+  document.write(counter + "<br/>");
 }
-
-Max(3, 10, 9)
+f(2);
