@@ -561,11 +561,12 @@ document.write('<hr/>');
 // Max(3, 10, 9);
 
 
-function f(counter) {
-  counter--;
-  document.write(counter + "<br/>");
-  if (counter != 0)
-    f(counter);
-  document.write(counter + "<br/>");
-}
-f(2);
+// function f(counter) {
+//   counter--;
+//   document.write(counter + "<br/>");
+//   if (counter != 0)
+//     f(counter);
+//   document.write(counter + "<br/>");
+// }
+// f(2);
+
