@@ -17,3 +17,11 @@
 // previousSibling - предыдущий узел расположенный на одном уровне с текущим
 // parentNode - родительский узел для текущего элемента
 
+window.onload = function () {
+
+  var e = document.getElementById("list");
+  // childNodes - получение всех дочерних узлов
+  for (var i = 0; i < e.childNodes.length; ++i) {
+    e.childNodes[i].style.color = "red";
+  }
+}
