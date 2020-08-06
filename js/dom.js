@@ -19,25 +19,46 @@
 
 window.onload = function () {
 
-// -------------- childNodes
-  var e = document.getElementById("list");
-  // childNodes - получение всех дочерних узлов
-  for (var i = 0; i < e.childNodes.length; ++i) {
-    e.childNodes[i].style.color = "red";
-    alert(e.childNodes[i].nodeType); // Element
-  }
+// // -------------- childNodes
+//   var e = document.getElementById("list");
+//   // childNodes - получение всех дочерних узлов
+//   for (var i = 0; i < e.childNodes.length; ++i) {
+//     e.childNodes[i].style.color = "red";
+//     alert(e.childNodes[i].nodeType); // Element
+//   }
+//
+// // -------------- childNodes 2
+//   var elem = document.getElementById("list_2");
+//
+//   for (var i = 0; i < elem.childNodes.length; ++i) {
+//     var temp = elem.childNodes[i];
+//
+//     // если найденный узел не элемент, то пропустить его
+//     if(temp.nodeType != 1) {
+//       continue;
+//     }
+//     elem.childNodes[i].style.color = "yellow";
+//   }
+//
+// // -------------- parentNode
+//   var par = document.getElementById("p1");
+//   // parentNode - получить родительский узел для узла
+//   par.parentNode.style.border = "1px solid red";
+//
+// // -------------- first last child
+//   var flc = document.getElementById("list_3");
+//   // firstChild - получить первый дочерний узел
+//     flc.firstChild.style.color = "orange";
+//   // lastChild - получить последний дочерний узел
+//     flc.lastChild.style.color = "blue";
 
-// -------------- childNodes 2
-  var elem = document.getElementById("list_2");
+// -------------- next previous Sibling
+  var sib = document.getElementById("list_4");
+  alert(sib.getElementsByTagName("li")[3].innerHTML);
 
-  for (var i = 0; i < elem.childNodes.length; ++i) {
-    var temp = elem.childNodes[i];
-
-    // если найденный узел не элемент, то пропустить его
-    if(temp.nodeType != 1) {
-      continue;
-    }
-    elem.childNodes[i].style.color = "yellow";
-  }
+  // nextSibling - получение следующего узла, который находится на одном уровне с текущим
+  //   sib.nextSibling.style.color = "red";
+  // previousSibling - получение предыдущего узла, который находится на одном уровне с текущим
+  //   sib.previousSibling.style.size = "10px";
 
 }
