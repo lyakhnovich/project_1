@@ -53,12 +53,12 @@ window.onload = function () {
 //     flc.lastChild.style.color = "blue";
 
 // -------------- next previous Sibling
-  var sib = document.getElementById("list_4");
-  alert(sib.getElementsByTagName("li")[3].innerHTML);
-
+  var sib = document.getElementsByTagName("li")[1];
+  //alert(sib.nextSibling.innerHTML);
   // nextSibling - получение следующего узла, который находится на одном уровне с текущим
-  //   sib.nextSibling.style.color = "red";
+    sib.nextSibling.style.color = "red";
   // previousSibling - получение предыдущего узла, который находится на одном уровне с текущим
-  //   sib.previousSibling.style.size = "10px";
+    sib.previousSibling.style.fontSize = "50px";
+
 
 }
