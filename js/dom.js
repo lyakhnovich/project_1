@@ -120,6 +120,30 @@ window.onload = function () {
   }
 
 
+
+  var node = null;
+  document.getElementById("NextChild").onclick = function selectNextNode() {
+    resetColor();
+    if (node == null) {
+      var list = document.getElementById("list");
+      node = list.firstChild;
+      node.setAttribute("style", "color:green");
+      return;
+    }
+    // Получение следующего элемента, которые в дереве находиться на одном уровне.
+    node = node.nextSibling;
+    if (node != null) {
+      node.setAttribute("style", "color:green");
+    }
+  }
+
+  function resetColor() {
+    var liList = document.getElementsByTagName("li");
+    for (var i = 0; i < liList.length; i++) {
+      liList[i].setAttribute("style", "color:black");
+    }
+  }
+
 }
 
 
