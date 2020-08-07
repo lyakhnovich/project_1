@@ -79,9 +79,29 @@ window.onload = function () {
     var list = document.getElementById("list_5");
     // Получение первого дочернего элемента в списке.
     var child = list.firstChild;
-    if (child != null) {
-      // добавление атрибута style="color:red" для выбранного элемента.
-      child.setAttribute("style", "color:red;");
+      if (child != null) {
+        var texColor = child.style.color ? child.style.color : 'black';
+        // добавление атрибута style="color:red" для выбранного элемента.
+        //  child.setAttribute("style", "color:black;");
+
+         //alert(texColor);
+        switch (texColor) {
+          case "black": child.setAttribute("style", "color:purple;");
+            break;
+          case "purple": child.setAttribute("style", "color:blue;");
+            break;
+          case "blue": child.setAttribute("style", "color:green;");
+            break;
+          case "green": child.setAttribute("style", "color:red;");
+            break;
+          case "red": child.setAttribute("style", "color:yellow;");
+            break;
+          case "yellow": child.setAttribute("style", "color:grey;");
+            break;
+          case "grey": child.setAttribute("style", "color:black;");
+            break;
+        }
+
     }
   };
 
@@ -93,8 +113,9 @@ window.onload = function () {
       // добавление атрибута style="color:red" для выбранного элемента.
       child.setAttribute("style", "color:red;");
     }
-    if(child.style.color = "red") {
-      alert("loh");
+    else if(child.style.color = "red") {
+      //alert("loh");
+      child.setAttribute("style", "color:black;");
     }
   }
 
