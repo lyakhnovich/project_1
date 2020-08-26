@@ -122,7 +122,7 @@ window.onload = function () {
 
   var node = null;
 
-  document.getElementById("selectNextNode").onclick = function () {
+  document.getElementById("SelectNextNode").onclick = function () {
     resetColor();
     if (node == null) {
       var list = document.getElementById("list_5");
@@ -134,6 +134,22 @@ window.onload = function () {
     node = node.nextSibling;
     if (node != null) {
       node.setAttribute("style", "color:red");
+      //alert(node.firstChild.nodeType);
+    }
+  }
+
+  document.getElementById("SelectPrevNode").onclick = function () {
+    resetColor();
+    if (node == null) {
+      var list = document.getElementById("list_5");
+      node = list.lastChild;
+      node.setAttribute("style", "color:blue");
+      return;
+    }
+    // Получение предыдущего элемента, которые в дереве находиться на одном уровне.
+    node = node.previousSibling;
+    if (node != null) {
+      node.setAttribute("style", "color:blue");
     }
   }
 
@@ -143,6 +159,43 @@ window.onload = function () {
       liList[i].setAttribute("style", "color:black");
     }
   }
+
+
+  document.getElementById("createNewChild").onclick = function () {
+    var list = document.getElementById("list_5");
+    // создание элемента li
+    var item = document.createElement("li");
+    item.innerHTML = "<H1>ХУЙ</H1>";
+    // добавление созданного элемента в конце.
+    list.appendChild(item);
+  }
+
+  document.getElementById("removeLastChild").onclick = function () {
+    var list = document.getElementById("list_5");
+    var item = list.lastChild;
+    if (item != null) {
+      // удаление выбранного элемента из дерева.
+      list.removeChild(item);
+    }
+  }
+
+
+  document.getElementById("createNewChildAtStart").onclick = function () {
+    var list = document.getElementById("list_5");
+    var item = document.createElement("li");
+    item.innerHTML = "ХУЙ";
+    if (list.firstChild != null) {
+      // вставка элемента перед указанным элементом.
+      list.insertBefore(item, list.firstChild);
+    }
+  }
+
+
+  document.getElementById("black").onclick = function () {
+    var list = document.getElementById("list_5");
+    list.setAttribute("style", "color:yellow");
+  }
+
 
 }
 
