@@ -75,7 +75,7 @@ window.onload = function () {
 //     document.body.insertBefore(p2, div1);
 
 
-  document.getElementById("FirstChild").onclick = function () {
+  document.getElementById("SelectFirstChild").onclick = function () {
     var list = document.getElementById("list_5");
     // Получение первого дочернего элемента в списке.
     var child = list.firstChild;
@@ -105,7 +105,7 @@ window.onload = function () {
     }
   };
 
-  document.getElementById("LastChild").onclick = function () {
+  document.getElementById("SelectLastChild").onclick = function () {
     var list = document.getElementById("list_5");
     // Получение первого дочернего элемента в списке.
     var child = list.lastChild;
@@ -120,20 +120,20 @@ window.onload = function () {
   }
 
 
-
   var node = null;
-  document.getElementById("NextChild").onclick = function selectNextNode() {
+
+  document.getElementById("selectNextNode").onclick = function () {
     resetColor();
     if (node == null) {
-      var list = document.getElementById("list");
+      var list = document.getElementById("list_5");
       node = list.firstChild;
-      node.setAttribute("style", "color:green");
+      node.setAttribute("style", "color:red");
       return;
     }
     // Получение следующего элемента, которые в дереве находиться на одном уровне.
     node = node.nextSibling;
     if (node != null) {
-      node.setAttribute("style", "color:green");
+      node.setAttribute("style", "color:red");
     }
   }
 
