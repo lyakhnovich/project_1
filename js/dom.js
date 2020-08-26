@@ -191,9 +191,11 @@ window.onload = function () {
   }
 
 
-  document.getElementById("black").onclick = function () {
-    var list = document.getElementById("list_5");
-    list.setAttribute("style", "color:yellow");
+  document.getElementById("yellow").onclick = function () {
+    var liList = document.getElementsByTagName("li");
+    for (var i = 0; i < liList.length; i++) {
+      liList[i].setAttribute("style", "color:yellow");
+    }
   }
 
 
