@@ -200,9 +200,10 @@ window.onload = function () {
 //
 //
 
-  // document.getElementById("sortChildren").onclick =
-function sortChildren(e) {
+  document.getElementById("sortChildren").onclick = function () {
+  var e = 'mylist';
   if(typeof  e == "string") e = document.getElementById(e);
+
 
   //преобразовываем дочерние элементы в массив
   var children = [];
