@@ -201,39 +201,39 @@ window.onload = function () {
 //
 
   document.getElementById("sortChildren").onclick = function () {
-  var e = 'mylist';
-  if(typeof  e == "string") e = document.getElementById(e);
+    var e = 'mylist';
+    if(typeof  e == "string") e = document.getElementById(e);
 
-  //alert(e.innerHTML);
-  //преобразовываем дочерние элементы в массив
-  var children = [], i = 0;
+    //alert(e.innerHTML);
+    //преобразовываем дочерние элементы в массив
+    var children = [], i = 0;
 
-  for (var x = e.firstChild; x != null; x = x.nextSibling) {
-    if(x.nodeType == 1 /* Node.ELEMENT_nNODE*/) children.push(x);
-    // if(x.nodeType == 8 /* Node.ELEMENT_nNODE*/) alert('HUI');
-  }
+    for (var x = e.firstChild; x != null; x = x.nextSibling) {
+      if(x.nodeType == 1 /* Node.ELEMENT_nNODE*/) children.push(x);
+      // if(x.nodeType == 8 /* Node.ELEMENT_nNODE*/) alert('HUI');
+    }
     //сортировка
     console.log('---------------');
 
-  children.sort(function (n, m) { //функция сравнения
-    i++;
-    var s = n.firstChild.data;        //текст узла n
-    var t = m.firstChild.data;        //текст узла m
-    console.log(n,m,s,t);
-    if (s < t) return -1;//n перед m
-    else if (s > t) return 1          //m перед n
-    else return  0;                   //n и m равны
-  });
+    children.sort(function (n, m) { //функция сравнения
+      i++;
+      var s = n.firstChild.data;        //текст узла n
+      var t = m.firstChild.data;        //текст узла m
+      console.log(n,m,s,t);
+      if (s < t) return -1;//n перед m
+      else if (s > t) return 1          //m перед n
+      else return  0;                   //n и m равны
+    });
     console.log('i:', i);
     console.log('---------------');
 
-  //добавляем дочерние элементы обратно в родительский узел
-  //когда добавляется узел, который уже существует в документе, он автоматически удаляется со своего старого места
-  for (var i = 0; i < children.length; i++) e.appendChild(children[i]);
+    //добавляем дочерние элементы обратно в родительский узел
+    //когда добавляется узел, который уже существует в документе, он автоматически удаляется со своего старого места
+    for (var i = 0; i < children.length; i++) e.appendChild(children[i]);
 
-  var myarray = ["one", "two", "three", "four"];
-   ///alert(myarray.sort());
-}
+    var myarray = ["one", "two", "three", "four"];
+    ///alert(myarray.sort());
+  }
 
 }
 
