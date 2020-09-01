@@ -101,9 +101,7 @@ function  print() {
   let args = getQueryString();
   let e = document.createElement("p");
 
-  e.innerHTML = "Login " + args.login + "<br/>";
-  e.innerHTML = "Password " + args.password;
-
+  e.innerHTML = "Login " + args.login + "<br/>" + "Password " + args.password;
 
   document.body.appendChild(e);
 };
