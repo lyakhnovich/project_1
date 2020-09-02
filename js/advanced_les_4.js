@@ -161,23 +161,124 @@
 //   alert("Width " + screen.width + "; Height = " + screen.height);
 // }
 
-// 04.03 WindowOpen
+// // 04.03 WindowOpen
+//
+// window.onload = function () {
+//
+//   document.getElementById("openButton").onclick = openButtonHandler;
+//   document.getElementById("closeButton").onclick = closeButtonHandler;
+//
+//   var w;
+//
+//   function openButtonHandler() {
+//     w = window.open("window.html", "Window Name", "width=400, height=400, status=yes, resizable=no")
+//   }
+//
+//   function closeButtonHandler() {
+//     w.close();
+//   }
+// }
 
-window.onload = function () {
 
-  document.getElementById("openButton").onclick = openButtonHandler;
-  document.getElementById("closeButton").onclick = closeButtonHandler;
+// //--------------  05 String  --------------
+// // 05.1 StringObject
+//
+// let a = 'my string',
+//   b = "my string",
+//   c = new String("my string"),
+//   d = String("my string");
+//
+// let str = "\u1234";
+// document.write(str + "<br/>");
+//
+// document.write(typeof a);
+// document.write("<br/>");
+// document.write(typeof d + "<br/>");
+//
+// // 05.2 StringMethods
+//
+// // split - разбивает строки
+// let str2 = "для тестирования",
+//   substr = str2.split(" ");
+// document.write(str2 + "<br/>");
+// document.write(substr.join("<br/>"));
+//
+// // charAt - символ на указанной позиции
+// let firstChar = str2.charAt(0),
+//   lastChar = str2.charAt(str2.length - 1);
+// document.write("<br/> первый символ - " + firstChar + " последний символ " + lastChar + "<br/>");
+//
+// // indexOf - индекс первого символа в строке
+// str2 = "ab-cd-ef-gh-ij";
+// let firstDash = str2.indexOf("-");
+// document.write("Индекс первого символа '-' в строке " + str2 + " = " + firstDash + "<br/>");
+//
+// // lastIndexOf - индекс последнего символа в строке
+// str2 = "ab-cd-ef-gh-ij";
+// let lastDash = str2.lastIndexOf("-");
+// document.write("Индекс последнего символа '-' в строке " + str2 + " = " + lastDash + "<br/>");
+//
+// // toLowerCase() - символы в нижний регистр, toUpperCase() - в верхний регистр
+// str2 = "Hello world!!!";
+// str2 = str2.toLowerCase();
+// document.write(str2);
+//
+// str2 = str2.toUpperCase();
+// document.write(str2);
+// document.write(str2.toLowerCase());
+//
+// // substring - возвращает строку между указанными индексами, не включая индексы
+// str2 = "Hello world!!"
+// substr = str2.substring(6, 12);
+// document.write("<br/>" + substr);
+//
+// // substr - возвращает строку начиая с указанного индекса, указанной длинны
+// str2 = "Hello world!!"
+// substr = str2.substr(6, 5);
+// document.write("<br/>" + substr);
 
-  var w;
+//--------------  06 Regular Expressions  --------------
 
-  function openButtonHandler() {
-    w = window.open("window.html", "Window Name", "width=400, height=400, status=yes, resizable=no")
-  }
+// 06.1 Simple Regexp
 
-  function closeButtonHandler() {
-    w.close();
-  }
-}
+let pattern1 = /\d\d\d/;
+
+//let pattern2 = new RegExp("\d\d\d");
+
+// 06.2 String Methods. Search
+let text = "строка 123 для тестирования";
+let pattern = /\d\d\d/;
+let firstIndex = text.search(pattern);
+document.write("Подстройка найдена по индексу " + firstIndex + "<br/>");
+
+// 06.3 String Methods. Replace
+let text3 = "строка для 123тести456рования при789мера";
+let pattern3 = /\d\d\d/g;                                   // g - глобальный поиска
+let result3 = text3.replace(pattern3, "");
+document.write(result3 + "<br/>");
+
+// 06.4 String Methods. Match
+text4 = "1 плюс 2 равно 3";
+result4 = text4.match(/\d/g);
+document.write(result4[2] + "<br/>");
+
+let text5 = "Текст 123 для тестирования примера";
+let result5 = text5.match(/\d\d\d/);
+document.write("result5[0] = " + result5[0] + "<br/>");
+
+// 06.5 Split
+let text6 = "test-A123test-B123test-C111test-D567";
+let result6 = text.split(/\d\d\d/g)
+document.write(result6 + "<br/>");
+
+// 06.6 Exec
+
+
+
+
+
+
+
 
 
 
