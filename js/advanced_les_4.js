@@ -241,37 +241,64 @@
 
 // 06.1 Simple Regexp
 
-let pattern1 = /\d\d\d/;
+// let pattern1 = /\d\d\d/;
+//
+// //let pattern2 = new RegExp("\d\d\d");
+//
+// // 06.2 String Methods. Search
+// let text = "строка 123 для тестирования";
+// let pattern = /\d\d\d/;
+// let firstIndex = text.search(pattern);
+// document.write("Подстройка найдена по индексу " + firstIndex + "<br/>");
+//
+// // 06.3 String Methods. Replace
+// let text3 = "строка для 123тести456рования при789мера";
+// let pattern3 = /\d\d\d/g;                                   // g - глобальный поиска
+// let result3 = text3.replace(pattern3, "");
+// document.write(result3 + "<br/>");
+//
+// // 06.4 String Methods. Match
+// text4 = "1 плюс 2 равно 3";
+// result4 = text4.match(/\d/g);
+// document.write(result4[2] + "<br/>");
+//
+// let text5 = "Текст 123 для тестирования примера";
+// let result5 = text5.match(/\d\d\d/);
+// document.write("result5[0] = " + result5[0] + "<br/>");
+//
+// // 06.5 Split
+// let text6 = "test-A123test-B123test-C111test-D567";
+// let result6 = text.split(/\d\d\d/g)
+// document.write(result6 + "<br/>");
+//
+// // 06.6 Exec
+// let test7 = "Строка №2 для тестирования примера с регулярными выражениями в файле 6_RegExMethods_exec.html"
+// let pattern7 = /\d/g;
+//
+// let result7;
+// while ((result7 = pattern7.exec(test7)) != null) {
+//   alert("Найдено " + result7 + " в позиции " + result7.index + ". Следующий поиск начнется с индкса " + pattern7.lastIndex);
+// }
 
-//let pattern2 = new RegExp("\d\d\d");
+// 06.7 Test
+let pattern8 = /\d\d\d/;
 
-// 06.2 String Methods. Search
-let text = "строка 123 для тестирования";
-let pattern = /\d\d\d/;
-let firstIndex = text.search(pattern);
-document.write("Подстройка найдена по индексу " + firstIndex + "<br/>");
+let input = "hello world";
+if(pattern8.test(input)) {
+  document.write("Строка " + input + " соответствует шаблону<br/>");
+}
+else {
+  document.write("Строка " + input + " НЕ соответствует шаблону<br/>");
+}
 
-// 06.3 String Methods. Replace
-let text3 = "строка для 123тести456рования при789мера";
-let pattern3 = /\d\d\d/g;                                   // g - глобальный поиска
-let result3 = text3.replace(pattern3, "");
-document.write(result3 + "<br/>");
+input = "123";
+if(pattern8.test(input)) {
+  document.write("Строка " + input + " соответствует шаблону<br/>");
+}
+else {
+  document.write("Строка " + input + " НЕ соответствует шаблону<br/>");
+}
 
-// 06.4 String Methods. Match
-text4 = "1 плюс 2 равно 3";
-result4 = text4.match(/\d/g);
-document.write(result4[2] + "<br/>");
-
-let text5 = "Текст 123 для тестирования примера";
-let result5 = text5.match(/\d\d\d/);
-document.write("result5[0] = " + result5[0] + "<br/>");
-
-// 06.5 Split
-let text6 = "test-A123test-B123test-C111test-D567";
-let result6 = text.split(/\d\d\d/g)
-document.write(result6 + "<br/>");
-
-// 06.6 Exec
 
 
 
