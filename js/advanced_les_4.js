@@ -1,19 +1,19 @@
-////// 001 setTimeout - планирует один запуск указанной функции через определенное количество миллисекунд
+////--------------  01 Timers  --------------
+
+//// 01.1 setTimeout. Планирует один запуск указанной функции через определенное количество миллисекунд
 
 // setTimeout(showMessage, 4000);// запуск через 4 сек
 //
 // function showMessage() {
 //   alert("Timeout 1");
 // }
-//
-//
 // setTimeout(function showMessage() {
 //   alert("Timeout 2");
 // }, 10000); // запуск через 10 сек
-//
-//
 
-////// 002 setInterval
+
+//// 01.2 setInterval
+
 // let cnt = 0;
 // function Count() {
 //   cnt++;
@@ -24,8 +24,8 @@
 // //setInterval - планирование запуска указанной функции с заданным интервалом
 // setInterval(Count, 1000);
 
+//// 01.3 clearTimeout
 
-////// 003 clearTimeout
 // timer = window.setTimeout(showMessage, 5000);
 //
 // function showMessage() {
@@ -36,7 +36,7 @@
 //   clearTimeout(timer);
 // }
 
-////// 004 clearInterval
+//// 01.4 clearInterval
 
 // window.onload = function (){
 //
@@ -61,57 +61,99 @@
 //     return document.getElementById(id);
 //   }
 
-
-// //02 Location
-// //001 Location
+////--------------  02 Location  --------------
+//// 02.1 Location
 //
 // document.write('location = ' + document.location + '<br/>'); //весь url
 // document.write('protocol = ' + document.location.protocol + '<br/>'); //протокол
 // document.write('host = ' + document.location.host + '<br/>'); //имя хоста
 // document.write('pathname = ' + document.location.pathname + '<br/>'); //путь
 // document.write('search = ' + document.location.search + '<br/>'); //строка запроса
+//
+//
+// // 02.2 UrlParsing. Функция для чтения данных, которые переданы при GET запросе (в адресной строке).
+//
+// function getQueryString() {
+//
+//   let args = {}; //пустой объект
+//
+//   let query = location.search.substring(1);     //получение строки запроса
+//   let pairs = query.split("&");            //разделение строки по амперсанту
+//
+//   for (let i = 0; i < pairs.length; i++) {
+//
+//     let pos = pairs[i].indexOf('=');                //проверка пары "name=value"
+//     if (pos === -1) {                                //если не найдено - пропустить
+//       continue;
+//     }
+//
+//     let argname = pairs[i].substring(0, pos);       //получение имени
+//     let value = pairs[i].substring(pos + 1);        //получение значения
+//
+//     args[argname] = value;
+//   }
+//   return args;
+// }
+//
+// document.getElementById("query").onclick =
+// function  print() {
+//   let args = getQueryString();
+//   let e = document.createElement("p");
+//
+//   e.innerHTML = "Login " + args.login + "<br/>" + "Password " + args.password;
+//
+//   document.body.appendChild(e);
+//
+//   var test = 'qwerty';
+//   test = test.substring(2);
+//   alert(test);
+// };
 
-//002 UrlParsing
-//функция для чтения данных, которые переданы при GET запросе (в адресной строке)
 
-function getQueryString() {
+//--------------  03 Navigator  --------------
+// 03.1 Сведенья о браузере
 
-  let args = {}; //пустой объект
+// объект Navigator поддерживает пять свойств, по которым можно определить версию браузера
+// appName - название веб браузера
+// appVersion - номер версии или другая информация о браузере
+// userAgent - строка, которую браузер посылает в HTTP заголовке USER-AGENT
+// appCodeName - кодовое имя браузера
+// platform - аппаратная платформа, на которой работает браузер
 
-  let query = location.search.substring(1);     //получение строки запроса
-  let pairs = query.split("&");            //разделение строки по амперсанту
+// var browserInfo = 'Сведениья о браузере \n';
+// for (var propname in navigator) {
+//   browserInfo += propname + ":" + navigator[propname] + '\n';
+// }
+// alert(browserInfo);
 
-  for (let i = 0; i < pairs.length; i++) {
 
-    let pos = pairs[i].indexOf('=');                //проверка пары "name=value"
-    if (pos === -1) {                                //если не найдено - пропустить
-      continue;
-    }
+//--------------  04 Windows  --------------
+// 04.1 Window Geometry. Определение параметров окна
 
-    let argname = pairs[i].substring(0, pos);       //получение имени
-    let value = pairs[i].substring(pos + 1);        //получение значения
+let geometry = {};
 
-    args[argname] = value;
-  }
-  return args;
+if (window.screenLeft || window.screenLeft == 0) {                                                    // для IE
+  geometry.getWindowX = function () { return window.screenLeft; };
+  geometry.getWindowY = function () { return window.screenTop; };
+}
+else if (window.screenX || window.screenX == 0) {                                                     // для Firefox
+  geometry.getWindowY = function () { return window.screenX; };
+  geometry.getWindowY = function () { return window.screenY; };
 }
 
-document.getElementById("query").onclick =
-function  print() {
-  let args = getQueryString();
-  let e = document.createElement("p");
+if (window.innerWidth) {
+  geometry.gitViewportWidth = function () { return window.innerWidth; };
+  geometry.gitViewportHeight = function () { return window.innerHeight; };
+}
+else if (document.documentElement && document.documentElement.clientWidth) {                          // для IE6
+  geometry.gitViewportWidth = function () { return document.documentElement.clientWidth; };
+  geometry.gitViewportHeight = function () { return document.documentElement.clientHeight; };
+}
 
-  e.innerHTML = "Login " + args.login + "<br/>" + "Password " + args.password;
-
-  document.body.appendChild(e);
-};
-
-
-
-
-
-
-
+document.write("X position " + geometry.getWindowX() + "<br/>");
+document.write("Y position " + geometry.getWindowX() + "<br/>");
+document.write("Height " + geometry.gitViewportHeight() + "<br/>");
+document.write("Width " + geometry.gitViewportWidth() + "<br/>");
 
 
 
