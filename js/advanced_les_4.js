@@ -341,10 +341,35 @@
 // g Выполнение глобального поиска
 // m Многострочный режим
 
+//--------------  08 Примеры регулярных выражений  --------------
+
+let pattern = /\d{1,2}-\d{1,2}-\d{4}/;
+let text = "21-12-1999";
+document.write(text + " -> " + pattern.test(text) + "<br/>");
+
+pattern = /\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}/;
+text = "+38 (098) 223-23-23";
+document.write(text + " -> " + pattern.test(text) + "<br/>");
+
+pattern = /[а-яА-Я]+ [а-яА-Я]+ [а-яА-Я]/;
+text = "Иванов Иван Иваныч";
+document.write(text + " -> " + pattern.test(text) + "<br/>");
+
+pattern = /\b[a-z0-9._]+@[a-z0-9._]+\.[a-z]{2,4}\b/i;
+text = "ivanov.ivan@example.com";
+document.write(text + " -> " + pattern.test(text) + "<br/>");
+
+pattern = /\w+\.html/;
+text = "hello.html";
+document.write(text + " -> " + pattern.test(text) + "<br/>");
 
 
-
-
+pattern = /https?:\/\/[\w\d:\.:\?\&]+/g;
+text = "https://yandex.ru/ https://www.google.com/";
+let res;
+while ((res = pattern.exec(text)) != null) {
+  document.write("Найдено " + res + " по индексу " + res.index + "<br/>");
+}
 
 
 
