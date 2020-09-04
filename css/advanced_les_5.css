@@ -3,3 +3,23 @@
   font-weight: bold;
   font-size: 25px;
 }
+
+div {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+
+.class1 {
+  font-family: Tahoma;
+  color: blue;
+}
+
+.class2 {
+  font-family: "Courier New";
+  color: red;
+}
+
+#testDiv {
+  background-color: #ffcc00;
+}
