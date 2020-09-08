@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, Sans;
+  font-size: 12px;
+  color: #4d4f53;
+}
+
+.pay_container {
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  padding: 30px;
+  width: 610px;
+  text-align: center;
+  background: #EEE;
+  margin: 0 auto;
+  box-shadow: 5px 5px 2px lightgrey;
+  display: block;
+}
+
+.pay_container_header {
+  display: block;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.header_logo {
+  white-space: nowrap;
+  text-align: left;
+}
+
+.header_lang {
+  display: inline-block;
+  float: right;
+  vertical-align: top;
+}
+
+.pay_container_main {
+
+}
+
+
+.param-name {
+  width: 200px;
+  font-size: 20px;
+  vertical-align: top;
+  line-height: 1.2em;
+  text-align: left;
+  color: rgb(77, 79, 83);
+  padding-right: 10px;
+}
