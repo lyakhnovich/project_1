@@ -2,6 +2,35 @@ body {
   font-family: Arial, Sans;
   font-size: 12px;
   color: #4d4f53;
+  margin: 20px;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+  margin-block-end: 1em;
+
+  text-align: -webkit-center;
+}
+
+div {
+  display: block;
+}
+
+li {
+  list-style-type: none;
+}
+
+label {
+  text-align: left;
+}
+
+.pay_page {
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  padding: 30px;
+  width: 610px;
+  text-align: center;
 }
 
 .pay_container {
@@ -10,31 +39,127 @@ body {
   padding: 30px;
   width: 610px;
   text-align: center;
-  background: #EEE;
-  margin: 0 auto;
-  box-shadow: 5px 5px 2px lightgrey;
-  display: block;
 }
 
 .pay_container_header {
-  display: block;
-  white-space: nowrap;
-  text-align: center;
-}
-
-.header_logo {
   white-space: nowrap;
   text-align: left;
 }
 
-.header_lang {
+.pay_container_header_logo {
   display: inline-block;
-  float: right;
+  width: 150px;
+  max-width: 150px;
+  min-height: 60px;
+
+  border: 1px solid #1f1f1f; /*нахуй*/
+}
+
+.pay_container_header_name {
+  margin-top: 5px;
+  display: inline-block;
+  white-space: normal;
   vertical-align: top;
+  width: 350px;
+  color: #1f1f1f;
+  text-align: left;
+  font-weight: bold;
+  font-size: 22px;
+  padding: 0 25px;
+
+  border: 1px solid #1f1f1f; /*нахуй*/
+}
+.pay_container_header_lang {
+  display: inline-block;
+  float:right;
+  vertical-align:top;
+}
+.pay_container_header_lang ul {
+  padding:0;
+  margin:0;
+  list-style-type:none;
+  font-size:12px;
+  font-weight:bold;
+}
+.pay_container_header_lang li {
+  color:#4d4f53;
+  padding:6px;
+  border: 2px solid #55e300;
 }
 
 .pay_container_main {
+  padding: 2em 0;
+}
 
+.pay_container_main_card {
+  background-color: #f5f6f7;
+  height: 100%;
+  border-radius: 10px;
+  padding: 20px 30px;
+  border: 1px solid #dddddd;
+  box-shadow: 2px 6px 9px 0 rgba(0,29,74,.4);
+  position:relative;
+  overflow:hidden;
+
+  color: #4d4f53;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+
+.pan {
+
+  top: 10px;
+  color: #4d4f53;
+  font-size: 20px;
+  font-weight: 400;
+
+  float: left;
+  margin-top: 5px;
+}
+.pan input {
+  width: 200px;
+}
+.pan_label {
+  color: #4d4f53;
+  font-size: 20px;
+
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.exp {
+  color: #4d4f53;
+  font-size: 20px;
+  font-weight: 400;
+
+  float: left;
+  margin-top: 15px;
+}
+.exp input {
+  width: 50px;
+}
+.cvv {
+  color: #4d4f53;
+  font-size: 20px;
+  font-weight: 400;
+
+  float: right;
+  margin-top: 5px;
+}
+.cvv input {
+  width: 50px;
+}
+.name {
+  color: #4d4f53;
+  font-size: 20px;
+  font-weight: 400;
+
+  float: left;
+  margin-top: 15px;
+}
+.cvv input {
+  width: 50px;
 }
 
 
@@ -47,3 +172,4 @@ body {
   color: rgb(77, 79, 83);
   padding-right: 10px;
 }
+

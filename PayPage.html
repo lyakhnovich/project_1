@@ -6,40 +6,81 @@
   <link href="css/PayPage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <div id="div_1" class="pay_container">
+<form>
 
-    <div id="div_header" class="pay_container_header">
-      <div id="logo" class="logo">LOGO</div>
 
-      <div id="name" class="name">ZLUPA BANK</div>
+<div class="pay_container" style="text-align: center;">
 
-      <div id="lang" class="lang">
+    <div class="pay_container_header">
+
+      <div class="pay_container_header_logo">LOGO.PNG</div>
+      <div class="pay_container_header_name">ZALUPA BANK</div>
+      <div class="pay_container_header_lang">
         <ul>
           <li>RU</li>
           <li>EN</li>
         </ul>
-
       </div>
 
     </div>
 
-    <table id="tbl_sum_fee">
-      <tr>
-        <td class="param-name" data-lang-ru="Сумма платежа:" data-lang-en="Subtotal:">TEST</td>
-        <td class="param-name" data-lang-ru="руб." data-lang-en="RUB">TEST</td>
-      </tr>
-      <tr>
-        <td class="param-name" data-lang-ru="Комиссия:" data-lang-en="Bank Fee:">TEST</td>
-        <td class="param-name" data-lang-ru="руб." data-lang-en="RUB">TEST</td>
-      </tr>
-      <tr>
-        <td class="param-name" data-lang-ru="Сумма к оплате:" data-lang-en="Total:">TEST</td>
-        <td class="param-name" data-lang-ru="руб." data-lang-en="RUB">TEST</td>
-      </tr>
-    </table>
+  <div class="pay_container_main">
+
+    <div class="pay_container_main_table">
+      <table id="tbl_sum_fee" class="tbl_sum_fee">
+        <tr>
+          <td class="param-name" data-lang-ru="Сумма платежа:" data-lang-en="Subtotal:">Сумма платежа:</td>
+          <td class="param-name" data-lang-ru="руб." data-lang-en="RUB">TEST</td>
+        </tr>
+        <tr>
+          <td class="param-name" data-lang-ru="Комиссия:" data-lang-en="Bank Fee:">Комиссия:</td>
+          <td class="param-name" data-lang-ru="руб." data-lang-en="RUB">TEST</td>
+        </tr>
+        <tr>
+          <td class="param-name" data-lang-ru="Сумма к оплате:" data-lang-en="Total:">Сумма к оплате:</td>
+          <td class="param-name" data-lang-ru="руб." data-lang-en="RUB">TEST</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="pay_container_main_card">
+      <div class="pan">
+        <label class="pan_label">Номер карты</label>
+        <input>
+      </div>
+
+      <div class="cvv">
+        <label class="cvv_label">CVV2/CVC2</label>
+        <input>
+      </div>
+
+      <div class="exp">
+        <label>Срок действия</label>
+        <input>
+        <span>/</span>
+        <input>
+      </div>
+
+
+      <div class="name">
+        <label class="name_label">Имя держателя</label>
+        <input>
+      </div>
+    </div>
+
   </div>
 
-  <div class="pay_container_main"></div>
+    <div>
+      <input type="button" value="ОПЛАТИТЬ">
+    </div>
+
+
+  </div>
+
+</div>
+
+</form>
+
 
 </body>
 <script src="js/PayPage.js"></script>
