@@ -2,34 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Payment Page</title>
+  <title>Lesson 4</title>
 
-<html>
-<head>
-  <title>
-  </title>
-  <script type="text/javascript">
-    function prepare()
-    {
-      var x = document.getElementById('phone');
-      var v = x.value;
-      v = v.replace(/\D/g, ''); //замена не-цифр
-      console.log(v);
-      if(v.length != 7)
-      {
-        //alert('Неправильный номер!');
-        return false;
-      }
-      //alert(v + ' - правильный номер!');
-      return true;
-    }
-  </script>
+
 </head>
 <body>
+<!--  <p id="output">0</p>-->
+<!--  <a href="javascript:cancel()">отмена блеать</a>-->
 
-<form method="post" action="#" onSubmit="return prepare();">
-  <input type="text" name="phone" id="phone" /><input type="submit" value="test" />
-</form>
+<!--  <input id="startButton" type="button" value="Start" />-->
+<!--  <input id="stopButton" type="button" value="Stop" />-->
+
+<!--<input id="query" type="button" name="name" value="Read Query Parameters">-->
+
+<!--04.03 WindowOpen-->
+<!--<input type="button" id="openButton" value="Открыть">-->
+<!--<input type="button" id="closeButton" value="Закрыть">-->
 
 </body>
+<script src="js/advanced_les_4.js"></script>
 </html>

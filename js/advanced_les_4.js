@@ -374,9 +374,47 @@
 
 
 
-let pattern = /[0-9]{16,19}/;
-let text = "1234567890123456к";
-document.write(text + " -> " + pattern.test(text) + "<br/>");
+// let text = '1234567890';
+// let pattern = /^\d{0,5}$/g;
+//
+// //text = text.replace(/\D/g, '');
+// document.write(text+ "<br/>");
+//
+// text = text.replace(/\d{0,5}$/g, '');
+// document.write(text+ "<br/>");
+// document.write(text + " ---> " + pattern.test(text) + "<br/>");
+// console.log(text, pattern,  pattern.test(text));
+
+
+
+
+let x = "11112222333344";
+let y = 9;
+let result = "";
+let cnt = 4;
+
+for (let i = 1; y > i; i++) {
+
+  //console.log(x[i], i, cnt);
+
+  if (i == cnt){
+    result += x[i].concat("X");
+    cnt += 4;
+  }
+  else {
+    result += x[i];
+  }
+
+}
+
+document.write(result);
+
+
+
+
+
+
+
 
 
 
