@@ -46,38 +46,40 @@
     <div class="pay_container_main_card">
       <div class="pan">
         <label class="pan_label">Номер карты</label>
-        <input>
+        <input id="pan_input">
       </div>
 
       <div class="cvv">
         <label class="cvv_label">CVV2/CVC2</label>
-        <input>
+        <input id="cvv_input" class="cvv_input" type="password">
       </div>
 
       <div class="exp">
         <label>Срок действия</label>
-        <input>
+        <input id="mm_input">
         <span>/</span>
-        <input>
+        <input id="yyyy_input">
       </div>
 
 
       <div class="name">
         <label class="name_label">Имя держателя</label>
-        <input>
+        <input id="name_input">
       </div>
     </div>
 
   </div>
 
     <div>
-      <input type="button" value="ОПЛАТИТЬ">
+      <input id="pay" type="button" value="ОПЛАТИТЬ">
     </div>
 
 
   </div>
+  <div id="result"></div>
 
 </div>
+
 
 </form>
 
