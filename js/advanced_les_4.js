@@ -387,28 +387,27 @@
 
 
 
-
-let x = "11112222333344";
-let y = 9;
-let result = "";
-let cnt = 4;
-
-for (let i = 1; y > i; i++) {
-
-  //console.log(x[i], i, cnt);
-
-  if (i == cnt){
-    result += x[i].concat("X");
-    cnt += 4;
-  }
-  else {
-    result += x[i];
-  }
-
-}
-
-document.write(result);
-
+//
+// let x = "11112222333344";
+// let y = 9;
+// let result = "";
+// let cnt = 4;
+//
+// for (let i = 1; y > i; i++) {
+//
+//   //console.log(x[i], i, cnt);
+//
+//   if (i == cnt){
+//     result += x[i].concat("X");
+//     cnt += 4;
+//   }
+//   else {
+//     result += x[i];
+//   }
+//
+// }
+//
+// document.write(result);
 
 
 
