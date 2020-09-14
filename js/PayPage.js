@@ -1,16 +1,12 @@
-// window.onload = function(){
-//   document.getElementById("pan_input").value = "11112222333344445555";
-// };
-
-let keypress;
+let key_name;
 let input_keyup;
 let input_click;
+let caret_position;
 
 document.addEventListener('keydown', function (event) {
 
   if(event.code === 'Delete' || event.code == 'Backspace') {
-    keypress = event.code;
-    console.log("loh");
+    key_name = event.code;
   }
 });
 
@@ -28,12 +24,16 @@ class Position {
   handleEvent(event) {
     switch(event.type) {
       case 'click':
-        console.log("1111keypress " + keypress, "input_click " + input_click);
-        keypress = '';
+        //console.log("key_name " + key_name, "input_click " + input_click);
+        caret_position = input_click;
+        key_name = '';
+
         break;
       case 'keyup':
-        console.log("2222keypress " + keypress, "input_keyup " + input_keyup);
-        keypress = '';
+        //console.log("key_name " + key_name, "input_keyup " + input_keyup);
+        caret_position = input_keyup;
+        key_name = '';
+
         break;
     }
   }
@@ -46,24 +46,24 @@ document.getElementById("pan_input").addEventListener('keyup', position);
 
 
 
-// console.log("keypress " + keypress, "caretPosition " + caretPosition);
+
 
 
 document.getElementById("pan_input").oninput = function () {
+
   let x;
   x = document.getElementById("pan_input").value;                          // извлекаем данные из поля "номер карты"
-
-  // if (keypress != 'Backspace') {
-  //   x = onlyNum(x);
-  // }
-  // else if (keypress == 'Backspace') {
-  // }
-
   x = onlyNum(x);
   x = cut19(x);
-  x = addSpaces(keypress, x);
+
+  if (key_name != 'Backspace'/* || key_name != 'Delete'*/) {
+    x = addSpaces(key_name, x);
+  }
+  else {
+    delSpaces(caret_position, key_name);
+  }
+
   document.getElementById("pan_input").value = x;
-  input_click = '';
 };
 
 function onlyNum(txt) {
@@ -79,19 +79,24 @@ function addSpaces(key, txt) {
   let result = "";
 
   for (let i = 0; txt.length > i; i++) {
-
-    if (i == cnt /*&& keypress != 'Backspace'*/){
-
+    if (i == cnt){
       result += txt[i].concat(" ");
       cnt += 4;
     }
     else {
       result += txt[i];
     }
-
   }
   return result;
 }
+
+
+function delSpaces(car_pos, key_nm) {
+  car_pos -= 1;
+  console.log("car_pos " + car_pos + " " + key_nm);
+}
+
+
 
 function cut19(txt) {
   let result;
