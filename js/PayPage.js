@@ -1,62 +1,70 @@
+// window.onload = function(){
+//   document.getElementById("pan_input").value = "11112222333344445555";
+// };
+
 let keypress;
+let input_keyup;
+let input_click;
+
 document.addEventListener('keydown', function (event) {
-  if(event.code == 'Delete' || event.code == 'Backspace') {
+
+  if(event.code === 'Delete' || event.code == 'Backspace') {
     keypress = event.code;
-    //console.log('пидор', keypress);
+    console.log("loh");
   }
 });
 
-
-let input = document.getElementById("pan_input");
-input.addEventListener("input", function () {
-  console.log("Caret position INPUT: " + this.selectionStart);
+document.getElementById("pan_input").addEventListener("keyup", function () {
+  input_keyup = this.selectionStart;
 });
 
 
-
-let input2 = document.getElementById("pan_input").addEventListener("keyup", function () {
-  console.log("Caret position KEYUP: " + this.selectionStart);
-});
-
-let input3 = document.getElementById("pan_input").addEventListener("keydown", function () {
-  console.log("Caret position keydown: " + this.selectionStart);
-});
-
-let input4 = document.getElementById("pan_input").addEventListener("keypress", function () {
-  console.log("Caret position keypress: " + this.selectionStart);
-});
-
-let input5 = document.getElementById("pan_input").addEventListener("click", function () {
-  console.log("Caret position CLICK: " + this.selectionStart);
+document.getElementById("pan_input").addEventListener("click", function () {
+  input_click = this.selectionStart;
 });
 
 
+class Position {
+  handleEvent(event) {
+    switch(event.type) {
+      case 'click':
+        console.log("1111keypress " + keypress, "input_click " + input_click);
+        keypress = '';
+        break;
+      case 'keyup':
+        console.log("2222keypress " + keypress, "input_keyup " + input_keyup);
+        keypress = '';
+        break;
+    }
+  }
+}
+
+let position = new Position();
+document.getElementById("pan_input").addEventListener('click', position);
+document.getElementById("pan_input").addEventListener('keyup', position);
+
+
+
+
+// console.log("keypress " + keypress, "caretPosition " + caretPosition);
 
 
 document.getElementById("pan_input").oninput = function () {
-
   let x;
-  x = document.getElementById("pan_input").value;                          // извлекаем данные за поля "номер карты"
+  x = document.getElementById("pan_input").value;                          // извлекаем данные из поля "номер карты"
 
+  // if (keypress != 'Backspace') {
+  //   x = onlyNum(x);
+  // }
+  // else if (keypress == 'Backspace') {
+  // }
 
-
-  if (keypress != 'Backspace') {
-    x = onlyNum(x);
-  }
-  else if (keypress == 'Backspace') {
-  }
-
+  x = onlyNum(x);
   x = cut19(x);
-
   x = addSpaces(keypress, x);
-
-
   document.getElementById("pan_input").value = x;
-  keypress = '';
+  input_click = '';
 };
-
-
-
 
 function onlyNum(txt) {
   let result;
@@ -65,14 +73,15 @@ function onlyNum(txt) {
   return result;
 }
 
-
 function addSpaces(key, txt) {
+
   let cnt = 3;
   let result = "";
 
   for (let i = 0; txt.length > i; i++) {
 
-    if (i == cnt && keypress != 'Backspace'){
+    if (i == cnt /*&& keypress != 'Backspace'*/){
+
       result += txt[i].concat(" ");
       cnt += 4;
     }
@@ -94,17 +103,3 @@ function cut19(txt) {
 
   return result;
 }
-
-
-// window.addEventListener ("load", function () {
-//   let input = document.getElementById("pan_input");
-//   console.log(input);
-//   input[0].addEventListener ("keydown", function () {
-//     console.log("Caret position: " + this.selectionStart);
-//
-//     // You can also set the caret: this.selectionStart = 2;
-//   });
-// });
-
-
-
