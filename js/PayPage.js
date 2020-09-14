@@ -1,3 +1,8 @@
+window.onload = function() {
+  document.getElementById("pan_input").value = "0000 1111 2222 3333 44";
+  // setCaretPosition(document.getElementById("pan_input"), 5);
+};
+
 let key_name;
 let input_keyup;
 let input_click;
@@ -24,13 +29,11 @@ class Position {
   handleEvent(event) {
     switch(event.type) {
       case 'click':
-        //console.log("key_name " + key_name, "input_click " + input_click);
         caret_position = input_click;
         key_name = '';
 
         break;
       case 'keyup':
-        //console.log("key_name " + key_name, "input_keyup " + input_keyup);
         caret_position = input_keyup;
         key_name = '';
 
@@ -60,7 +63,7 @@ document.getElementById("pan_input").oninput = function () {
     x = addSpaces(key_name, x);
   }
   else {
-    delSpaces(caret_position, key_name);
+    x = delSpaces(caret_position);
   }
 
   document.getElementById("pan_input").value = x;
@@ -73,10 +76,10 @@ function onlyNum(txt) {
   return result;
 }
 
-function addSpaces(key, txt) {
 
-  let cnt = 3;
+function addSpaces(key, txt) {
   let result = "";
+  let cnt = 3;
 
   for (let i = 0; txt.length > i; i++) {
     if (i == cnt){
@@ -91,9 +94,29 @@ function addSpaces(key, txt) {
 }
 
 
-function delSpaces(car_pos, key_nm) {
-  car_pos -= 1;
-  console.log("car_pos " + car_pos + " " + key_nm);
+function delSpaces(cp) {
+
+  let source_value = document.getElementById("pan_input").value;
+  let cnt = 3;
+  let result = "";
+
+  for (let i = 0; source_value.length > i; i++) {
+    if (i == cnt) {
+      result += source_value[i].concat("x");
+
+      console.log("i " + i + " cp" + cp);
+
+      document.getElementById("pan_input").oninput = function() {
+      setCaretPosition(document.getElementById("pan_input"), caret_position);
+      };
+
+      cnt += 4;
+    }
+    else {
+      result += source_value[i];
+    }
+  }
+  return result;
 }
 
 
@@ -107,4 +130,16 @@ function cut19(txt) {
   else result = txt;
 
   return result;
+}
+
+
+
+
+
+function setCaretPosition (elem, caretPos) {
+if (elem.selectionStart || elem.selectionStart == '0') {
+    elem.selectionStart = caretPos;
+    elem.selectionEnd = caretPos;
+    elem.focus ();
+  }
 }
