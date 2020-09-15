@@ -1,6 +1,5 @@
 window.onload = function() {
   document.getElementById("pan_input").value = "0000 1111 2222 3333 44";
-  // setCaretPosition(document.getElementById("pan_input"), 5);
 };
 
 let key_name;
@@ -9,7 +8,6 @@ let input_click;
 let caret_position;
 
 document.addEventListener('keydown', function (event) {
-
   if(event.code === 'Delete' || event.code == 'Backspace') {
     key_name = event.code;
   }
@@ -23,7 +21,6 @@ document.getElementById("pan_input").addEventListener("keyup", function () {
 document.getElementById("pan_input").addEventListener("click", function () {
   input_click = this.selectionStart;
 });
-
 
 class Position {
   handleEvent(event) {
@@ -57,17 +54,13 @@ document.getElementById("pan_input").oninput = function () {
   x = onlyNum(x);
   x = cut19(x);
 
-  //console.log(" key_name " + key_name);
-
   if (key_name != 'Backspace') {
     x = addSpaces(key_name, x);
   } else {
     x = delSpaces(caret_position);
-    // setCaretPosition(document.getElementById("pan_input"), 2);
   }
 
   document.getElementById("pan_input").value = x;
-  // key_name = "";
 };
 
 
@@ -79,38 +72,35 @@ function onlyNum(txt) {
   return result;
 }
 
-function addSpaces(key, txt) {
-  let result = "";
-  let cnt = 3;
+// function addSpaces(key, txt) {
+//   let result = "";
+//   let cnt = 3;
+//
+//   for (let i = 0; txt.length > i; i++) {
+//     if (i == cnt){
+//       result += txt[i].concat(" ");
+//       cnt += 4;
+//     }
+//     else {
+//       result += txt[i];
+//     }
+//   }
+//   return result;
+// }
 
-  for (let i = 0; txt.length > i; i++) {
-    if (i == cnt){
-      result += txt[i].concat(" ");
-      cnt += 4;
-      console.log("lol " + i);
-    }
-    else {
-      result += txt[i];
-    }
-  }
-  return result;
-}
-
-function delSpaces(cp) {
-
+function delSpaces(caret_position) {
   let source_value = document.getElementById("pan_input").value;
   let cnt = 3;
   let result = "";
 
   for (let i = 0; source_value.length > i; i++) {
     if (i == cnt) {
-      result += source_value[i].concat("x");
+      result += source_value[i].concat(" ");
 
-      console.log("i " + i + " cp " + cp + " key_name " + key_name);
+      console.log("caret_position" + caret_position);
 
-      document.getElementById("pan_input").oninput = function() {
-      setCaretPosition(document.getElementById("pan_input"), cp - 2);
-      };
+      // document.getElementById("pan_input").setSelectionRange(2,5);
+      // setCaretPosition(document.getElementById("pan_input"), 3);
 
       cnt += 4;
     }
@@ -134,23 +124,11 @@ function cut19(txt) {
 
 
 function setCaretPosition(elem, caretPos) {
-  console.log('setCaretPosition 1');
 if (elem.selectionStart || elem.selectionStart == '0') {
-  console.log('setCaretPosition 2');
     elem.selectionStart = caretPos;
     elem.selectionEnd = caretPos;
     elem.focus();
-
     console.log('caretPos:', caretPos);
   }
 }
 
-//
-// let input = document.getElementsByTagName('input')[0];
-// input.addEventListener('focus', (e, el) => {
-//   e.preventDefault()
-// });
-// input.addEventListener('mouseup', (e, el) => {
-//   e.preventDefault()
-//   console.log(input.setSelectionRange(4, 4))
-// });

@@ -2,23 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <script type = "text/javascript">
-    window.addEventListener ("load", function () {
-      var input = document.getElementsByTagName ("input");
-
-      input[0].addEventListener ("keydown", function () {
-        alert ("Caret position: " + this.selectionStart);
-
-        // You can also set the caret: this.selectionStart = 2;
-      });
-    });
-  </script>
-
   <title>Test</title>
 </head>
 
 <body>
-<input type = "text">
+<input id="input" type = "text">
 </body>
+<script src="js/SANDBOX.js"></script>
 </html>
