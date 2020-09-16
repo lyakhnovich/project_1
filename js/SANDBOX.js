@@ -1,5 +1,5 @@
 window.onload = function() {
-  document.getElementById("input").value = "0004 1117 3333";
+  document.getElementById("input").value = "0004 6117 8333";
 };
 // // split - разбивает строки ADD ADD ADD ADD ADD ADD ADD ADD ADD ADD ADD ADD
 // // lastIndexOf - индекс последнего символа в строке
@@ -7,14 +7,14 @@ window.onload = function() {
 let input_keyup,
   input_click,
   caret_position,
-  key_name;
+  key_name,
+  last_symbol;
 
 document.addEventListener('keydown', function (event) {
   if(event.code === 'Delete' || event.code == 'Backspace') {
     key_name = event.code;
   }
 });
-
 
 document.getElementById("input").addEventListener("keyup", function () {
   input_keyup = this.selectionStart;
@@ -30,11 +30,14 @@ class Position {
     switch(event.type) {
       case 'click':
         caret_position = input_click;
+        last_symbol = document.getElementById("input").value.substr(0, caret_position-1).slice(-1);
         break;
       case 'keyup':
         caret_position = input_keyup;
+        last_symbol = document.getElementById("input").value.substr(0, caret_position-1).slice(-1);
         break;
     }
+    console.log("'" + last_symbol + "'");
   }
 }
 
@@ -49,19 +52,24 @@ function main() {
   let x;
   x = document.getElementById("input").value;
 
-  let source_value = document.getElementById("input").value;
-  let last_symbol = source_value.substr(0, caret_position-1).slice(-1);
-
-
-
   x = onlyNum(x);
   x = cut19(x);
-  console.log("1: " + caret_position);
   x = refresh_input(x);
-  console.log("2: " + caret_position);
-  console.log("last_symbol:" + last_symbol);
   document.getElementById("input").value = x;
-  setCaretPosition(document.getElementById("input"), caret_position-1);
+
+  if(key_name == "Backspace" && last_symbol != " ") {
+    setCaretPosition(document.getElementById("input"), caret_position-1);
+    // console.log(key_name);
+  }
+  else if (key_name == "Backspace" && last_symbol == " ") {
+    setCaretPosition(document.getElementById("input"), caret_position-2);
+  }
+
+  if(key_name == "Delete") {
+    console.log("LOH " + caret_position);
+    setCaretPosition(document.getElementById("input"), caret_position);
+  }
+
   key_name = "";
 }
 
