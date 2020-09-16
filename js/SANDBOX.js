@@ -1,5 +1,5 @@
 window.onload = function() {
-  document.getElementById("input").value = "00001 1111 33344";
+  document.getElementById("input").value = "0004 1117 3333";
 };
 // // split - разбивает строки ADD ADD ADD ADD ADD ADD ADD ADD ADD ADD ADD ADD
 // // lastIndexOf - индекс последнего символа в строке
@@ -45,27 +45,28 @@ document.getElementById("input").addEventListener('keyup', position);
 
 document.getElementById("input").oninput = main;
 
-
 function main() {
   let x;
   x = document.getElementById("input").value;
 
+  let source_value = document.getElementById("input").value;
+  let last_symbol = source_value.substr(0, caret_position-1).slice(-1);
 
-  if (key_name != 'Backspace') {
-    console.log("x " + x);
-    x = onlyNum(x);
-    x = cut19(x);
-    x = addSpaces(key_name, x);
-  } else {
-    x = delSpaces(caret_position);
-  }
 
+
+  x = onlyNum(x);
+  x = cut19(x);
+  console.log("1: " + caret_position);
+  x = refresh_input(x);
+  console.log("2: " + caret_position);
+  console.log("last_symbol:" + last_symbol);
   document.getElementById("input").value = x;
+  setCaretPosition(document.getElementById("input"), caret_position-1);
   key_name = "";
 }
 
 
-function addSpaces(key, txt) {
+function refresh_input(txt) {
   let result = "";
   let cnt = 3;
 
@@ -79,17 +80,6 @@ function addSpaces(key, txt) {
     }
   }
   return result;
-}
-
-function delSpaces(caret_pos) {
-  let source_value = document.getElementById("input").value;
-  let last_symbol = source_value.substr(0, caret_pos-1).slice(-1);
-
-  if(last_symbol == " ") {
-    setCaretPosition(document.getElementById("input"), caret_position - 2);
-  }
-console.log(source_value);
-  return source_value;
 }
 
 
@@ -110,14 +100,61 @@ function cut19(txt) {
 }
 
 
-
-
-
-
 function setCaretPosition(elem, caretPos) {
+  // caret_position = 2;
   if (elem.selectionStart || elem.selectionStart == '0') {
     elem.selectionStart = caretPos;
     elem.selectionEnd = caretPos;
     elem.focus();
   }
 }
+
+
+
+
+
+// function addSpaces(key, txt) {
+//   let result = "";
+//   let cnt = 3;
+//
+//   for (let i = 0; txt.length > i; i++) {
+//     if (i == cnt){
+//       result += txt[i].concat(" ");
+//       cnt += 4;
+//     }
+//     else {
+//       result += txt[i];
+//     }
+//   }
+//   return result;
+// }
+
+// function delSpaces(caret_pos) {
+//   let source_value = document.getElementById("input").value;
+//   let last_symbol = source_value.substr(0, caret_pos-1).slice(-1);
+//   let result;
+//
+//   console.log("last_symbol:" + last_symbol);
+//
+//   if(last_symbol == " ") {
+//     result = onlyNum(source_value);
+//     result = cut19(result);
+//     result = addSpaces("", result);
+//     setCaretPosition(document.getElementById("input"), caret_position - 2);
+//     console.log(result);
+//   }
+//   else {
+//     console.log("pidr");
+//     result = onlyNum(source_value);
+//     result = cut19(result);
+//     result = addSpaces("", result)
+//   }
+//   // if(caret_position < source_value.length) {
+//   //   result = onlyNum(source_value);
+//   //   result = cut19(result);
+//   //   result = addSpaces('', result);
+//   //   console.log(result + " " + caret_position + " " + source_value.length);
+//   // }
+//
+//   return result;
+// }
