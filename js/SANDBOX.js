@@ -16,7 +16,9 @@ let input_keyup,
 document.addEventListener('keydown', function (event) {
   if(event.code === 'Delete' || event.code == 'Backspace') {
     key_name = event.code;
+
   }
+  console.log('key_name',key_name, event.code);
 });
 
 document.getElementById("input").addEventListener("keyup", function () {
@@ -55,31 +57,48 @@ document.getElementById("input").addEventListener('keyup', position);
 document.getElementById("input").oninput = main;
 
 function main() {
-  let x;
-  x = document.getElementById("input").value;
+  let x = document.getElementById("input").value;
+
+  let arr = [];
+  for (let i = 0; i < x.length ; i++) {
+    arr.push(x[i]);
+  }
+
+  if(key_name == "Backspace" && left_symbol == " ") {
+    arr.splice(caret_position-2, 1);
+    arr = arr.join("");
+    x = arr.toString();
+  }
+  if(key_name == "Delete" && right_symbol == " ") {
+    arr.splice(caret_position, 1);
+    arr = arr.join("");
+    x = arr.toString();
+  }
+
 
   x = onlyNum(x);
   x = cut19(x);
-
   x = refresh_input(x);
   document.getElementById("input").value = x;
 
 
-
-
-
-  if(key_name == "Backspace" && last_symbol != " ") {
+  if(key_name == "Backspace" && left_symbol == " ") {
+    setCaretPosition(document.getElementById("input"), caret_position-2);
+  }
+  else if(key_name == "Backspace" && last_symbol != " ") {
     setCaretPosition(document.getElementById("input"), caret_position-1);
   }
   else if (key_name == "Backspace" && last_symbol == " ") {
     setCaretPosition(document.getElementById("input"), caret_position-2);
+    console.log("LOH 666");
   }
+
 
   if(key_name == "Delete" && right_symbol == " ") {
-    console.log("LOH Delete");
+    setCaretPosition(document.getElementById("input"), caret_position+1);
+    // console.log("LOH");
   }
-
-  if(key_name == "Delete") {
+  else if (key_name == "Delete" && right_symbol != " "){
     setCaretPosition(document.getElementById("input"), caret_position);
   }
 
@@ -104,25 +123,8 @@ function refresh_input(txt) {
     }
   }
 
-
-  let arr = [];
-  for (let i = 0; i < result.length ; i++) {
-    let total;
-    arr.push(result[i]);
-  }
-  console.log(arr);
-
-  if(key_name == "Backspace" && left_symbol == " ") {
-    console.log("1 '" + result[caret_position-2] + "'");
-    console.log("2 '" + "'");
-    setCaretPosition(document.getElementById("input"), caret_position-2);
-
-  }
-
-
   return result;
 }
-
 
 function onlyNum(txt) {
   let result;
@@ -140,7 +142,6 @@ function cut19(txt) {
   return result;
 }
 
-
 function setCaretPosition(elem, caretPos) {
   // caret_position = 2;
   if (elem.selectionStart || elem.selectionStart == '0') {
@@ -149,54 +150,4 @@ function setCaretPosition(elem, caretPos) {
     elem.focus();
   }
 }
-
-
-
-
-
-// function addSpaces(key, txt) {
-//   let result = "";
-//   let cnt = 3;
-//
-//   for (let i = 0; txt.length > i; i++) {
-//     if (i == cnt){
-//       result += txt[i].concat(" ");
-//       cnt += 4;
-//     }
-//     else {
-//       result += txt[i];
-//     }
-//   }
-//   return result;
-// }
-
-// function delSpaces(caret_pos) {
-//   let source_value = document.getElementById("input").value;
-//   let last_symbol = source_value.substr(0, caret_pos-1).slice(-1);
-//   let result;
-//
-//   console.log("last_symbol:" + last_symbol);
-//
-//   if(last_symbol == " ") {
-//     result = onlyNum(source_value);
-//     result = cut19(result);
-//     result = addSpaces("", result);
-//     setCaretPosition(document.getElementById("input"), caret_position - 2);
-//     console.log(result);
-//   }
-//   else {
-//     console.log("pidr");
-//     result = onlyNum(source_value);
-//     result = cut19(result);
-//     result = addSpaces("", result)
-//   }
-//   // if(caret_position < source_value.length) {
-//   //   result = onlyNum(source_value);
-//   //   result = cut19(result);
-//   //   result = addSpaces('', result);
-//   //   console.log(result + " " + caret_position + " " + source_value.length);
-//   // }
-//
-//   return result;
-// }
 
