@@ -8,7 +8,10 @@ let input_keyup,
   input_click,
   caret_position = 0,
   key_name,
-  last_symbol;
+  last_symbol,
+
+  left_symbol,
+  right_symbol;
 
 document.addEventListener('keydown', function (event) {
   if(event.code === 'Delete' || event.code == 'Backspace') {
@@ -37,8 +40,10 @@ class Position {
         last_symbol = document.getElementById("input").value.substr(0, caret_position-1).slice(-1);
         break;
     }
-    console.log(document.getElementById("input").value[caret_position-1]);
-    console.log(document.getElementById("input").value[caret_position]);
+      left_symbol = document.getElementById("input").value[caret_position-1];
+      right_symbol = document.getElementById("input").value[caret_position];
+
+    // console.log("left_symbol'" + left_symbol + "' : right_symbol'" + right_symbol + "'");
   }
 }
 
@@ -70,12 +75,19 @@ function main() {
     setCaretPosition(document.getElementById("input"), caret_position-2);
   }
 
+  if(key_name == "Delete" && right_symbol == " ") {
+    console.log("LOH Delete");
+  }
+
   if(key_name == "Delete") {
     setCaretPosition(document.getElementById("input"), caret_position);
   }
 
   key_name = "";
 }
+
+
+
 
 
 function refresh_input(txt) {
@@ -91,6 +103,23 @@ function refresh_input(txt) {
       result += txt[i];
     }
   }
+
+
+  let arr = [];
+  for (let i = 0; i < result.length ; i++) {
+    let total;
+    arr.push(result[i]);
+  }
+  console.log(arr);
+
+  if(key_name == "Backspace" && left_symbol == " ") {
+    console.log("1 '" + result[caret_position-2] + "'");
+    console.log("2 '" + "'");
+    setCaretPosition(document.getElementById("input"), caret_position-2);
+
+  }
+
+
   return result;
 }
 
@@ -170,3 +199,4 @@ function setCaretPosition(elem, caretPos) {
 //
 //   return result;
 // }
+
