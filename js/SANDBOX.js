@@ -6,7 +6,7 @@ window.onload = function() {
 
 let input_keyup,
   input_click,
-  caret_position,
+  caret_position = 0,
   key_name,
   last_symbol;
 
@@ -37,7 +37,8 @@ class Position {
         last_symbol = document.getElementById("input").value.substr(0, caret_position-1).slice(-1);
         break;
     }
-    console.log("'" + last_symbol + "'");
+    console.log(document.getElementById("input").value[caret_position-1]);
+    console.log(document.getElementById("input").value[caret_position]);
   }
 }
 
@@ -54,26 +55,23 @@ function main() {
 
   x = onlyNum(x);
   x = cut19(x);
+
   x = refresh_input(x);
   document.getElementById("input").value = x;
 
 
-  console.log("1:" + last_symbol);
+
 
 
   if(key_name == "Backspace" && last_symbol != " ") {
     setCaretPosition(document.getElementById("input"), caret_position-1);
-    // console.log("1:" + last_symbol);
   }
   else if (key_name == "Backspace" && last_symbol == " ") {
     setCaretPosition(document.getElementById("input"), caret_position-2);
-    // console.log("2:" + last_symbol);
   }
 
   if(key_name == "Delete") {
-    console.log("LOH " + caret_position);
     setCaretPosition(document.getElementById("input"), caret_position);
-    // console.log("3:" + last_symbol);
   }
 
   key_name = "";
