@@ -57,17 +57,23 @@ function main() {
   x = refresh_input(x);
   document.getElementById("input").value = x;
 
+
+  console.log("1:" + last_symbol);
+
+
   if(key_name == "Backspace" && last_symbol != " ") {
     setCaretPosition(document.getElementById("input"), caret_position-1);
-    // console.log(key_name);
+    // console.log("1:" + last_symbol);
   }
   else if (key_name == "Backspace" && last_symbol == " ") {
     setCaretPosition(document.getElementById("input"), caret_position-2);
+    // console.log("2:" + last_symbol);
   }
 
   if(key_name == "Delete") {
     console.log("LOH " + caret_position);
     setCaretPosition(document.getElementById("input"), caret_position);
+    // console.log("3:" + last_symbol);
   }
 
   key_name = "";
