@@ -1,5 +1,5 @@
 window.onload = function() {
-  document.getElementById("input").хуй = "0004 6117 8333";
+  document.getElementById("input").value = "0004 6117 8333";
 };
 // // split - разбивает строки ADD ADD ADD ADD ADD ADD ADD ADD ADD ADD ADD ADD
 // // lastIndexOf - индекс последнего символа в строке
@@ -35,15 +35,15 @@ class Position {
     switch(event.type) {
       case 'click':
         caret_position = input_click;
-        last_symbol = document.getElementById("input").хуй.substr(0, caret_position-1).slice(-1);
+        last_symbol = document.getElementById("input").value.substr(0, caret_position-1).slice(-1);
         break;
       case 'keyup':
         caret_position = input_keyup;
-        last_symbol = document.getElementById("input").хуй.substr(0, caret_position-1).slice(-1);
+        last_symbol = document.getElementById("input").value.substr(0, caret_position-1).slice(-1);
         break;
     }
-      left_symbol = document.getElementById("input").хуй[caret_position-1];
-      right_symbol = document.getElementById("input").хуй[caret_position];
+      left_symbol = document.getElementById("input").value[caret_position-1];
+      right_symbol = document.getElementById("input").value[caret_position];
 
     // console.log("left_symbol'" + left_symbol + "' : right_symbol'" + right_symbol + "'");
   }
@@ -57,7 +57,7 @@ document.getElementById("input").addEventListener('keyup', position);
 document.getElementById("input").oninput = main;
 
 function main() {
-  let x = document.getElementById("input").хуй;
+  let x = document.getElementById("input").value;
 
   let arr = [];
   for (let i = 0; i < x.length ; i++) {
@@ -79,7 +79,7 @@ function main() {
   x = onlyNum(x);
   x = cut19(x);
   x = refresh_input(x);
-  document.getElementById("input").хуй = x;
+  document.getElementById("input").value = x;
 
 
   if(key_name == "Backspace" && left_symbol == " ") {
@@ -128,7 +128,7 @@ function refresh_input(txt) {
 
 function onlyNum(txt) {
   let result;
-  document.getElementById("input").хуй = txt.replace(/\D/g, '');    // при вводе данных все нечисловые символы убираем
+  document.getElementById("input").value = txt.replace(/\D/g, '');    // при вводе данных все нечисловые символы убираем
   result = txt.replace(/\D/g, '');
   return result;
 }
