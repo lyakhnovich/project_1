@@ -16,10 +16,16 @@ let input_keyup,
 document.addEventListener('keydown', function (event) {
   if(event.code === 'Delete' || event.code == 'Backspace') {
     key_name = event.code;
-
   }
-  console.log('key_name',key_name, event.code);
 });
+
+
+
+document.getElementById("input").addEventListener("keydown", function () {
+  input_keyup = this.selectionStart;
+});
+
+
 
 document.getElementById("input").addEventListener("keyup", function () {
   input_keyup = this.selectionStart;
@@ -41,24 +47,27 @@ class Position {
         caret_position = input_keyup;
         last_symbol = document.getElementById("input").value.substr(0, caret_position-1).slice(-1);
         break;
+      case 'keydown':
+        caret_position = input_keyup;
+        last_symbol = document.getElementById("input").value.substr(0, caret_position-1).slice(-1);
+        break;
     }
       left_symbol = document.getElementById("input").value[caret_position-1];
       right_symbol = document.getElementById("input").value[caret_position];
-
-    // console.log("left_symbol'" + left_symbol + "' : right_symbol'" + right_symbol + "'");
   }
 }
 
 let position = new Position();
+
 document.getElementById("input").addEventListener('click', position);
 document.getElementById("input").addEventListener('keyup', position);
-
+document.getElementById("input").addEventListener('keydown', position);
 
 document.getElementById("input").oninput = main;
 
 function main() {
   let x = document.getElementById("input").value;
-
+  console.log(position);
   let arr = [];
   for (let i = 0; i < x.length ; i++) {
     arr.push(x[i]);
@@ -90,13 +99,11 @@ function main() {
   }
   else if (key_name == "Backspace" && last_symbol == " ") {
     setCaretPosition(document.getElementById("input"), caret_position-2);
-    console.log("LOH 666");
   }
 
 
   if(key_name == "Delete" && right_symbol == " ") {
     setCaretPosition(document.getElementById("input"), caret_position+1);
-    // console.log("LOH");
   }
   else if (key_name == "Delete" && right_symbol != " "){
     setCaretPosition(document.getElementById("input"), caret_position);
@@ -143,7 +150,6 @@ function cut19(txt) {
 }
 
 function setCaretPosition(elem, caretPos) {
-  // caret_position = 2;
   if (elem.selectionStart || elem.selectionStart == '0') {
     elem.selectionStart = caretPos;
     elem.selectionEnd = caretPos;

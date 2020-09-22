@@ -23,3 +23,12 @@ div {
 #testDiv {
   background-color: #ffcc00;
 }
+
+div_task_2 {
+  width: 200px;
+  height: 200px;
+}
+
+div#first {
+
+}
