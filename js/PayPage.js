@@ -77,9 +77,17 @@ function main() {
 
   x = onlyNum(x);
   x = cut19(x);
-  if (!luhnAlgorithm(x)) {
-    console.log("PIZDEC");
-  };
+
+  if (x.length >= 16) {
+    if (!luhnAlgorithm(x)) {
+      console.log("PIZDEC");
+    }
+    else {
+      console.log("NORM");
+    };
+  }
+
+
   x = refresh_input(x);
   document.getElementById("pan_input").value = x;
 

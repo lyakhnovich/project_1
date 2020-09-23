@@ -106,6 +106,9 @@ label {
   font-weight: 400;
 }
 
+.error_img {
+  background-size: 20% 20%;
+}
 
 .pan {
 
