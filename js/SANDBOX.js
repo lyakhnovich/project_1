@@ -1,5 +1,5 @@
 window.onload = function() {
-  document.getElementById("input").value = "0004 6117 8333";
+  document.getElementById("input").value = "5220311995852146";
 };
 // // split - разбивает строки ADD ADD ADD ADD ADD ADD ADD ADD ADD ADD ADD ADD
 // // lastIndexOf - индекс последнего символа в строке
@@ -87,6 +87,9 @@ function main() {
 
   x = onlyNum(x);
   x = cut19(x);
+  if (!luhnAlgorithm(x)) {
+    console.log("PIZDEC");
+  };
   x = refresh_input(x);
   document.getElementById("input").value = x;
 
@@ -108,6 +111,8 @@ function main() {
   else if (key_name == "Delete" && right_symbol != " "){
     setCaretPosition(document.getElementById("input"), caret_position);
   }
+
+
 
   key_name = "";
 }
@@ -157,3 +162,24 @@ function setCaretPosition(elem, caretPos) {
   }
 }
 
+
+
+function luhnAlgorithm(digits) {
+  let sum = 0;
+
+  for (let i = 0; i < digits.length; i++) {
+    let cardNum = parseInt(digits[i]);
+
+    if ((digits.length - i) % 2 === 0) {
+      cardNum = cardNum * 2;
+
+      if (cardNum > 9) {
+        cardNum = cardNum - 9;
+      }
+    }
+
+    sum += cardNum;
+  }
+
+  return sum % 10 === 0;
+}
