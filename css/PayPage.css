@@ -107,7 +107,14 @@ label {
 }
 
 .error_img {
-  background-size: 20% 20%;
+  width: 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  transform: translate(-35%, 10%);
+  left: 3%;
 }
 
 .pan {
