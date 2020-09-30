@@ -1,6 +1,6 @@
-window.onload = function() {
-  document.getElementById("mmyyyy").value = "221990";
-};
+// window.onload = function() {
+//   document.getElementById("mmyyyy").value = "221990";
+// };
 
 
 //------------------Функциональность поля PAN------------------//
@@ -126,8 +126,6 @@ function refresh_input(txt) {
 
 function onlyNum(txt, id_elem) {
   let result;
-
-
   document.getElementById(id_elem).value = txt.replace(/\D/g, '');    // при вводе данных все нечисловые символы убираем
   result = txt.replace(/\D/g, '');
   return result;
@@ -183,32 +181,31 @@ let mm = "",
   yyyy = "";
 
 function main_mmyyyy() {
-
+  let temp = document.getElementById("mmyyyy").value;
   let y = document.getElementById("mmyyyy").value;
 
   y = onlyNum(y, "mmyyyy");
   y = cut_6(y);
-  console.log("START " + y);
-  for (let i = 0; y.length > i; i++) {
+  // console.log("START " + y);
 
+
+  for (let i = 0; y.length > i; i++) {
+    console.log("ты дебил? " + y.length + " " + y);
     if(y.length <= 2) {
       if(mm > 12) {
-        console.log("ты дебил?");
         mm = 12;
         break;
       }
       mm = y;
     }
     else {
-      yyyy = y.slice(2, )
+      yyyy = y.slice(2, );
     }
   }
 
 
-
-  console.log("mm: " + mm + " yyyy: " + yyyy);
-  y = mm + "/" + yyyy;
-  document.getElementById("mmyyyy").value = y;
+  //console.log("mm: " + mm + " yyyy: " + yyyy + " (temp: " + temp + ")");
+  document.getElementById("mmyyyy").value = mm + "/" + yyyy;
 }
 
 
@@ -226,6 +223,29 @@ function cut_6(mm_yyyy) {
 
 
 
+
+
+
+// //----------------------------------------------------------//
+//
+// window.onload = function () {
+//   var div1 = document.getElementById("first"),
+//     div2 = document.getElementById("second");
+//
+//   document.getElementById("btn1").onclick = function () {
+//     console.log("first div style - " + div1.style.backgroundColor);
+//   }
+//
+//   document.getElementById("btn2").onclick = function () {
+//     console.log("second div style - " + div2.style.backgroundColor);
+//   }
+//
+//
+//
+// };
+//
+// //----------------------------------------------------------//
+//
 
 
 
