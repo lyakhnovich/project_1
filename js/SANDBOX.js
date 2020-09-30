@@ -126,6 +126,8 @@ function refresh_input(txt) {
 
 function onlyNum(txt, id_elem) {
   let result;
+
+
   document.getElementById(id_elem).value = txt.replace(/\D/g, '');    // при вводе данных все нечисловые символы убираем
   result = txt.replace(/\D/g, '');
   return result;
@@ -167,31 +169,49 @@ function luhnAlgorithm(digits) {
 }
 
 
+
+
+
+
+
 //------------------Функциональность поля MMYYYY------------------//
 
 document.getElementById("mmyyyy").oninput = main_mmyyyy;
 
 
-
+let mm = "",
+  yyyy = "";
 
 function main_mmyyyy() {
+
   let y = document.getElementById("mmyyyy").value;
-  let arr = [];
-
-  let year = new Date();
-
-  for (let i = 0; i < y.length ; i++) {
-    arr.push(y[i]);
-  }
-  arr = arr.join("");
-  y = arr.toString();
 
   y = onlyNum(y, "mmyyyy");
   y = cut_6(y);
-  console.log(year);
-  document.getElementById("mmyyyy").value = y;
+  console.log("START " + y);
+  for (let i = 0; y.length > i; i++) {
 
+    if(y.length <= 2) {
+      if(mm > 12) {
+        console.log("ты дебил?");
+        mm = 12;
+        break;
+      }
+      mm = y;
+    }
+    else {
+      yyyy = y.slice(2, )
+    }
+  }
+
+
+
+  console.log("mm: " + mm + " yyyy: " + yyyy);
+  y = mm + "/" + yyyy;
+  document.getElementById("mmyyyy").value = y;
 }
+
+
 
 
 
@@ -203,5 +223,9 @@ function cut_6(mm_yyyy) {
   else result = mm_yyyy;
   return result;
 }
+
+
+
+
 
 
