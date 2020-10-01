@@ -10,7 +10,7 @@ let input_keyup,
 
 function key_info(id_elem) {
   document.addEventListener('keydown', function (event) {
-    if(event.code === 'Delete' || event.code == 'Backspace') {
+    if(event.code === 'Delete' || event.code === 'Backspace') {
       key_name = event.code;
     }
   });
@@ -61,8 +61,6 @@ function key_info(id_elem) {
 
 
 
-
-
 //------------------Функциональность поля PAN------------------//
 document.getElementById("pan").oninput = main_pan;
 
@@ -76,12 +74,12 @@ function main_pan() {
     arr.push(x[i]);
   }
 
-  if(key_name == "Backspace" && left_symbol == " ") {
+  if(key_name === "Backspace" && left_symbol === " ") {
     arr.splice(caret_position-2, 1);
     arr = arr.join("");
     x = arr.toString();
   }
-  if(key_name == "Delete" && right_symbol == " ") {
+  if(key_name === "Delete" && right_symbol === " ") {
     arr.splice(caret_position, 1);
     arr = arr.join("");
     x = arr.toString();
@@ -97,20 +95,20 @@ function main_pan() {
 
 
 
-  if(key_name == "Backspace" && left_symbol == " ") {
+  if(key_name === "Backspace" && left_symbol === " ") {
     setCaretPosition(document.getElementById("pan"), caret_position-2);
   }
-  else if(key_name == "Backspace" && last_symbol != " ") {
+  else if(key_name === "Backspace" && last_symbol !== " ") {
     setCaretPosition(document.getElementById("pan"), caret_position-1);
   }
-  else if (key_name == "Backspace" && last_symbol == " ") {
+  else if (key_name === "Backspace" && last_symbol === " ") {
     setCaretPosition(document.getElementById("pan"), caret_position-2);
   }
 
-  if(key_name == "Delete" && right_symbol == " ") {
+  if(key_name === "Delete" && right_symbol === " ") {
     setCaretPosition(document.getElementById("pan"), caret_position+1);
   }
-  else if (key_name == "Delete" && right_symbol != " "){
+  else if (key_name === "Delete" && right_symbol !== " "){
     setCaretPosition(document.getElementById("pan"), caret_position);
   }
 
@@ -134,13 +132,13 @@ function refresh_input(txt, separator, interval) {
   let cnt = interval-1;
 
   for (let i = 0; txt.length > i; i++) {
-    if (i == cnt){
+    if (i === cnt){
       result += txt[i].concat(separator);
 
-      if (separator == " ") {
+      if (separator === " ") {
         cnt += 4;
       }
-      else if (separator == "/") {
+      else if (separator === "/") {
         cnt += 5;
       }
     }
@@ -169,7 +167,7 @@ function cut_num(txt, num) {
 }
 
 function setCaretPosition(elem, caretPos) {
-  if (elem.selectionStart || elem.selectionStart == '0') {
+  if (elem.selectionStart || elem.selectionStart === '0') {
     elem.selectionStart = caretPos;
     elem.selectionEnd = caretPos;
     elem.focus();
@@ -215,12 +213,12 @@ function main_mmyyyy() {
     arr.push(x[i]);
   }
 
-  if(key_name == "Backspace" && left_symbol == "/") {
+  if(key_name === "Backspace" && left_symbol === "/") {
     arr.splice(caret_position-2, 1);
     arr = arr.join("");
     x = arr.toString();
   }
-  if(key_name == "Delete" && right_symbol == "/") {
+  if(key_name === "Delete" && right_symbol === "/") {
     arr.splice(caret_position, 1);
     arr = arr.join("");
     x = arr.toString();
@@ -234,20 +232,20 @@ function main_mmyyyy() {
 
 
 
-  if(key_name == "Backspace" && left_symbol == "/") {
+  if(key_name === "Backspace" && left_symbol === "/") {
     setCaretPosition(document.getElementById("mmyyyy"), caret_position-2);
   }
-  else if(key_name == "Backspace" && last_symbol != "/") {
+  else if(key_name === "Backspace" && last_symbol !== "/") {
     setCaretPosition(document.getElementById("mmyyyy"), caret_position-1);
   }
-  else if (key_name == "Backspace" && last_symbol == "/") {
+  else if (key_name === "Backspace" && last_symbol === "/") {
     setCaretPosition(document.getElementById("mmyyyy"), caret_position-2);
   }
 
-  if(key_name == "Delete" && right_symbol == "/") {
+  if(key_name === "Delete" && right_symbol === "/") {
     setCaretPosition(document.getElementById("mmyyyy"), caret_position+1);
   }
-  else if (key_name == "Delete" && right_symbol != "/"){
+  else if (key_name === "Delete" && right_symbol !== "/"){
     setCaretPosition(document.getElementById("mmyyyy"), caret_position);
   }
 
@@ -262,30 +260,4 @@ function main_mmyyyy() {
     " |right_symbol " + right_symbol
   );
 }
-
-
-
-
-// //----------------------------------------------------------//
-//
-// window.onload = function () {
-//   var div1 = document.getElementById("first"),
-//     div2 = document.getElementById("second");
-//
-//   document.getElementById("btn1").onclick = function () {
-//     console.log("first div style - " + div1.style.backgroundColor);
-//   }
-//
-//   document.getElementById("btn2").onclick = function () {
-//     console.log("second div style - " + div2.style.backgroundColor);
-//   }
-//
-//
-//
-// };
-//
-// //----------------------------------------------------------//
-//
-
-
 
