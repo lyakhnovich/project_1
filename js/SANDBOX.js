@@ -1,3 +1,7 @@
-$.each([1,2,3], function() {
-  document.write(this + 1);
+$(window).ready(function () {
+  $("div > span").css("color", "green");
+
+
 });
+
+
