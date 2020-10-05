@@ -118,7 +118,6 @@ label {
 }
 
 .pan {
-
   top: 10px;
   color: #4d4f53;
   font-size: 20px;
@@ -168,10 +167,6 @@ label {
   float: left;
   margin-top: 15px;
 }
-.cvv input {
-  width: 50px;
-}
-
 
 .param-name {
   width: 200px;
@@ -183,3 +178,7 @@ label {
   padding-right: 10px;
 }
 
+
+#pan_input {
+  background-color: red;
+}

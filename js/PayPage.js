@@ -1,7 +1,3 @@
-window.onload = function() {
-  document.getElementById("pan_input").value = "5220 3119 9585 2146";
-};
-
 let input_keyup,
   input_click,
   caret_position = 0,
@@ -10,115 +6,137 @@ let input_keyup,
   left_symbol,
   right_symbol;
 
-document.addEventListener('keydown', function (event) {
-  if(event.code === 'Delete' || event.code == 'Backspace') {
-    key_name = event.code;
-  }
-});
 
-document.getElementById("pan_input").addEventListener("keydown", function () {
-  input_keyup = this.selectionStart;
-});
+//------------------Функциональность поля PAN------------------//
+document.getElementById("pan_input").oninput = function () {
+  main("pan_input", " ");
+};
 
-document.getElementById("pan_input").addEventListener("keyup", function () {
-  input_keyup = this.selectionStart;
-});
+//------------------Функциональность поля MMYYYY------------------//
+document.getElementById("mm_yyyy_input").oninput = function () {
+  main("mm_yyyy_input", "/");
+};
 
-document.getElementById("pan_input").addEventListener("click", function () {
-  input_click = this.selectionStart;
-});
+function main(id_elem, separator) {
+  key_info(id_elem);
 
-class Position {
-  handleEvent(event) {
-    switch(event.type) {
-      case 'click':
-        caret_position = input_click;
-        last_symbol = document.getElementById("pan_input").value.substr(0, caret_position-1).slice(-1);
-        break;
-      case 'keyup':
-        caret_position = input_keyup;
-        last_symbol = document.getElementById("pan_input").value.substr(0, caret_position-1).slice(-1);
-        break;
-      case 'keydown':
-        caret_position = input_keyup;
-        last_symbol = document.getElementById("pan_input").value.substr(0, caret_position-1).slice(-1);
-        break;
-    }
-    left_symbol = document.getElementById("pan_input").value[caret_position-1];
-    right_symbol = document.getElementById("pan_input").value[caret_position];
-  }
-}
-
-let position = new Position();
-document.getElementById("pan_input").addEventListener('click', position);
-document.getElementById("pan_input").addEventListener('keyup', position);
-document.getElementById("pan_input").addEventListener('keydown', position);
-
-document.getElementById("pan_input").oninput = main;
-
-function main() {
-  let x = document.getElementById("pan_input").value;
+  let x = document.getElementById(id_elem).value;
   let arr = [];
+
   for (let i = 0; i < x.length ; i++) {
     arr.push(x[i]);
   }
 
-  if(key_name == "Backspace" && left_symbol == " ") {
+  if(key_name === "Backspace" && left_symbol === separator) {
     arr.splice(caret_position-2, 1);
     arr = arr.join("");
     x = arr.toString();
   }
-  if(key_name == "Delete" && right_symbol == " ") {
+  if(key_name === "Delete" && right_symbol === separator) {
     arr.splice(caret_position, 1);
     arr = arr.join("");
     x = arr.toString();
   }
 
-
-  x = onlyNum(x);
-  x = cut19(x);
-
-  if (x.length >= 16) {
+  if(id_elem === "mm_yyyy_input") {
+    x = onlyNum(x, id_elem);
+    x = cut_num(x, 6);
+    x = refresh_input(x, separator, 2);
+  }
+  else if (id_elem === "pan_input") {
+    x = onlyNum(x, "pan_input");
+    x = cut_num(x, 19);
     if (!luhnAlgorithm(x)) {
-      console.log("PIZDEC");
+      console.log("non valid Luhn");
     }
-    else {
-      console.log("NORM");
-    };
+    x = refresh_input(x, " ", 4);
+  }
+  document.getElementById(id_elem).value = x;
+
+  if(key_name === "Backspace" && left_symbol === separator) {
+    setCaretPosition(document.getElementById(id_elem), caret_position-2);
+  }
+  else if(key_name === "Backspace" && last_symbol !== separator) {
+    setCaretPosition(document.getElementById(id_elem), caret_position-1);
+  }
+  else if (key_name === "Backspace" && last_symbol === separator) {
+    setCaretPosition(document.getElementById(id_elem), caret_position-2);
   }
 
+  if(key_name === "Delete" && right_symbol === separator) {
+    setCaretPosition(document.getElementById(id_elem), caret_position+1);
+  }
+  else if (key_name === "Delete" && right_symbol !== separator){
+    setCaretPosition(document.getElementById(id_elem), caret_position);
+  }
 
-  x = refresh_input(x);
-  document.getElementById("pan_input").value = x;
-
-// проставляем положение каретки
-  if(key_name == "Backspace" && left_symbol == " ") {
-    setCaretPosition(document.getElementById("pan_input"), caret_position-2);
-  }
-  else if(key_name == "Backspace" && last_symbol != " ") {
-    setCaretPosition(document.getElementById("pan_input"), caret_position-1);
-  }
-  else if (key_name == "Backspace" && last_symbol == " ") {
-    setCaretPosition(document.getElementById("pan_input"), caret_position-2);
-  }
-  if(key_name == "Delete" && right_symbol == " ") {
-    setCaretPosition(document.getElementById("pan_input"), caret_position+1);
-  }
-  else if (key_name == "Delete" && right_symbol != " "){
-    setCaretPosition(document.getElementById("pan_input"), caret_position);
-  }
   key_name = "";
 }
 
 
-function refresh_input(txt) {
+function key_info(id_elem) {
+  document.addEventListener('keydown', function (event) {
+    if(event.code === 'Delete' || event.code === 'Backspace') {
+      key_name = event.code;
+    }
+  });
+
+  document.getElementById(id_elem).addEventListener("keydown", function () {
+    input_keyup = this.selectionStart;
+  });
+
+  document.getElementById(id_elem).addEventListener("keyup", function () {
+    input_keyup = this.selectionStart;
+  });
+
+  document.getElementById(id_elem).addEventListener("click", function () {
+    input_click = this.selectionStart;
+    console.log(input_click);
+  });
+
+  class Position {
+    handleEvent(event) {
+      console.log("loh");
+      switch(event.type) {
+        case 'click':
+          caret_position = input_click;
+          last_symbol = document.getElementById(id_elem).value.substr(0, caret_position-1).slice(-1);
+          break;
+        case 'keyup':
+          caret_position = input_keyup;
+          last_symbol = document.getElementById(id_elem).value.substr(0, caret_position-1).slice(-1);
+          break;
+        case 'keydown':
+          caret_position = input_keyup;
+          last_symbol = document.getElementById(id_elem).value.substr(0, caret_position-1).slice(-1);
+          break;
+      }
+      left_symbol = document.getElementById(id_elem).value[caret_position-1];
+      right_symbol = document.getElementById(id_elem).value[caret_position];
+    }
+  }
+
+  let position = new Position();
+
+  document.getElementById(id_elem).addEventListener('click', position);
+  document.getElementById(id_elem).addEventListener('keyup', position);
+  document.getElementById(id_elem).addEventListener('keydown', position);
+}
+
+function refresh_input(txt, separator, interval) {
   let result = "";
-  let cnt = 3;
+  let cnt = interval-1;
 
   for (let i = 0; txt.length > i; i++) {
-    if (i == cnt){
-      result += txt[i].concat(" ");
-      cnt += 4;
+    if (i === cnt){
+      result += txt[i].concat(separator);
+
+      if (separator === " ") {
+        cnt += 4;
+      }
+      else if (separator === "/") {
+        cnt += 5;
+      }
     }
     else {
       result += txt[i];
@@ -127,24 +145,24 @@ function refresh_input(txt) {
   return result;
 }
 
-function onlyNum(txt) {
+function onlyNum(txt, id_elem) {
   let result;
-  document.getElementById("pan_input").value = txt.replace(/\D/g, '');    // при вводе данных все нечисловые символы убираем
+  document.getElementById(id_elem).value = txt.replace(/\D/g, '');    // при вводе данных все нечисловые символы убираем
   result = txt.replace(/\D/g, '');
   return result;
 }
 
-function cut19(txt) {
+function cut_num(txt, num) {
   let result;
-  if (txt.length > 19) {                      // огранчение в 19 символов
-    result = txt.substr(0, 19);
+  if (txt.length > num) {
+    result = txt.substr(0, num);
   }
   else result = txt;
   return result;
 }
 
 function setCaretPosition(elem, caretPos) {
-  if (elem.selectionStart || elem.selectionStart == '0') {
+  if (elem.selectionStart || elem.selectionStart === '0') {
     elem.selectionStart = caretPos;
     elem.selectionEnd = caretPos;
     elem.focus();
