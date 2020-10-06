@@ -1,7 +1,17 @@
-#pan {
-  background-color: #ffcc00;
+/*#pan {*/
+/*  background-color: #ffcc00;*/
+/*}*/
+
+/*.span {*/
+/*  color: red;*/
+/*}*/
+
+.class_1 {
+  font-family: Tahoma;
+  color: blue;
 }
 
-.span {
+.class_2 {
+  font-family: "Courier New";
   color: red;
 }
