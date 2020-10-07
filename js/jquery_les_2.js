@@ -19,14 +19,18 @@
 
 //----------------------------First-child Last-child--------------------------------//
 
-$(function () {
-  $("ul li:first-child").css("color", "red");
-  // $("ul li:last-child").css("color", "red");
-});
+// $(function () {
+//   $("ul li:first-child").css("color", "red");
+//   // $("ul li:last-child").css("color", "red");
+// });
 
 
 //----------------------------Only-child--------------------------------//
+// Only-child - выбор ЕДИНСТВЕННЫХ дочерних элементов
 
+$(function () {
+  $("div p:only-child").css("color", "blue");
+});
 
 
 
