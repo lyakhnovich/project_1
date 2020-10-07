@@ -12,3 +12,16 @@ div {
   margin-bottom: 10px;
   padding: 10px;
 }
+
+.one, .two, .three, .four {
+  border: 1px solid;
+  border-collapse: collapse;
+  width: 300px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.one tr td, .two tr td, .three tr td, .four tr td,
+.one tr th, .two tr th, .three tr th, .four tr th {
+  border: 1px solid;
+}

@@ -26,13 +26,30 @@
 
 
 //----------------------------Only-child--------------------------------//
+
 // Only-child - выбор ЕДИНСТВЕННЫХ дочерних элементов
 
+// $(function () {
+//   $("div p:only-child").css("color", "blue");
+// });
+
+
+//----------------------------Nth-child--------------------------------//
+
+/* Nth-child - выборка элементов на основе нумерации в DOM-дереве
+
+  :nth-child(n) - n-ый дочерний элемент
+  :nth-child(even) - четные дочерние элементы
+  :nth-child(odd) - нечетные дочерние элементы
+  :nth-child(an+b) - a и b целые числа, n - счетчик, который автоматически принимает значения 0,1,2....
+ */
+
 $(function () {
-  $("div p:only-child").css("color", "blue");
+  $(".one tr:nth-child(7)").css("background-color", "lightblue");
+  // $(".one tr:nth-child(even)").css("background-color", "lightblue");
+  // $(".one tr:nth-child(odd)").css("background-color", "lightblue");
+  // $(".one tr:nth-child(3n+1)").css("background-color", "lightblue");
 });
-
-
 
 
 
