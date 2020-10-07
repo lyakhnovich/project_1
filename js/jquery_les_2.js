@@ -44,13 +44,26 @@
   :nth-child(an+b) - a и b целые числа, n - счетчик, который автоматически принимает значения 0,1,2....
  */
 
-$(function () {
-  $(".one tr:nth-child(2)").css("background-color", "lightblue");
-  $(".two tr:nth-child(even)").css("background-color", "lightblue");
-  $(".three tr:nth-child(odd)").css("background-color", "lightblue");
-  $(".four tr:nth-child(3n+1)").css("background-color", "lightblue");
-});
+// $(function () {
+//   $(".one tr:nth-child(2)").css("background-color", "lightblue");
+//   $(".two tr:nth-child(even)").css("background-color", "lightblue");
+//   $(".three tr:nth-child(odd)").css("background-color", "lightblue");
+//   $(".four tr:nth-child(3n+1)").css("background-color", "lightblue");
+// });
 
+
+//----------------------------Eq Gt Lt--------------------------------//
+
+// :eq(индекс) - выбор элемента по индексу
+// :gt(индекс) - все элементы, индекс котрых больше указанного
+// :lt(индекс) - все элементы, индекс котрых меньше указанного
+
+$(function () {
+  // $("p").css("background-color", "#4dea4d");
+  // $("p:eq(3)").css("background-color", "#4dea4d");
+  // $("p:gt(4)").css("background-color", "#4dea4d");
+  $("p:lt(4)").css("background-color", "#4dea4d");
+});
 
 
 
