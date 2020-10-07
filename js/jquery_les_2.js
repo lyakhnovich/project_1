@@ -45,10 +45,10 @@
  */
 
 $(function () {
-  $(".one tr:nth-child(7)").css("background-color", "lightblue");
-  // $(".one tr:nth-child(even)").css("background-color", "lightblue");
-  // $(".one tr:nth-child(odd)").css("background-color", "lightblue");
-  // $(".one tr:nth-child(3n+1)").css("background-color", "lightblue");
+  $(".one tr:nth-child(2)").css("background-color", "lightblue");
+  $(".two tr:nth-child(even)").css("background-color", "lightblue");
+  $(".three tr:nth-child(odd)").css("background-color", "lightblue");
+  $(".four tr:nth-child(3n+1)").css("background-color", "lightblue");
 });
 
 
