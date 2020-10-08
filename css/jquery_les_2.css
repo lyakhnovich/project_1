@@ -1,5 +1,5 @@
 body {
-  background-color: #44e3ff;
+  /*background-color: #44e3ff;*/
 }
 
 p {
@@ -11,6 +11,11 @@ div {
   border: 1px solid;
   margin-bottom: 10px;
   padding: 10px;
+
+  width: 200px;
+  height: 200px;
+  float: left;
+  margin-right: 30px;
 }
 
 .one, .two, .three, .four {
@@ -25,3 +30,8 @@ div {
 .one tr th, .two tr th, .three tr th, .four tr th {
   border: 1px solid;
 }
+
+ol li:first-child {
+  background-color: yellow;
+}
+
