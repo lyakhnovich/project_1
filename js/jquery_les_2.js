@@ -144,30 +144,52 @@
 
 //----------------------------attr()--------------------------------//
 
-$('div:not(.func_div)').attr({
-                style: "color:red; font-size:22pt;",
-                title: "jquery attr test"
-              });
+// $('div:not(.func_div, .test_div)').attr({
+//                 style: "color:red; font-size:22pt;",
+//                 title: "jquery attr test"
+//               });
+//
+//
+// $('.func_div').attr(
+//                     "style", CalculateValue()
+//                     );
+//
+// function CalculateValue() {
+//   return "color:blue";
+// }
+//
+// $('.test_div').attr("style", "background-color:yellow");
 
 
-$('.func_div').attr(
-                    "style", CalculateValue()
-                    );
+//----------------------------removeAttr()--------------------------------//
 
-function CalculateValue() {
-  return "color:blue";
-}
+// $('div').removeAttr("align");
 
 
+//----------------------------Prop()--------------------------------//
+// Метод prop() - возвращает или изменяет значение свойств выбранных элементов страницы
+// .prop(propName, value) - во всех выбранных элементах, свойство propName прмет значение value.
+// .prop({propName1:value, propName2:value, ....}) - во всех выбранных элементах изменит значения группы свойств
+// propName1, propName2, .... сделав их равными value1, value2, .... соответственно.
+// .prop(propName, function(index, value)) - свойству propName будет присвоено значение, возвращенное пользовательской функцией
+// (если она ничего не вернет, то свойство просто не изменит своего значения). Функция вызывается отдельно, для каждого из выбранных элементов.
+// При вызове ей передаются следующие параметры: index - позиция элемнта в наборе, value - текущее значение свойства propName у элемента.
+
+// метод html() - получает HTML-содержимое первого элемента в наборе соответствующих элементов или устанавливает HTML-разметку
+// для каждого совпавшего элемента.
 
 
+$(function () {
 
+  $('input').change(function () {
 
+    let input = $(this);
+    $('p').html(
+      ".attr( \"checked\" ): <b>" + input.attr("checked") + "</b><br>" +
+      ".prop( \"checked\" ): <b>" + input.prop("checked") + "</b><br>") + "</br>";
 
-
-
-
-
+      }).change();
+});
 
 
 
