@@ -201,13 +201,13 @@
 
 // Метод append() - добавляет контент внутрь каждого элемента набора. Добавляемый контент следует за уже существующим. Данный метод подобен применению appendChild.
 
-$(function () {
-  let output = $('p');
-  output.prop('SecretProp', 1234);
-  output.append('Секретный код: ', String(output.prop('SecretProp')), ". ")
-  output.removeProp('SecretProp');
-  output.append("Теперь: ", String(output.prop('SecretProp')), ". ");
-});
+// $(function () {
+//   let output = $('p');
+//   output.prop('SecretProp', 1234);
+//   output.append('Секретный код: ', String(output.prop('SecretProp')), ". ")
+//   output.removeProp('SecretProp');
+//   output.append("Теперь: ", String(output.prop('SecretProp')), ". ");
+// });
 
 
 //----------------------------Val--------------------------------//
@@ -220,22 +220,36 @@ $(function () {
 // Функция вызывается отдельно, для каждого из выбранных элементов. При вызове, ей передаются следующие параметры: index - позиция элемента в наборе,
 // newVal - текущее значение атрибута value у элемента.
 
+// $(function () {
+//   // нажатие на первую кнопку
+//   $("#button1").click(function () {
+//     $("#edit1").val("Hello"); // запись в поле ввода
+//   });
+//
+//   // нажатие на вторую кнопку
+//   $("#button2").click(function () {
+//     alert($("#edit1").val()); // запись в поле ввода
+//   });
+// });
+
+
+//----------------------------addClass()--------------------------------//
+// Метод addClass() - добавляет класс(ы) к выбранным элементам страницы и не заменяет уже существующие.
+// .addClass("clName1 clName2....") - добавляет классы clName1, clName2, ... всем выбранным элементам.
+// .addClass(function(index, class)) - добавляет классы, список котрых возвращает заданная пользователем функция. Возвращенное ей значение
+// должно представлять из себя строку, с перечислением добавляемых классов через пробел. Функция вызывается отдельно для каждого из выбранных
+// элементов. При вызове ей передаются следующие параметры: index - позиция в наборе, class - текущий класс(ы) элемента.
+
 $(function () {
-  // нажатие на первую кнопку
-  $("#button1").click(function () {
-    $("#edit1").val("Hello"); // запись в поле ввода
-  });
 
-  // нажатие на вторую кнопку
-  $("#button2").click(function () {
-    alert($("#edit1").val()); // запись в поле ввода
-  });
+  function adding_class() {
 
-
+    $("#First").addClass("testClassGreen");
+    $("#Second").addClass("testClassRed");
+    $("#Third").addClass("testClassBlue");
+  }
+  adding_class();
 });
-
-
-
 
 
 
