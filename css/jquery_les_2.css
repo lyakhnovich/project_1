@@ -64,6 +64,26 @@ b {
   color: blue;
 }
 
+.class1 {
+  color: green;
+}
+
+.class2 {
+  color: red;
+}
+
+.class3 {
+  color: blue;
+}
+
+.class3 {
+  color: blue;
+}
+
+.toggleClass1 {
+  color: red;
+}
+
 
 
 
