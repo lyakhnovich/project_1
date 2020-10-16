@@ -11,49 +11,72 @@
 /*  background: blue;*/
 /*}*/
 
+
 /*Not()*/
 
+
 /*Is()*/
-div{
-  width: 60px;
-  height: 60px;
-  margin: 5px;
-  float: left;
-  border: 4px outset;
-  background: green;
-  text-align: center;
-  font-weight: bolder;
-  cursor: pointer;
-}
+/*div{*/
+/*  width: 60px;*/
+/*  height: 60px;*/
+/*  margin: 5px;*/
+/*  float: left;*/
+/*  border: 4px outset;*/
+/*  background: green;*/
+/*  text-align: center;*/
+/*  font-weight: bolder;*/
+/*  cursor: pointer;*/
+/*}*/
 
-.blue {
-  background: blue;
-}
+/*.blue {*/
+/*  background: blue;*/
+/*}*/
 
-.red {
-  background: red;
-}
+/*.red {*/
+/*  background: red;*/
+/*}*/
 
-span {
-  color: white;
-  font-size: 16px;
-}
+/*span {*/
+/*  color: white;*/
+/*  font-size: 16px;*/
+/*}*/
 
-p {
-  color: red;
-  font-weight: bolder;
-  background: yellow;
-  margin: 3px;
-  clear: left;
-}
-
-
+/*p {*/
+/*  color: red;*/
+/*  font-weight: bolder;*/
+/*  background: yellow;*/
+/*  margin: 3px;*/
+/*  clear: left;*/
+/*}*/
 
 
+/*Filter()*/
+/*bode {*/
+/*  background-color: silver;*/
+/*  color: white;*/
+/*}*/
+
+/*p {*/
+/*  padding: 10px;*/
+/*  font-weight: bold;*/
+/*  background-color: gray;*/
+/*}*/
 
 
+/*Filter(function)*/
+/*body {*/
+/*  background-color: silver;*/
+/*  color: white;*/
+/*}*/
+
+/*p {*/
+/*  padding: 10px;*/
+/*  font-weight: bold;*/
+/*  background-color: gray;*/
+/*}*/
 
 
+/*Slice()*/
 
 
 
