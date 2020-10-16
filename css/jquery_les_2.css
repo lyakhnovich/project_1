@@ -157,7 +157,7 @@ b {
   font-size: 20pt;
   padding: 7px;
   margin: 7px;
-  background-color: #7b91e5;
+  background-color: white;
 }
 
 .outer {
@@ -165,14 +165,14 @@ b {
   width: 100px;
   height: 100px;
   margin: 15px;
-  background-color: #ffcc00;
+  background-color: white;
 }
 
 .wrap {
   width: 60px;
   height: 60px;
   margin: 18px;
-  background-color: #f63737;
+  background-color: white;
 }
 
 
