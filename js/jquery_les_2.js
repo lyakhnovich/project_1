@@ -320,16 +320,48 @@
 // .css(styleName, function(index, value)) - css-свойству styleName будет присвоено значение, возвращенное пользовательской функцией. Функция вызывается отдельно, для
 // каждого из выбранных элементов. При вызове, ей передаются следующие параметры: index - позиция элемента в наборе, value - текущее значение css-свойства styleName у элемента
 
-$(function () {
+// $(function () {
+//
+//   $("p").css(
+//     {
+//         color: "green",
+//         backgroundColor: "lightgray"
+//     });
+// });
 
-  $("p").css(
-    {
-        color: "green",
-        backgroundColor: "lightgray"
-    });
-});
+
+//----------------------------width--------------------------------//
+
+// $(function () {
+//   let a = "";
+//   a += "width() - " + $(".test_div").width() + "<br/>";
+//   a += "innerWidth() - " + $(".test_div").innerWidth() + "<br/>";
+//   a += "outerWidth() - " + $(".test_div").outerWidth() + "<br/>";
+//   a += "outerWidth(true) - " + $(".test_div").outerWidth(true) + "<br/>";
+//   $("p").html(a);
+//   //$(".test_div).width(400);
+// });
 
 
+//----------------------------offset--------------------------------//
+
+// $(function () {
+//   let element = $(".offset_div").offset();
+//   let output = $(".offset_div");
+//   output.html("координаты относительно документа: <br/>" + "x: " + element.left + "<br/> y: " + element.top)
+// });
+
+
+//----------------------------position--------------------------------//
+
+// $(function () {
+//   let element = $("#child").position();
+//   let output = $("#output");
+//   output.html("координаты относительно родителя: <br/>" + "x: " + element.left + "<br/> y: " + element.top);
+// });
+
+
+//----------------------------offsetParent--------------------------------//
 
 
 

@@ -8,7 +8,7 @@ p {
 }
 
 div {
-  border: 1px solid;
+  border: 1px solid black;
   margin-bottom: 10px;
   padding: 10px;
 
@@ -91,6 +91,91 @@ b {
 .hasClass2 {
   color: red;
 }
+
+.test_div {
+  width: 300px;
+  background: green;
+  padding: 10px;
+  margin: 15px;
+  color: white;
+  border: 5px solid yellow;
+  text-align: justify;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, "Fira Code Retina", sans-serif;
+  font-size: 12px;
+}
+
+.offset_div {
+  background-color: #7b91e5;
+  width: 270px;
+  height: 200px;
+  position: absolute;
+  top: 50px;
+  left: 200px;
+  padding: 5px;
+}
+
+#main_parent {
+  background-color: #f63737;
+  width: 700px;
+  height: 500px;
+  position: relative;
+  left: 300px;
+  top: 50px;
+  padding: 5px;
+}
+
+#parent {
+  background-color: #c7cad6;
+  width: 500px;
+  height: 400px;
+  /*left: 500px;*/
+  /*top: 100px;*/
+  margin-left: 50px;
+  margin-top: 10px;
+  /*position: relative;*/
+  padding: 5px;
+}
+
+#child {
+  background-color: #7b91e5;
+  width: 270px;
+  height: 200px;
+  left: 200px;
+  top: 50px;
+  position: absolute;
+  padding: 5px;
+}
+
+.inner {
+  width: 30px;
+  height: 30px;
+  font-size: 20pt;
+  padding: 7px;
+  margin: 7px;
+  background-color: #7b91e5;
+}
+
+.outer {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 15px;
+  background-color: #ffcc00;
+}
+
+.wrap {
+  width: 60px;
+  height: 60px;
+  margin: 18px;
+  background-color: #f63737;
+}
+
+
 
 
 
