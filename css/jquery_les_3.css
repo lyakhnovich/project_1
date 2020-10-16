@@ -1,0 +1,76 @@
+/*eq()*/
+/*div {*/
+/*  width: 60px;*/
+/*  height: 60px;*/
+/*  margin: 10px;*/
+/*  float: left;*/
+/*  border: 2px solid blue;*/
+/*}*/
+
+/*.blue {*/
+/*  background: blue;*/
+/*}*/
+
+/*Not()*/
+
+/*Is()*/
+div{
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  float: left;
+  border: 4px outset;
+  background: green;
+  text-align: center;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.blue {
+  background: blue;
+}
+
+.red {
+  background: red;
+}
+
+span {
+  color: white;
+  font-size: 16px;
+}
+
+p {
+  color: red;
+  font-weight: bolder;
+  background: yellow;
+  margin: 3px;
+  clear: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
