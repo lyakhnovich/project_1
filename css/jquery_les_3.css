@@ -78,8 +78,17 @@
 
 /*Slice()*/
 
+/*Add*/
+body {
+  background-color: silver;
+  color: white;
+}
 
-
+p {
+  padding: 10px;
+  font-weight: bold;
+  background-color: gray;
+}
 
 
 

@@ -50,36 +50,58 @@
 // });
 
 //----------------------------Slice()--------------------------------//
+// $(function () {
+//   $('#btn1').click(function () {
+//     $('p').css("background-color", "green");
+//     $('p')
+//       .slice(0, 3)
+//       .css("background-color", "red");
+//   });
+//
+//   $('#btn2').click(function () {
+//     $('p').css("background-color", "green");
+//     $('p')
+//       .slice(2, 4)
+//       .css("background-color", "red");
+//   });
+//
+//   $('#btn3').click(function () {
+//     $('p').css("background-color", "green");
+//     $('p')
+//       .slice(3)
+//       .css("background-color", "red");
+//   });
+//
+//   $('#btn4').click(function () {
+//     $('p').css("background-color", "green");
+//     $('p')
+//       .slice(3, -3)
+//       .css("background-color", "red");
+//   });
+// });
+
+
+//----------------------------Add()--------------------------------//
+// метод add() - добавляет в уже существующий набор доп элементы, которые соответствуют указанному выражению
+
 $(function () {
-  $('#btn1').click(function () {
-    $('p').css("background-color", "green");
-    $('p')
-      .slice(0, 3)
-      .css("background-color", "red");
-  });
-
-  $('#btn2').click(function () {
-    $('p').css("background-color", "green");
-    $('p')
-      .slice(2, 4)
-      .css("background-color", "red");
-  });
-
-  $('#btn3').click(function () {
-    $('p').css("background-color", "green");
-    $('p')
-      .slice(3)
-      .css("background-color", "red");
-  });
-
-  $('#btn4').click(function () {
-    $('p').css("background-color", "green");
-    $('p')
-      .slice(3, -3)
-      .css("background-color", "red");
-  });
-
+  $('p')
+    .add('span') // добавляем к выборке span
+    .css('background-color', 'red');
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
