@@ -119,29 +119,49 @@
 // hover(over, out) - метод имитирует эффект hovering (отслеживание попадания указателя мыши в пределы объекта).
 // параметры метода: over - функция при наведении, out - функция при отведении курсора мыши.
 
-$(function () {
-  $('span').hover(
-    function () {
-      $(this).css('background-color', 'yellow')
-        .parent()
-        .css('background-color', 'red');
-    },
-
-    function () {
-      $(this).css('background-color', 'white')
-        .parent()
-        .css('background-color', 'white');
-    });
-});
-
+// $(function () {
+//   $('span').hover(
+//     function () {
+//       $(this).css('background-color', 'yellow')
+//         .parent()
+//         .css('background-color', 'red');
+//     },
+//
+//     function () {
+//       $(this).css('background-color', 'white')
+//         .parent()
+//         .css('background-color', 'white');
+//     });
+// });
 
 //----------------------------Parents()--------------------------------//
-
+// метод выбирает все родительские элементы (узлы) для ранее выбранных элементов. Принимает в качестве аргумента дополнительный фильтр-селектор
+// $(function () {
+//   $('span').parents('div').css('background-color', 'yellow');
+//
+//   //$('span').parents().css('background-color', 'yellow');
+//
+// });
 
 
 //----------------------------Parents()Example--------------------------------//
+function showParents() {
+  $('div').css('border-color', 'white');
 
+  let len = $('span.selected')
+    .parents('div')
+    .css('border', '2px red solid')
+    .length;
 
+  $('b').text('уникальных родителей (элементов div): ' + len);
+}
+
+function customHover() {
+  $(this).toggleClass('selected');
+  showParents();
+}
+
+$('span').hover(customHover);
 
 //----------------------------Closest()--------------------------------//
 
