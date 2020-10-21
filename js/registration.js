@@ -1,11 +1,16 @@
 $(document).ready(function () {
 
+  // $('.enter, .registration').hide();
+
   $('.input_enter').on('click', function () {
-    $('.enter').toggleClass("toggleClass")
+    console.log('lol');
+    $('.enter').show();
+    $('.registration').hide();
   });
 
   $('.input_registration').on('click', function () {
-    $('.registration').toggleClass("toggleClass")
+    $('.enter').hide();
+    $('.registration').show();
   })
 
 
