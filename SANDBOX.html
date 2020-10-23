@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>ПЕСОЧНИЦА</title>
-  <link rel="stylesheet" href="css/SANDBOX.css">
-  <script src="js/jquery-3.5.1.js"></script>
-</head>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>ПЕСОЧНИЦА</title>-->
+<!--  <link rel="stylesheet" href="css/SANDBOX.css">-->
+<!--  <script src="js/jquery-3.5.1.js"></script>-->
+<!--</head>-->
 
-<body>
+<!--<body>-->
 <!--1-->
 
 <!--<p>1</p>-->
@@ -36,14 +36,96 @@
 
 <!--3-->
 
-<input id="first" type="button" value="First">
-<input id="second" type="button" value="Second">
-<div id="testDiv">Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-  Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-  Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-  Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test </div>
+<!--<input id="first" type="button" value="First">-->
+<!--<input id="second" type="button" value="Second">-->
+<!--<div id="testDiv">Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test-->
+<!--  Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test-->
+<!--  Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test-->
+<!--  Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test </div>-->
+
+
+
+
+
+<!--</body>-->
+<!--<script src="js/SANDBOX.js"></script>-->
+
+<!--</html>-->
+
+
+
+
+<!--//////////////////////////////////////////////////////////////-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Effects - Toggle Demo</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+
+    .hide_div {
+      width: 500px;
+      height: 200px;
+    }
+    #sign_btn {
+      padding: .5em 1em;
+      text-decoration: none;
+    }
+    #effect {
+      position: relative;
+      width: 240px;
+      height: 170px;
+      padding: 0.4em;
+    }
+    #effect h3 {
+      margin: 0;
+      padding: 0.4em;
+      text-align: center;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+
+
+    $( function() {
+
+      function runEffect() {
+        $( "#effect" ).toggle( 'blind', {}, 500 );
+      }
+
+      $( "#sign_btn" ).on( "click", function() {
+        runEffect();
+      });
+    } );
+  </script>
+</head>
+<body>
+
+
+
+
+
+<div class="hide_div">
+  <div id="effect" class="ui-widget-content ui-corner-all">
+    <h3 class="ui-widget-header ui-corner-all">Toggle</h3>
+    <p>
+      Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.
+    </p>
+  </div>
+</div>
+
+
+<select name="effects" id="effectTypes">
+  <option value="blind">Blind</option>
+</select>
+
+<button id="sign_btn" class="ui-state-default ui-corner-all">Run Effect</button>
+
 
 </body>
-<script src="js/SANDBOX.js"></script>
-
 </html>

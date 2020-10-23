@@ -47,22 +47,22 @@
 //   div.className = "class_2";
 // }
 
-$(document).ready(function () {
-
-  $('#first').on('click', firstButtonHandler);
-  $('#second').on('click', secondButtonHandler);
-  let div = $('#testDiv');
-
-  function firstButtonHandler() {
-    div.removeClass();
-    div.addClass("class_1");
-  }
-  function secondButtonHandler() {
-    div.removeClass();
-    div.addClass("class_2");
-}
-
-});
+// $(document).ready(function () {
+//
+//   $('#first').on('click', firstButtonHandler);
+//   $('#second').on('click', secondButtonHandler);
+//   let div = $('#testDiv');
+//
+//   function firstButtonHandler() {
+//     div.removeClass();
+//     div.addClass("class_1");
+//   }
+//   function secondButtonHandler() {
+//     div.removeClass();
+//     div.addClass("class_2");
+// }
+//
+// });
 
 
 

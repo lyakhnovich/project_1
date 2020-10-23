@@ -1,18 +1,27 @@
 $(document).ready(function () {
 
-  // $('.enter, .registration').hide();
+  $('.sign_btn').on('click', function () {
 
-  $('.input_enter').on('click', function () {
-    console.log('lol');
-    $('.enter').show();
-    $('.registration').hide();
+    let btn_txt = $('.sign_btn').html();
+
+    if(btn_txt == 'SIGN IN') {
+      $('.sign_btn').text('SIGN ON');
+    }
+    else {
+      $('.sign_btn').text('SIGN IN');
+    }
+
   });
 
-  $('.input_registration').on('click', function () {
-    $('.enter').hide();
-    $('.registration').show();
-  })
 
 
+  $( function() {
+
+    $( "#sign_btn" ).on( 'click', function() {
+      $( "#hide_div, #hide_div2" ).toggle( 'blind', {}, 500 );
+
+    });
+
+  });
 
 });
