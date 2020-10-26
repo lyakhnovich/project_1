@@ -15,8 +15,11 @@ $(document).ready(function () {
   $( function() {
     $( "#sign_btn" ).on( 'click', function() {
       $( "#hide_div, #hide_div2" ).toggle( 'blind', {}, 500 );
+      console.log('lol');
     });
   });
+
+
 
 
 
@@ -26,16 +29,34 @@ $(document).ready(function () {
       console.log(e.target.className);}
   });
 
-  // проверка правильности ввода email
-  $('.email_inp').on('input', function () {
-    console.log(isEmail($('.email_inp').val()));
+
+  $('.login_inp').on('input', function () {
+    let regex = /[0-9]/;
+
+    if (regex.test($('.login_inp').val().substr(0,1))) {
+      $('.login_inp').css("background-color", "#FF5B73");
+    }
+    else {
+      $('.login_inp').css("background-color", "");
+    }
+
   });
 
-  // pattern = /\b[a-z0-9._]+@[a-z0-9._]+\.[a-z]{2,4}\b/i;
+
+  // проверка правильности ввода email
+  $('.email_inp').on('input', function () {
+
+    if(!isEmail($('.email_inp').val())) {
+      $('.email_inp').css("background-color", "#FF5B73");
+    }
+    else {
+      $('.email_inp').css("background-color", "");
+    }
+  });
+
+
   function isEmail(email) {
     let regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-
     return regex.test(email);
   }
 
