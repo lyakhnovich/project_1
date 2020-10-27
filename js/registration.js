@@ -6,9 +6,8 @@ $(document).ready(function () {
       console.log(e.target.className);}
   });
 
-
-// SIGN IN
-  $('.sign_btn').on('click', function () {
+  // SIGN IN
+  $('#sign_btn').on('click', function () {
     let btn_txt = $('.sign_btn').html();
 
     if(btn_txt === 'SIGN IN') {
@@ -19,7 +18,7 @@ $(document).ready(function () {
     }
   });
 
-// SIGN IN
+  // SIGN IN
   $( function() {
     $( "#sign_btn" ).on( 'click', function(e) {
       e.preventDefault();
@@ -31,10 +30,21 @@ $(document).ready(function () {
   $('.login_inp').on('input', function () {
     let regex = /[0-9]/;
 
-    if (regex.test($('.login_inp').val().substr(0,1))) {
-      $('.login_inp').css("background-color", "#FF5B73");
-    }
-    else {
+    // LOG IN
+    $( function() {
+      $( "#log_in" ).on( 'click', function(e) {
+        e.preventDefault();
+
+        if (regex.test($('.login_inp').val().substr(0,1))) {
+          $('.login_inp').css("background-color", "#FF5B73");
+        }
+        else {
+          $('.login_inp').css("background-color", "");
+        }
+      });
+    });
+
+    if($('.login_inp').val() === '') {
       $('.login_inp').css("background-color", "");
     }
 
@@ -62,12 +72,7 @@ $(document).ready(function () {
 
 
 
-  // LOG IN
-  $( function() {
-    $( "#log_in" ).on( 'click', function(e) {
-      e.preventDefault();
-      console.log('loh')
-    });
-  });
+
 
 });
+
