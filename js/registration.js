@@ -1,5 +1,13 @@
 $(document).ready(function () {
 
+  // определение элемента с фокусом
+  $(document).click(function(e){
+    if(e.target.tagName === 'INPUT') {
+      console.log(e.target.className);}
+  });
+
+
+// SIGN IN
   $('.sign_btn').on('click', function () {
     let btn_txt = $('.sign_btn').html();
 
@@ -11,22 +19,12 @@ $(document).ready(function () {
     }
   });
 
-
+// SIGN IN
   $( function() {
-    $( "#sign_btn" ).on( 'click', function() {
+    $( "#sign_btn" ).on( 'click', function(e) {
+      e.preventDefault();
       $( "#hide_div, #hide_div2" ).toggle( 'blind', {}, 500 );
-      console.log('lol');
     });
-  });
-
-
-
-
-
-  // определение элемента с фокусом
-  $(document).click(function(e){
-    if(e.target.tagName === 'INPUT') {
-      console.log(e.target.className);}
   });
 
 
@@ -63,5 +61,13 @@ $(document).ready(function () {
 
 
 
+
+  // LOG IN
+  $( function() {
+    $( "#log_in" ).on( 'click', function(e) {
+      e.preventDefault();
+      console.log('loh')
+    });
+  });
 
 });
