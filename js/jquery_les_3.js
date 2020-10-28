@@ -223,17 +223,28 @@
 // });
 
 //----------------------------PrevUntil()--------------------------------//
+// $(function () {
+//   // $('.class1').prevUntil().css('background-color', 'red');
+//   $('.class2').prevUntil('.class1').css('background-color', 'red');
+// });
+
+
+//----------------------------OffsetParent()--------------------------------//
+// метод получает ближайшего предка элемента, который позиционирован (absolute, relative, fixed)
+
+// $(function () {
+//   $('p').offsetParent().css('background-color', 'red');
+// });
+
+
+//----------------------------siblings()--------------------------------//
+// метод получает все родственные элементы
 $(function () {
-  // $('.class1').prevUntil().css('background-color', 'red');
-  $('.class2').prevUntil('.class1').css('background-color', 'red');
+
+  let len = $('.hilight').siblings().css('color', 'red').length;
+
+  $('b').text(len);
 });
-
-
-
-
-
-
-
 
 
 
