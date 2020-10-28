@@ -142,28 +142,78 @@
 
 
 /*Closest()*/
-.outer {
-  padding: 20px;
-  background: red;
-}
+/*.outer {*/
+/*  padding: 20px;*/
+/*  background: red;*/
+/*}*/
 
-.inner {
-  padding: 20px;
-  background: #ffcc00;
+/*.inner {*/
+/*  padding: 20px;*/
+/*  background: #ffcc00;*/
+/*}*/
+
+/*p {*/
+/*  padding: 5px;*/
+/*  background: green;*/
+/*}*/
+
+/*span {*/
+/*  background: pink;*/
+/*}*/
+
+/*.hilight {*/
+/*  background: blue;*/
+/*}*/
+
+
+/*Next()*/
+
+/*NextAll()*/
+/*body {*/
+/*  background-color: silver;*/
+/*  color: white;*/
+/*}*/
+
+/*p {*/
+/*  padding: 10px;*/
+/*  font-weight: bold;*/
+/*  background-color: gray;*/
+/*}*/
+
+/*NextUntil()*/
+/*body {*/
+/*  background-color: silver;*/
+/*  color: white;*/
+/*}*/
+
+/*p {*/
+/*  padding: 10px;*/
+/*  font-weight: bold;*/
+/*  background-color: gray;*/
+/*}*/
+
+/*Prev()*/
+
+/*PrevAll()*/
+/*body {*/
+/*  background-color: silver;*/
+/*  color: white;*/
+/*}*/
+
+/*p {*/
+/*  padding: 10px;*/
+/*  font-weight: bold;*/
+/*  background-color: gray;*/
+/*}*/
+
+/*PrevUntil()*/
+body {
+  background-color: silver;
+  color: white;
 }
 
 p {
-  padding: 5px;
-  background: green;
+  padding: 10px;
+  font-weight: bold;
+  background-color: gray;
 }
-
-span {
-  background: pink;
-}
-
-.hilight {
-  background: blue;
-}
-
-
-

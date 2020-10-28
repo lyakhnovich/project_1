@@ -169,12 +169,12 @@
 //----------------------------Closest()--------------------------------//
 // Для каждого элемента в наборе, получает первый элемент, который совпадает с селектором при движении вверху по DOM дереву элементов.
 
-$(function () {
-
-  $('span').on('click', function () {
-    $(this).closest('div').toggleClass('hilight');
-  });
-});
+// $(function () {
+//
+//   $('span').on('click', function () {
+//     $(this).closest('div').toggleClass('hilight');
+//   });
+// });
 
 
 // сравнение с parents
@@ -186,16 +186,47 @@ $(function () {
 // });
 
 
-
-
 //----------------------------Next()--------------------------------//
+// $(function () {
+//
+//   $('p:first').next().css('background', 'yellow');
+//   // $('p').next().css('background', 'yellow');
+// });
+
+//----------------------------NextAll()--------------------------------//
+// поиск всех родственных элементов после текущего элемента
+
+// $(function () {
+//   // $('p.class1').nextAll().css('background-color', 'red');
+//   $('p.class1').nextAll('p').css('background-color', 'red');
+// });
+
+//----------------------------NextUntil()--------------------------------//
+// $(function () {
+//
+//   $('.class1').nextUntil().css('background-color', 'red')
+//   // $('.class1').nextUntil('.class2').css('background-color', 'red')
+// });
 
 
+//----------------------------Prev()--------------------------------//
+// $(function () {
+//   $('p').prev('span:first').css('background-color', 'yellow');
+//   // $('p:last').prev().css('background-color', 'yellow');
+// });
 
+//----------------------------PrevAll()--------------------------------//
+// поиск всех родственных элементов перед текущим элементом
+// $(function () {
+//   // $('p.class1').prevAll().css('background-color', 'red');
+//   $('p.class1').prevAll('p').css('background-color', 'red');
+// });
 
-
-
-
+//----------------------------PrevUntil()--------------------------------//
+$(function () {
+  // $('.class1').prevUntil().css('background-color', 'red');
+  $('.class2').prevUntil('.class1').css('background-color', 'red');
+});
 
 
 
