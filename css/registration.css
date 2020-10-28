@@ -181,3 +181,25 @@ input[type="submit"] {
 /*  text-align: center;*/
 /*}*/
 /*---------------------------------------------------------------------------------------*/
+
+.ui-tooltip {
+  padding: 8px;
+  position: absolute;
+  z-index: 9999;
+  width: 210px;
+}
+
+.ui-tooltip-content {
+  position: absolute;
+}
+
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

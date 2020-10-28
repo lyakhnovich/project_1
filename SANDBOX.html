@@ -89,7 +89,7 @@
 
   <script>
     $( function() {
-      var tooltips = $( "[title]" ).tooltip({
+      let tooltips = $( "[title]" ).tooltip({
         position: {
           my: "left top",
           at: "right+5 top-5",
@@ -113,14 +113,7 @@
 
 <form>
   <fieldset>
-    <div>
-      <label for="firstname">Firstname</label>
-      <input id="firstname" name="firstname" title="Please provide your firstname.">
-    </div>
-    <div>
-      <label for="lastname">Lastname</label>
-      <input id="lastname" name="lastname" title="Please provide also your lastname.">
-    </div>
+
     <div>
       <label for="address">Address</label>
       <input id="address" name="address" title="Your home or work address.">

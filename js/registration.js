@@ -43,36 +43,53 @@ $(document).ready(function () {
         }
       });
     });
-
     if($('.login_inp').val() === '') {
       $('.login_inp').css("background-color", "");
     }
 
   });
 
-
   // проверка правильности ввода email
   $('.email_inp').on('input', function () {
+    let regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
-    if(!isEmail($('.email_inp').val())) {
-      $('.email_inp').css("background-color", "#FF5B73");
-    }
-    else {
+    // LOG IN
+    $( function() {
+      $( "#log_in" ).on( 'click', function(e) {
+        e.preventDefault();
+
+        if(!regex.test($('.email_inp').val())) {
+          $('.email_inp').css("background-color", "#FF5B73");
+        }
+        else {
+          $('.email_inp').css("background-color", "");
+        }
+      });
+    });
+    if($('.email_inp').val() === '') {
       $('.email_inp').css("background-color", "");
     }
+
+
   });
 
 
-  function isEmail(email) {
-    let regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    return regex.test(email);
-  }
 
 
+  $( function() {
+    let tooltips = $("[title]").tooltip({
+      position: {
+        my: "left top",
+        at: "right+10 top-0",
+        collision: "none"
+      }
+    });
 
-
-
-
+    $( "<button>" ).text( "ЛУЛ" ).button().on( "click", function() {
+        tooltips.tooltip( "open" );
+      })
+      .insertAfter( "form" );
+  } );
 
 });
 
