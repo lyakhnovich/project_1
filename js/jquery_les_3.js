@@ -145,28 +145,46 @@
 
 
 //----------------------------Parents()Example--------------------------------//
-function showParents() {
-  $('div').css('border-color', 'white');
-
-  let len = $('span.selected') // цэ селектор по классу для span
-    .parents('div')
-    .css('border', '2px red solid')
-    .length;
-
-  $('b').text('уникальных родителей (элементов div): ' + len);
-}
-
-//.toggleClass()
-// Переключатель классов. Добавляет элементу указанный класс, если его нет. Иначе удаляет.
-function customHover() {
-  $(this).toggleClass('selected');
-  showParents();
-}
-
-//метод .hover() связывает один или два обработчика событий для элемента, которые будут выполнены, когда указатель мыши находится на элементе и при его отведении.
-$('span').hover(customHover);
+// function showParents() {
+//   $('div').css('border-color', 'white');
+//
+//   let len = $('span.selected') // цэ селектор по классу для span
+//     .parents('div')
+//     .css('border', '2px red solid')
+//     .length;
+//
+//   $('b').text('уникальных родителей (элементов div): ' + len);
+// }
+//
+// //.toggleClass()
+// // Переключатель классов. Добавляет элементу указанный класс, если его нет. Иначе удаляет.
+// function customHover() {
+//   $(this).toggleClass('selected');
+//   showParents();
+// }
+//
+// //метод .hover() связывает один или два обработчика событий для элемента, которые будут выполнены, когда указатель мыши находится на элементе и при его отведении.
+// $('span').hover(customHover);
 
 //----------------------------Closest()--------------------------------//
+// Для каждого элемента в наборе, получает первый элемент, который совпадает с селектором при движении вверху по DOM дереву элементов.
+
+$(function () {
+
+  $('span').on('click', function () {
+    $(this).closest('div').toggleClass('hilight');
+  });
+});
+
+
+// сравнение с parents
+// $(function () {
+//
+//   $('span').on('click', function () {
+//     $(this).parents('div').toggleClass('hilight');
+//   });
+// });
+
 
 
 

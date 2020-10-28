@@ -116,36 +116,54 @@
 /*}*/
 
 /*Parents()Example*/
-p, div, span {
-  margin: 2px;
-  padding: 1px;
+/*p, div, span {*/
+/*  margin: 2px;*/
+/*  padding: 1px;*/
+/*}*/
+
+/*div {*/
+/*  border:  2px white solid;*/
+/*}*/
+
+/*span {*/
+/*  cursor: pointer;*/
+/*  font-size: 12px;*/
+/*}*/
+
+/*.selected {*/
+/*  color: blue;*/
+/*}*/
+
+/*b {*/
+/*  color: red;*/
+/*  display: block;*/
+/*  font-size: 14px;*/
+/*}*/
+
+
+/*Closest()*/
+.outer {
+  padding: 20px;
+  background: red;
 }
 
-div {
-  border:  2px white solid;
+.inner {
+  padding: 20px;
+  background: #ffcc00;
+}
+
+p {
+  padding: 5px;
+  background: green;
 }
 
 span {
-  cursor: pointer;
-  font-size: 12px;
+  background: pink;
 }
 
-.selected {
-  color: blue;
+.hilight {
+  background: blue;
 }
-
-b {
-  color: red;
-  display: block;
-  font-size: 14px;
-}
-
-
-
-
-
-
-
 
 
 
