@@ -275,39 +275,109 @@
 
 //----------------------------Find()Example--------------------------------//
 
+// $(function () {
+//
+//   let newText = $('p')
+//         .text()
+//         .split(' ')
+//         .join('</span> <span>'); // обертка слов в span
+//
+//   newText = '<span>' + newText + '</span>';
+//
+//   $('p').html(newText)
+//         .find('span')
+//         .hover(function () {
+//                     $(this).addClass('highlight');
+//                   },
+//                 function () {
+//                     $(this).removeClass('highlight');
+//                   })
+//     .end()
+//     .find(":contains('t')")
+//     .css(
+//       {
+//         'font-style': 'italic',
+//         'text-decoration': 'underline'
+//       })
+// });
+
+
+//----------------------------Insertion--------------------------------//
+//----------------------------Html()--------------------------------//
+// $(function () {
+//
+//   $('p').click(function () {
+//     //$(this)
+//     console.log($(this).html());
+//   })
+// });
+
+
+//----------------------------Html(val)--------------------------------//
+// $(function () {
+//
+//   $('p').html('<u>hello</u>')
+// });
+
+
+//----------------------------text()--------------------------------//
+// $(function () {
+//
+//   $('p').on('click', function () {
+//     // console.log($(this).text());
+//     console.log($(this).html());
+//   });
+// });
+
+
+//----------------------------text(val)--------------------------------//
+// $(function () {
+//
+//   $('p').on('click', function () {
+//     $(this).text('<a href=\"#\">link</a>');
+//     // $(this).html('<a href=\"#\">link</a>');
+//   })
+// });
+
+
+//----------------------------append()--------------------------------//
+// $(function () {
+//
+//   $('p').append('new text');
+//   $('table').append('<tr><td>3</td><td>666</td></tr>');
+//   $('<b>hello</b>').appendTo('.test');
+// });
+
+//----------------------------prepend()--------------------------------//
+// $(function () {
+//
+//   $('p').prepend('new text');
+//   $('table').prepend('<tr><td>3</td><td>666</td></tr>');
+//   $('<b>hello</b>').prependTo('.test');
+// });
+
+//----------------------------wrap()--------------------------------//
 $(function () {
 
-  let newText = $('p')
-        .text()
-        .split(' ')
-        .join('</span> <span>'); // обертка слов в span
+  $('span').wrap('<div>');
 
-  newText = '<span>' + newText + '</span>';
+  $('#clearBtn').on('click', function () {
+    $('p').empty();
+  });
 
-  $('p').html(newText)
-        .find('span')
-        .hover(function () {
-                    $(this).addClass('highlight');
-                  },
-                function () {
-                    $(this).removeClass('highlight');
-                  })
-    .end()
-    .find(":contains('t')")
-    .css(
-      {
-        'font-style': 'italic',
-        'text-decoration': 'underline'
-      })
+  $('#removeBtn').on('click', function () {
+    $('span').remove();
+    $('span').text('aaa');
+
+  });
 });
 
 
+//----------------------------text()--------------------------------//
 
+//----------------------------text()--------------------------------//
 
-
-
-
-
+//----------------------------text()--------------------------------//
 
 
 

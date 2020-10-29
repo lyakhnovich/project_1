@@ -259,17 +259,88 @@
 /*end()*/
 
 /*Find()Example*/
-p {
-  font-size: 20px;
-  width: 200px;
-  cursor: default;
-  color: #3f56ff;
-  font-weight: bold;
-  margin: 0 10px;
+/*p {*/
+/*  font-size: 20px;*/
+/*  width: 200px;*/
+/*  cursor: default;*/
+/*  color: #3f56ff;*/
+/*  font-weight: bold;*/
+/*  margin: 0 10px;*/
+/*}*/
+
+/*.highlight {*/
+/*  background: #ffcc00;*/
+/*}*/
+
+
+/*Insertion*/
+
+
+/*Html()*/
+/*p {*/
+/*  background-color: #ffcc00;*/
+/*  color: white;*/
+/*  padding: 4px;*/
+/*  font-family: Verdana;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*Html(val)*/
+/*p {*/
+/*  background-color: #ffcc00;*/
+/*  color: white;*/
+/*  padding: 4px;*/
+/*  font-family: Verdana;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*text()*/
+/*p {*/
+/*  background-color: #ffcc00;*/
+/*  color: white;*/
+/*  padding: 4px;*/
+/*  font-family: Verdana;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*text(val)*/
+/*p {*/
+/*  background-color: #ffcc00;*/
+/*  color: white;*/
+/*  padding: 4px;*/
+/*  font-family: Verdana;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*append()*/
+
+/*prepend()*/
+
+/*wrap()*/
+div {
+  background-color: blue;
+  padding: 10px;
 }
 
-.highlight {
-  background: #ffcc00;
+span {
+  background-color: white;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
