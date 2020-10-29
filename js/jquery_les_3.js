@@ -239,24 +239,67 @@
 
 //----------------------------siblings()--------------------------------//
 // метод получает все родственные элементы
+// $(function () {
+//
+//   let len = $('.highlight').siblings().css('color', 'red').length;
+//
+//   $('b').text(len);
+// });
+
+
+//----------------------------addBack()--------------------------------//
+// добавляет предыдущий набор jQuery к текущему в пределах одной цепочки команд и возвращает объединенный набор
+
+// $(function () {
+//   $('div') // получаем div'ы
+//     .find('p') // находим дочерние p
+//     .addBack() // добавляем в выборку div'ы
+//     .addClass('border'); // добавляем класс
+//
+//   // $('div').find('p').addClass('border');
+// });
+
+//----------------------------end()--------------------------------//
+// отменяет последнее деструктивное действие, возвращая тем самым набор элементов к его предыдущему состоянию
+// (до деструктивной операции). Если никакой деструктивной операции не проводилось, то возвращается пе=устой набор.
+// Под деструктивной операцией понимают операцию, которая изменяет набор элементов jQuery. То есть это любая из
+// Traversing-функций, возвращающая объект jQuery: add, andSelf, children, filter, map, next, nextAll, not, parent,
+// parents, prev, prevAll, siblings, slice, clone, appendTo, prependTo, insertBefore, insertAfter, replaceAll
+
+// $(function () {
+//   $('p')
+//     .add('div')
+//     .css('border', '2px solid red')
+//     .end().css('background-color', 'green');
+// });
+
+//----------------------------Find()Example--------------------------------//
+
 $(function () {
 
-  let len = $('.hilight').siblings().css('color', 'red').length;
+  let newText = $('p')
+        .text()
+        .split(' ')
+        .join('</span> <span>'); // обертка слов в span
 
-  $('b').text(len);
+  newText = '<span>' + newText + '</span>';
+
+  $('p').html(newText)
+        .find('span')
+        .hover(function () {
+                    $(this).addClass('highlight');
+                  },
+                function () {
+                    $(this).removeClass('highlight');
+                  })
+    .end()
+    .find(":contains('t')")
+    .css(
+      {
+        'font-style': 'italic',
+        'text-decoration': 'underline'
+      })
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

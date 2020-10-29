@@ -227,19 +227,49 @@
 /*}*/
 
 /*siblings()*/
-ul {
-  float: left;
-  margin: 5px;
-  font-size: 16px;
-  font-weight: bold;
-}
+/*ul {*/
+/*  float: left;*/
+/*  margin: 5px;*/
+/*  font-size: 16px;*/
+/*  font-weight: bold;*/
+/*}*/
 
+/*p {*/
+/*  color: blue;*/
+/*  margin: 10px 20px;*/
+/*  font-size: 16px;*/
+/*}*/
+
+/*.highlight {*/
+/*  background: #ffcc00;*/
+/*}*/
+
+/*Andself()*/
+
+/*p, div {*/
+/*  margin: 5px;*/
+/*  padding: 5px;*/
+/*}*/
+
+/*.border {*/
+/*  border: 2px solid red;*/
+/*}*/
+
+
+/*end()*/
+
+/*Find()Example*/
 p {
-  color: blue;
-  margin: 10px 20px;
-  font-size: 16px;
-
+  font-size: 20px;
+  width: 200px;
+  cursor: default;
+  color: #3f56ff;
+  font-weight: bold;
+  margin: 0 10px;
 }
 
+.highlight {
+  background: #ffcc00;
+}
 
 
