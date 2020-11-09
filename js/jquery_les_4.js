@@ -19,19 +19,32 @@
 
 //----------------------------click--------------------------------//
 
+// $(function () {
+//
+//   $('p').on('click', function () {
+//     console.log('click');
+//   });
+//
+//   $('#button').on('click', function () {
+//     console.log('click btn');
+//     $('p').click();
+//   });
+// });
+
+
+//----------------------------FocusAndBlur--------------------------------//
+
 $(function () {
 
-  $('p').on('click', function () {
-    console.log('click');
+  $("input").focus(function () {
+    $(this).val('focus');
   });
 
-  $('#button').on('click', function () {
-    console.log('click btn');
-    $('p').click();
+  $('input').blur(function () {
+    $(this).val('blur');
   });
+
 });
-
-
 
 
 
