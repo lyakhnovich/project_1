@@ -34,17 +34,121 @@
 
 //----------------------------FocusAndBlur--------------------------------//
 
+// $(function () {
+//
+//   $("input").focus(function () {
+//     $(this).val('focus');
+//   });
+//
+//   $('input').blur(function () {
+//     $(this).val('blur');
+//   });
+//
+// });
+
+//----------------------------Load--------------------------------//
+
+// $(document).ready(function () {
+//   console.log('document hui');
+// });
+//
+// $(window).load(function () {
+//   console.log('window hui');
+// });
+
+
+//----------------------------KeyDown--------------------------------//
+
+// $(window).keydown(function (event) {
+//
+//   switch (event.keyCode) {
+//     case 37: {
+//       console.log('left pushed');
+//     }
+//       break;
+//     case 38: {
+//       console.log('up pushed');
+//     }
+//       break;
+//     case 39: {
+//       console.log('right pushed');
+//     }
+//       break;
+//     case 40: {
+//       console.log('down pushed');
+//     }
+//       break;
+//   }
+//
+// });
+
+
+//----------------------------KeyUp--------------------------------//
+
+// $(window).keyup(function (event) {
+//
+//   switch (event.keyCode) {
+//     case 37: {
+//       console.log('left poped');
+//     }
+//       break;
+//     case 38: {
+//       console.log('up poped');
+//     }
+//       break;
+//     case 39: {
+//       console.log('right poped');
+//     }
+//       break;
+//     case 40: {
+//       console.log('down poped');
+//     }
+//       break;
+//   }
+//
+// });
+
+
+//----------------------------KeyPress--------------------------------//
+
+// $(window).keypress(function (event) {
+//   console.log(String.fromCharCode(event.charCode) + '(' + event.charCode + ')');
+// });
+
+
+//----------------------------MouseEvents--------------------------------//
+
+let overCount = 0,
+  outCount = 0;
+
 $(function () {
 
-  $("input").focus(function () {
-    $(this).val('focus');
-  });
-
-  $('input').blur(function () {
-    $(this).val('blur');
-  });
-
+  $('div:first').mouseover(function () { overCount++; Update();})
+  $('div:last').mouseout(function () { outCount++; Update();})
 });
+
+function Update() {
+
+  $('#over').text('MouseOver ' + overCount);
+  $('#out').text('MouseOut ' + outCount);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
