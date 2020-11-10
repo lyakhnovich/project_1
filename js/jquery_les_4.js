@@ -118,23 +118,46 @@
 
 //----------------------------MouseEvents--------------------------------//
 
-let overCount = 0,
-  outCount = 0;
+// let overCount = 0,
+//   outCount = 0;
+//
+// $(function () {
+//
+//   $('div:first').mouseover(function () { overCount++; Update();})
+//   $('div:last').mouseout(function () { outCount++; Update();})
+// });
+//
+// function Update() {
+//
+//   $('#over').text('MouseOver ' + overCount);
+//   $('#out').text('MouseOut ' + outCount);
+// }
+
+//----------------------------Hover--------------------------------//
+
+// $(function () {
+//
+//   $('div').hover(onIn, onOut);
+// });
+//
+// function onIn() {
+//   $('div').html('IN');
+// }
+//
+// function onOut() {
+//   $('div').html('OUT');
+// }
+
+//----------------------------MouseMove--------------------------------//
 
 $(function () {
 
-  $('div:first').mouseover(function () { overCount++; Update();})
-  $('div:last').mouseout(function () { outCount++; Update();})
+  $('div').mousemove(function (e) {
+
+    let pageCoord = '(' + e.pageX + ', ' + e.pageY + ' )';
+    $('span').text('Page coords ' + pageCoord);
+  });
 });
-
-function Update() {
-
-  $('#over').text('MouseOver ' + overCount);
-  $('#out').text('MouseOut ' + outCount);
-}
-
-
-
 
 
 
