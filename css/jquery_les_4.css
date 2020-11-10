@@ -4,3 +4,16 @@
 /*KeyDown*/
 /*KeyPress*/
 /*MouseEvents*/
+div{
+  padding: 20px;
+}
+
+
+#first-div {
+  background-color: #ffcc00;
+}
+
+#second-div {
+  background-color: blue;
+}
+
