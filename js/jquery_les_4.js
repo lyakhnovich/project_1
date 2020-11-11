@@ -150,22 +150,44 @@
 
 //----------------------------MouseMove--------------------------------//
 
-$(function () {
-
-  $('div').mousemove(function (e) {
-
-    let pageCoord = '(' + e.pageX + ', ' + e.pageY + ' )';
-    $('span').text('Page coords ' + pageCoord);
-  });
-});
-
-
+// $(function () {
+//
+//   $('div').mousemove(function (e) {
+//
+//     let pageCoord = '(' + e.pageX + ', ' + e.pageY + ' )';
+//     $('span').text('Page coords ' + pageCoord);
+//   });
+// });
 
 
+//----------------------------AddEventListener--------------------------------//
 
+// window.addEventListener('load', function () {
+//
+//   function show_msg() {
+//     console.log('hey');
+//   }
+//
+//   let div = document.getElementById('test');
+//   div.addEventListener('mouseover', show_msg, false)
+// }, false);
 
+//----------------------------removeEventListener--------------------------------//
 
+window.addEventListener('load', function () {
 
+  let div = document.getElementById('test');
+  let del = document.getElementById('del');
+
+  function show_msg() {
+    console.log('hello');
+  }
+  div.addEventListener('mouseover', show_msg, false);
+
+  del.addEventListener('click', function () {
+    div.removeEventListener('mouseover', show_msg, false);
+  }, false)
+}, false);
 
 
 
