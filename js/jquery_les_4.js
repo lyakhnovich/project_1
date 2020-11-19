@@ -191,6 +191,13 @@
 
 
 //----------------------------EventRouts--------------------------------//
+// в модели DOM level 2 события распространяются по следующему принципу:
+// на этапе перехвата событие распространяется от Document вниз до целевого элемента управления
+// второй этап - событие в целевом узле
+// на третьем этапе событие всплывает от целевого элемента обратно вверх до корневого элемента
+
+// последний параметр addEventListener - true - обработать событие на этапе ПЕРЕХВАТА,
+// false - на этапе ВСПЛЫВАНИЕ
 
 let isTunnel = true;
 
@@ -207,8 +214,21 @@ window.addEventListener('load', function () {
     },
     isTunnel);
 
+  e2.addEventListener('click',
+    function () {
+      this.style.backgroundColor = 'yellow';
+      console.log('обработчик div 2');
+    },
+    isTunnel);
 
-});
+  e3.addEventListener('click',
+    function () {
+      this.style.backgroundColor = 'red';
+      console.log('обработчик div 3');
+    },
+    isTunnel);
+
+}, false);
 
 
 

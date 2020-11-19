@@ -52,7 +52,11 @@
 /*}*/
 
 /*EventRouts*/
-
+div {
+  border: 3px solid gray;
+  padding: 50px;
+  background-color: white;
+}
 
 
 
