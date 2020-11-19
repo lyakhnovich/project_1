@@ -174,22 +174,41 @@
 
 //----------------------------removeEventListener--------------------------------//
 
+// window.addEventListener('load', function () {
+//
+//   let div = document.getElementById('test');
+//   let del = document.getElementById('del');
+//
+//   function show_msg() {
+//     console.log('hello');
+//   }
+//   div.addEventListener('mouseover', show_msg, false);
+//
+//   del.addEventListener('click', function () {
+//     div.removeEventListener('mouseover', show_msg, false);
+//   }, false)
+// }, false);
+
+
+//----------------------------EventRouts--------------------------------//
+
+let isTunnel = true;
+
 window.addEventListener('load', function () {
 
-  let div = document.getElementById('test');
-  let del = document.getElementById('del');
+  let e1 = document.getElementById('first');
+  let e2 = document.getElementById('second');
+  let e3 = document.getElementById('third');
 
-  function show_msg() {
-    console.log('hello');
-  }
-  div.addEventListener('mouseover', show_msg, false);
-
-  del.addEventListener('click', function () {
-    div.removeEventListener('mouseover', show_msg, false);
-  }, false)
-}, false);
+  e1.addEventListener('click',
+    function () {
+      this.style.backgroundColor = 'green';
+      console.log('обработчик div 1');
+    },
+    isTunnel);
 
 
+});
 
 
 
