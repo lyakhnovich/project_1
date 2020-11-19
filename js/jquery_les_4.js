@@ -199,36 +199,99 @@
 // последний параметр addEventListener - true - обработать событие на этапе ПЕРЕХВАТА,
 // false - на этапе ВСПЛЫВАНИЕ
 
-let isTunnel = true;
+// let isTunnel = true;
+//
+// window.addEventListener('load', function () {
+//
+//   let e1 = document.getElementById('first');
+//   let e2 = document.getElementById('second');
+//   let e3 = document.getElementById('third');
+//
+//   e1.addEventListener('click',
+//     function () {
+//       this.style.backgroundColor = 'green';
+//       alert('обработчик div 1');
+//       // console.log('обработчик div 1');
+//     },
+//     isTunnel);
+//
+//   e2.addEventListener('click',
+//     function () {
+//       this.style.backgroundColor = 'yellow';
+//       alert('обработчик div 2');
+//       // console.log('обработчик div 2');
+//     },
+//     isTunnel);
+//
+//   e3.addEventListener('click',
+//     function () {
+//       this.style.backgroundColor = 'red';
+//       alert('обработчик div 3');
+//       // console.log('обработчик div 3');
+//     },
+//     isTunnel);
+//
+// }, false);
 
-window.addEventListener('load', function () {
+
+//----------------------------PreventDefault--------------------------------//
+
+// window.addEventListener('load', function () {
+//
+//   document.forms[0].addEventListener('submit', function (e) {
+//
+//     if (document.getElementById('nameInput').value.length === 0) {
+//
+//       e.preventDefault();
+//       alert('Введите имя');
+//     }
+//   }, false);
+//
+// }, false);
+
+
+//----------------------------stopPropagation--------------------------------//
+let isTunnel = false;
+
+window.onload = function () {
 
   let e1 = document.getElementById('first');
   let e2 = document.getElementById('second');
   let e3 = document.getElementById('third');
 
   e1.addEventListener('click',
-    function () {
-      this.style.backgroundColor = 'green';
-      console.log('обработчик div 1');
+    function (e) {
+
+    this.style.backgroundColor = 'green';
+    alert('Обработчик div 1');
+    e.stopPropagation();
     },
     isTunnel);
 
   e2.addEventListener('click',
-    function () {
+    function (e) {
+
       this.style.backgroundColor = 'yellow';
-      console.log('обработчик div 2');
+      alert('Обработчик div 2');
+      e.stopPropagation();
     },
     isTunnel);
 
   e3.addEventListener('click',
-    function () {
+    function (e) {
+
       this.style.backgroundColor = 'red';
-      console.log('обработчик div 3');
+      alert('Обработчик div 3');
+      e.stopPropagation();
     },
     isTunnel);
 
-}, false);
+};
+
+
+
+
+
 
 
 

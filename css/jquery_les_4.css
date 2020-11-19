@@ -52,13 +52,20 @@
 /*}*/
 
 /*EventRouts*/
+/*div {*/
+/*  border: 3px solid gray;*/
+/*  padding: 50px;*/
+/*  background-color: white;*/
+/*}*/
+
+/*PreventDefault*/
+
+/*stopPropagation*/
 div {
   border: 3px solid gray;
   padding: 50px;
   background-color: white;
 }
-
-
 
 
 
