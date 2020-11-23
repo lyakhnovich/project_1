@@ -290,17 +290,30 @@
 
 //----------------------------DOM_Level_2--------------------------------//
 
-window.addEventListener('load', function () {
-  let guard = document.getElementById('guard');
+// window.addEventListener('load', function () {
+//   let guard = document.getElementById('guard');
+//
+//   guard.addEventListener('keypress', function (e) {
+//
+//     if(String.fromCharCode(e.charCode) !== '1'
+//     && String.fromCharCode(e.charCode) !== '0') {
+//       e.preventDefault();
+//     }
+//   }, true)
+// }, false);
 
-  guard.addEventListener('keypress', function (e) {
 
-    if(String.fromCharCode(e.charCode) !== '1'
-    && String.fromCharCode(e.charCode) !== '0') {
-      e.preventDefault();
-    }
-  }, true)
-}, false);
+//----------------------------on--------------------------------//
+$(function () {
+
+  $('ul').on('click', function (event) {
+
+    $(event.target).css('background', 'red')
+    console.log(event.target);
+  });
+});
+
+
 
 
 
