@@ -343,21 +343,45 @@
 
 //----------------------------one--------------------------------//
 
+// $(function () {
+//
+//   let count = 0;
+//
+//   function add_text() {
+//     count++;
+//     $('#out').text('hui pizda ' + count);
+//   }
+//
+//   // $('#out').one('mouseover', add_text);
+//   $('#out').on('mouseover', add_text);
+//
+// });
+
+//----------------------------Trigger()--------------------------------//
+let button1,
+  button2,
+  button1Ctr = 0,
+  button2Ctr = 0;
+
 $(function () {
 
-  let count = 0;
-
-  function add_text() {
-    count++;
-    $('#out').text('hui pizda ' + count);
-  }
-
-  // $('#out').one('mouseover', add_text);
-  $('#out').on('mouseover', add_text);
-
+  button1 = $('#first');
+  button2 = $('#second');
+  button1.click(onButton1Click);
+  button2.click(onButton2Click);
 });
 
+function onButton1Click() {
+  button1Ctr++;
+  $('p:first').text('butt 1 clicked ' + button1Ctr);
+}
 
+function onButton2Click() {
+  button2Ctr++;
+  $('p:last').text('butt 2 clicked ' + button2Ctr);
+
+  button1.trigger('click');
+}
 
 
 
