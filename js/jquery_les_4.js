@@ -313,8 +313,17 @@ $(function () {
   });
 });
 
+//----------------------------on--------------------------------//
+$(function () {
 
+  function user_info(event) {
+    $('#out').html('login: ' + event.data.login + '<br />' + 'password: ' + event.data.password);
+  }
 
+  let access = {login: 'admin', password: '12345'};
+
+  $('#button').on('click', access, user_info);
+});
 
 
 
