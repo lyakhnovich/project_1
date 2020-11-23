@@ -304,26 +304,59 @@
 
 
 //----------------------------on--------------------------------//
-$(function () {
-
-  $('ul').on('click', function (event) {
-
-    $(event.target).css('background', 'red')
-    console.log(event.target);
-  });
-});
+// $(function () {
+//
+//   $('ul').on('click', function (event) {
+//
+//     $(event.target).css('background', 'red')
+//     console.log(event.target);
+//   });
+// });
 
 //----------------------------on--------------------------------//
-$(function () {
+// $(function () {
+//
+//   function user_info(event) {
+//     $('#out').html('login: ' + event.data.login + '<br />' + 'password: ' + event.data.password);
+//   }
+//
+//   let access = {login: 'admin', password: '12345'};
+//
+//   $('#button').on('click', access, user_info);
+// });
 
-  function user_info(event) {
-    $('#out').html('login: ' + event.data.login + '<br />' + 'password: ' + event.data.password);
-  }
+//----------------------------off--------------------------------//
 
-  let access = {login: 'admin', password: '12345'};
+// $(function () {
+//
+//   function show() {
+//     console.log('hello');
+//   }
+//
+//   function remove() {
+//     $('#first').off('click', show);
+//   }
+//
+//   $('#first').on('click', show);
+//   $('#second').on('click', remove);
+// });
 
-  $('#button').on('click', access, user_info);
-});
+//----------------------------one--------------------------------//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
