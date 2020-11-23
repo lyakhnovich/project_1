@@ -251,43 +251,56 @@
 
 
 //----------------------------stopPropagation--------------------------------//
-let isTunnel = false;
+// let isTunnel = false;
+//
+// window.onload = function () {
+//
+//   let e1 = document.getElementById('first');
+//   let e2 = document.getElementById('second');
+//   let e3 = document.getElementById('third');
+//
+//   e1.addEventListener('click',
+//     function (e) {
+//
+//     this.style.backgroundColor = 'green';
+//     alert('Обработчик div 1');
+//     e.stopPropagation();
+//     },
+//     isTunnel);
+//
+//   e2.addEventListener('click',
+//     function (e) {
+//
+//       this.style.backgroundColor = 'yellow';
+//       alert('Обработчик div 2');
+//       e.stopPropagation();
+//     },
+//     isTunnel);
+//
+//   e3.addEventListener('click',
+//     function (e) {
+//
+//       this.style.backgroundColor = 'red';
+//       alert('Обработчик div 3');
+//       e.stopPropagation();
+//     },
+//     isTunnel);
+//
+// };
 
-window.onload = function () {
+//----------------------------DOM_Level_2--------------------------------//
 
-  let e1 = document.getElementById('first');
-  let e2 = document.getElementById('second');
-  let e3 = document.getElementById('third');
+window.addEventListener('load', function () {
+  let guard = document.getElementById('guard');
 
-  e1.addEventListener('click',
-    function (e) {
+  guard.addEventListener('keypress', function (e) {
 
-    this.style.backgroundColor = 'green';
-    alert('Обработчик div 1');
-    e.stopPropagation();
-    },
-    isTunnel);
-
-  e2.addEventListener('click',
-    function (e) {
-
-      this.style.backgroundColor = 'yellow';
-      alert('Обработчик div 2');
-      e.stopPropagation();
-    },
-    isTunnel);
-
-  e3.addEventListener('click',
-    function (e) {
-
-      this.style.backgroundColor = 'red';
-      alert('Обработчик div 3');
-      e.stopPropagation();
-    },
-    isTunnel);
-
-};
-
+    if(String.fromCharCode(e.charCode) !== '1'
+    && String.fromCharCode(e.charCode) !== '0') {
+      e.preventDefault();
+    }
+  }, true)
+}, false);
 
 
 
