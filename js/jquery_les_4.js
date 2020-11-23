@@ -343,6 +343,20 @@
 
 //----------------------------one--------------------------------//
 
+$(function () {
+
+  let count = 0;
+
+  function add_text() {
+    count++;
+    $('#out').text('hui pizda ' + count);
+  }
+
+  // $('#out').one('mouseover', add_text);
+  $('#out').on('mouseover', add_text);
+
+});
+
 
 
 
