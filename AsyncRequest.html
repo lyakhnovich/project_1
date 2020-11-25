@@ -10,16 +10,16 @@
       document.getElementById('btnGet').onclick = function () {
 
         let xhr = new XMLHttpRequest();
-        xhr.open('GET', 'testfile.html', true);
+        xhr.open('GET', 'test.json');
 
-        xhr.onreadystatechange = function () {
-
-          if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-              document.getElementById('output').innerHTML += xhr.responseText;
-            }
-          }
-        };
+        // xhr.onreadystatechange = function () {
+        //
+        //   if (xhr.readyState === 4) {
+        //     if (xhr.status === 200) {
+        //       document.getElementById('output').innerHTML += xhr.responseText;
+        //     }
+        //   }
+        // };
 
         xhr.send();
       }
