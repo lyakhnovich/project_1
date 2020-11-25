@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ajax()</title>
+  <script src="js/jquery-3.5.1.js"></script>
+  <script>
+    window.onload = function () {
+
+      $.ajax({
+        url: 'js/test.js',
+        type: 'GET',
+
+        datatype: 'script'
+      });
+    }
+  </script>
+</head>
+
+<body>
+<p></p>
+</body>
+</html>
