@@ -7,7 +7,7 @@
     window.onload = function () {
       document.getElementById('btnGet').onclick = function () {
         let xhr = new XMLHttpRequest();
-        xhr.open('GET', 'testfile.html');
+        xhr.open('GET', 'testfile.html', true);
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4) {
             if (xhr.status === 200) {
