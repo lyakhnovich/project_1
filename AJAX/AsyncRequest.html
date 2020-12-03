@@ -3,33 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Async</title>
-
   <script>
     window.onload = function () {
-
       document.getElementById('btnGet').onclick = function () {
-
         let xhr = new XMLHttpRequest();
-        xhr.open('GET', 'test.json');
-
+        xhr.open('GET', 'testfile.html', false);
         // xhr.onreadystatechange = function () {
-        //
         //   if (xhr.readyState === 4) {
         //     if (xhr.status === 200) {
         //       document.getElementById('output').innerHTML += xhr.responseText;
         //     }
         //   }
         // };
-
+        xhr.send();
+        document.getElementById('output').innerHTML += xhr.responseText;
         xhr.send();
       }
     };
-
   </script>
-
-
 </head>
-
 <body>
 <input id="btnGet" type="button" value="Get Info">
 <p id="output"></p>
