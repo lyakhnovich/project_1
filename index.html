@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TEST</title>
+</head>
+<body>
+<div>
+  <h1>Sending User</h1>
+  <form id="userForm">
+    <label for="name">Name</label>
+    <input id="name" name="name"/><br/>
+    <br/>
+
+    <label for="age">Age</label>
+    <input id="age" name="age"/>
+    <br/>
+    <br/>
+    <input type="submit" value="Send"/>
+  </form>
+</div>
+<br/>
+<br/>
+<div>
+  <h2>Click the button below for getting User from server and showing it</h2>
+  <button id="getUserButton">Get User</button>
+</div>
+<!-------------------------------------------------------------------------->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+<script>
+  $(document).ready(function () {
+
+    $('#userForm').submit(function (e) {
+      var user = {
+        name: $('input[name=name]').val(),
+        age: $('input[name=age]').val()
+      };
+
+      $.ajax({
+        type: 'POST',
+        url: 'http://localhost:8080/api/user',
+        data: user
+      })
+        .done(function (data) {
+          // clear form
+          $('input[name=name]').val('');
+          $('input[name=age]').val('')
+
+
+          alert(data);
+        });
+
+      e.preventDefault();
+    });
+
+    $('#getUserButton').on('click', function (e) {
+      $.ajax({
+        type: 'GET',
+        url: '/api/user'
+      })
+        .done(function (data) {
+          alert(JSON.stringify(data));
+        });
+    });
+  });
+</script>
+</body>
+</html>
