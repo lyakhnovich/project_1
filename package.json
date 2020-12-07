@@ -2,7 +2,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "hyak": "node server",
-    "server": "node index"
+    "server": "node index",
+    "testovich": "node testovich"
   },
   "devDependencies": {
     "babel-core": "^6.11.4",
