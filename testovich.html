@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>TEST</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 <div>
@@ -21,12 +22,12 @@
 
 <!-------------------------------------------------------------------------->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
 <script>
   $(document).ready(function () {
 
-    // POST
-    $('#buttonPost').on('click', function (event) {
+    // ********** POST **********
+
+    $('#buttonPost').on('click', function (e) { // e - объект?
       // создание массива postData со всеми значениями введенными во все инпуты. Ключ - имя инпута, значение - что введено в инпут.
       let postData = {
         inputValue: $('input[name=inputValue]').val(),
@@ -36,25 +37,43 @@
 
       $.ajax({
         type: 'POST',
-        url: 'http://localhost:7080/api/user',
-        data: postData
+        url: '/api/user',
+        dataType: 'json',
+        data: postData, // получившийся массив данных
+        success: function (data) {
+          console.log('data');
+          console.log(data);
+        },
+        error: function (err) {
+          console.warn('Error in ajax:', err);
+        }
       })
-        .done(function (data) {
+        .done(function (data) { // метод .done добавляет обработчик или обработчики, которые будут вызваны при успешном выполнении).
           // Присваивание пустоты(.val('')) полю input. Т.е. очистка поля input
           $('input[name=inputValue]').val('');
           $('input[name=inputValue2]').val('');
+          $('input[name=inputValue3]').val('');
           console.log(data + ' ты лох');
         });
       // отменяем действие события по умолчанию
-      event.preventDefault();
+      e.preventDefault();
     });
 
 
-    // GET
+    // ********** GET **********
     $('#buttonGet').on('click', function (event) {
+      // создание массива postData со всеми значениями введенными во все инпуты. Ключ - имя инпута, значение - что введено в инпут.
+      let postData = {
+        inputValue: $('input[name=inputValue]').val(),
+        inputValue2: $('input[name=inputValue2]').val(),
+        inputValue3: $('input[name=inputValue3]').val()
+      };
+
       $.ajax({
         type: 'GET',
-        url: '/api/user'
+        url: '/api/user',
+        dataType: 'json',
+        data: postData
       })
         .done(function (data) {
           console.log(JSON.stringify(data));
