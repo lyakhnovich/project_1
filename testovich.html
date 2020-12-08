@@ -7,7 +7,9 @@
 <body>
 <div>
   <form id="userForm">
-    <input id="name" name="inputValue"/><br/>
+    <input id="inputValue" name="inputValue"/><br/><br/>
+    <input id="inputValue2" name="inputValue2"/><br/><br/>
+    <input id="inputValue3" name="inputValue3"/><br/><br/>
     <br/>
     <input id="buttonPost" type="button" value="Post"/>
   </form>
@@ -24,12 +26,14 @@
   $(document).ready(function () {
 
     // POST
-    $('#buttonPost').on('click', function (e) {
+    $('#buttonPost').on('click', function (event) {
       // создание массива postData со всеми значениями введенными во все инпуты. Ключ - имя инпута, значение - что введено в инпут.
       let postData = {
-        inputValue: $('input[name=inputValue]').val()
+        inputValue: $('input[name=inputValue]').val(),
+        inputValue2: $('input[name=inputValue2]').val(),
+        inputValue3: $('input[name=inputValue3]').val()
       };
-       console.log(e);
+
       $.ajax({
         type: 'POST',
         url: 'http://localhost:7080/api/user',
@@ -38,15 +42,16 @@
         .done(function (data) {
           // Присваивание пустоты(.val('')) полю input. Т.е. очистка поля input
           $('input[name=inputValue]').val('');
+          $('input[name=inputValue2]').val('');
           console.log(data + ' ты лох');
         });
-
-      e.preventDefault();
+      // отменяем действие события по умолчанию
+      event.preventDefault();
     });
 
 
     // GET
-    $('#buttonGet').on('click', function (e) {
+    $('#buttonGet').on('click', function (event) {
       $.ajax({
         type: 'GET',
         url: '/api/user'
