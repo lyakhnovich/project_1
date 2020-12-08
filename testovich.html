@@ -7,7 +7,7 @@
 <body>
 <div>
   <form id="userForm">
-    <input id="name" name="name"/><br/>
+    <input id="name" name="inputValue"/><br/>
     <br/>
     <input id="buttonPost" type="button" value="Post"/>
   </form>
@@ -23,23 +23,22 @@
 <script>
   $(document).ready(function () {
 
-
     // POST
     $('#buttonPost').on('click', function (e) {
+      // создание массива postData со всеми значениями введенными во все инпуты. Ключ - имя инпута, значение - что введено в инпут.
       let postData = {
-        DATA: $('input[name=name]').val()
+        inputValue: $('input[name=inputValue]').val()
       };
-
+       console.log(e);
       $.ajax({
         type: 'POST',
         url: 'http://localhost:7080/api/user',
         data: postData
       })
         .done(function (data) {
-          // clear form
-          $('input[name=name]').val('');
-
-          alert(data + ' ты лох');
+          // Присваивание пустоты(.val('')) полю input. Т.е. очистка поля input
+          $('input[name=inputValue]').val('');
+          console.log(data + ' ты лох');
         });
 
       e.preventDefault();
@@ -53,7 +52,7 @@
         url: '/api/user'
       })
         .done(function (data) {
-          alert(JSON.stringify(data));
+          console.log(JSON.stringify(data));
         });
     });
 

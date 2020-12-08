@@ -47,7 +47,8 @@ server.on('request', function (request, response) {
             'Content-Type': 'text/plain'
           };
           response.writeHead(200, headers);
-          response.end('User was already stored.');
+          // возвращаяет DATA
+          response.end('Testovich');
         });
       }
 
