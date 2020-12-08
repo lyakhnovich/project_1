@@ -9,12 +9,12 @@
   <form id="userForm">
     <input id="name" name="name"/><br/>
     <br/>
-    <input id="buttonSubmit" type="button" value="Send"/>
+    <input id="buttonPost" type="button" value="Post"/>
   </form>
 </div>
 <br/>
 <div>
-  <button id="getUserButton">Get</button>
+  <button id="buttonGet">Get</button>
 </div>
 
 <!-------------------------------------------------------------------------->
@@ -23,16 +23,17 @@
 <script>
   $(document).ready(function () {
 
-    $('#buttonSubmit').on('click', function (e) {
-      let getData = {
+
+    // POST
+    $('#buttonPost').on('click', function (e) {
+      let postData = {
         DATA: $('input[name=name]').val()
       };
 
       $.ajax({
         type: 'POST',
         url: 'http://localhost:7080/api/user',
-        timeout: 10000,
-        data: getData
+        data: postData
       })
         .done(function (data) {
           // clear form
@@ -45,9 +46,8 @@
     });
 
 
-
-
-    $('#getUserButton').on('click', function (e) {
+    // GET
+    $('#buttonGet').on('click', function (e) {
       $.ajax({
         type: 'GET',
         url: '/api/user'
@@ -56,6 +56,7 @@
           alert(JSON.stringify(data));
         });
     });
+
   });
 </script>
 </body>
