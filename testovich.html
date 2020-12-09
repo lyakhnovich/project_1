@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>TEST</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--  <script src="js/jquery-3.5.1.js"></script>-->
+
 </head>
 <body>
 <div>
@@ -21,7 +23,7 @@
 </div>
 
 <!-------------------------------------------------------------------------->
-
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>-->
 <script>
   $(document).ready(function () {
 
@@ -38,12 +40,11 @@
       $.ajax({
         type: 'POST',
         url: '/api/user',
-        dataType: 'json',
+        // dataType: 'json',
         cache: true,
         data: postData, // получившийся массив данных
         success: function (data) {
-          console.log('data');
-          console.log(data);
+          console.log(postData);
         },
         error: function (err) {
           console.warn('Error in ajax:', err);
@@ -73,7 +74,7 @@
       $.ajax({
         type: 'GET',
         url: '/api/user',
-        dataType: 'json',
+        // dataType: 'json',
         data: postData
       })
         .done(function (data) {
