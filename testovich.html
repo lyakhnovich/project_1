@@ -65,17 +65,17 @@
     // ********** GET **********
     $('#buttonGet').on('click', function (event) {
       // создание массива postData со всеми значениями введенными во все инпуты. Ключ - имя инпута, значение - что введено в инпут.
-      let postData = {
-        inputValue: $('input[name=inputValue]').val(),
-        inputValue2: $('input[name=inputValue2]').val(),
-        inputValue3: $('input[name=inputValue3]').val()
-      };
+      // let postData = {
+      //   inputValue: $('input[name=inputValue]').val(),
+      //   inputValue2: $('input[name=inputValue2]').val(),
+      //   inputValue3: $('input[name=inputValue3]').val()
+      // };
 
       $.ajax({
         type: 'GET',
         url: '/api/user',
         // dataType: 'json',
-        data: postData
+        // data: postData
       })
         .done(function (data) {
           console.log(JSON.stringify(data));
