@@ -3,7 +3,7 @@ function CreateConnection() {
   //   console.log(this);
   // };
   this.connect = function () {
-    console.log(this);
+    console.log('connect!');
   };
 }
 
@@ -19,9 +19,4 @@ if(module.parent) {
 else {
   testConnection();
 }
-
-
-
-
-
 

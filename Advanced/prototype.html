@@ -7,4 +7,23 @@
 <body>
 
 </body>
+
+<script>
+  const person = new Object({
+    name: 'HUI',
+    age: 101,
+    greet: function () {
+      console.log('Greet!')
+    }
+  });
+
+  Object.prototype.sayHello = function () {
+    console.log('hello!')
+  };
+
+  const kek = Object.create(person)
+
+  // kek.greet();
+
+</script>
 </html>
