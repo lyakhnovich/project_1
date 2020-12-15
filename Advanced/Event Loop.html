@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Loop</title>
+</head>
+<body>
+
+</body>
+
+<script>
+  console.log('hello 1');
+  console.log('hello 2');
+
+  function timeout2sec () {
+    console.log('timeout2sec');
+  }
+
+  window.setTimeout(function () {
+    console.log('Inside timeout');
+  }, 3000);
+
+  setTimeout(timeout2sec, 2000);
+
+  console.log('hello 3');
+
+</script>
+</html>
