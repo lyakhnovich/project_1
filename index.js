@@ -16,7 +16,7 @@ server.on('request', function (request, response) {
   switch (currentRoute) {
     // serving the html index to client
     case '/':
-      fs.readFile(__dirname + '/index.html', function (err, data) {
+      fs.readFile(__dirname + '/testovich.html', function (err, data) {
         let headers = {
           'Content-Type': 'text/html'
         };
@@ -47,7 +47,8 @@ server.on('request', function (request, response) {
             'Content-Type': 'text/plain'
           };
           response.writeHead(200, headers);
-          response.end('User was already stored.');
+          // возвращаяет DATA
+          response.end('Testovich');
         });
       }
 
@@ -66,5 +67,5 @@ server.on('request', function (request, response) {
 });
 
 server.listen(8080, function () {
-  console.log('server up and running at 8080 port blyat');
+  console.log('server up and running at 7080 port blyat');
 });

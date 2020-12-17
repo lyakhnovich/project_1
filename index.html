@@ -4,66 +4,84 @@
   <meta charset="UTF-8">
   <title>TEST</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!--  <script src="js/jquery-3.5.1.js"></script>-->
+
 </head>
 <body>
 <div>
-  <h1>Sending User</h1>
   <form id="userForm">
-    <label for="name">Name</label>
-    <input id="name" name="name"/><br/>
+    <input id="inputValue" name="inputValue"/><br/><br/>
+    <input id="inputValue2" name="inputValue2"/><br/><br/>
+    <input id="inputValue3" name="inputValue3"/><br/><br/>
     <br/>
-    <label for="age">Age</label>
-    <input id="age" name="age"/>
-    <br/>
-    <br/>
-    <input type="submit" value="Send"/>
+    <input id="buttonPost" type="button" value="Post"/>
   </form>
 </div>
 <br/>
-<br/>
 <div>
-  <h2>Click the button below for getting User from server and showing it</h2>
-  <button id="getUserButton">Get User</button>
+  <button id="buttonGet">Get</button>
 </div>
 
 <!-------------------------------------------------------------------------->
-
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>-->
 <script>
   $(document).ready(function () {
 
-    $('#userForm').submit(function (e) {
-      var user = {
-        name: $('input[name=name]').val(),
-        age: $('input[name=age]').val()
+    // ********** POST **********
+
+    $('#buttonPost').on('click', function (e) { // e - объект?
+      // создание массива postData со всеми значениями введенными во все инпуты. Ключ - имя инпута, значение - что введено в инпут.
+      let postData = {
+        inputValue: $('input[name=inputValue]').val(),
+        inputValue2: $('input[name=inputValue2]').val(),
+        inputValue3: $('input[name=inputValue3]').val()
       };
 
       $.ajax({
         type: 'POST',
-        url: 'http://localhost:8080/api/user',
-        data: user
+        url: '/api/user',
+        // dataType: 'json',
+        cache: true,
+        data: postData, // получившийся массив данных
+        success: function (data) {
+          console.log(postData);
+        },
+        error: function (err) {
+          console.warn('Error in ajax:', err);
+        }
       })
-        .done(function (data) {
-          // clear form
-          $('input[name=name]').val('');
-          $('input[name=age]').val('');
-
-
-          alert(data);
+        .done(function (data) { // метод .done добавляет обработчик или обработчики, которые будут вызваны при успешном выполнении).
+          // Присваивание пустоты(.val('')) полю input. Т.е. очистка поля input
+          $('input[name=inputValue]').val('');
+          $('input[name=inputValue2]').val('');
+          $('input[name=inputValue3]').val('');
+          console.log(data + ' ты лох');
         });
-
+      // отменяем действие события по умолчанию
       e.preventDefault();
     });
 
-    $('#getUserButton').on('click', function (e) {
+
+    // ********** GET **********
+    $('#buttonGet').on('click', function (event) {
+      // создание массива postData со всеми значениями введенными во все инпуты. Ключ - имя инпута, значение - что введено в инпут.
+      // let postData = {
+      //   inputValue: $('input[name=inputValue]').val(),
+      //   inputValue2: $('input[name=inputValue2]').val(),
+      //   inputValue3: $('input[name=inputValue3]').val()
+      // };
+
       $.ajax({
         type: 'GET',
-        url: '/api/user'
+        url: '/api/user',
+        // dataType: 'json',
+        // data: postData
       })
         .done(function (data) {
-          alert(JSON.stringify(data));
+          console.log(JSON.stringify(data));
         });
     });
+
   });
 </script>
 </body>
