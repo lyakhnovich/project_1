@@ -1,7 +1,6 @@
 {
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "hyak": "node server",
     "index 8080": "node index",
     "testovich 7080": "node testovich"
   },
