@@ -14,27 +14,22 @@ server.on('request', function (request, response) {
   let requestBody = '';
 
   switch (currentRoute) {
-    // serving the html index to client
-    // case '/':
-    //   fs.readFile(__dirname + '/testovich.html', function (err, data) {
-    //     let headers = {
-    //       'Content-Type': 'text/html'
-    //     };
-    //     response.writeHead(200, headers);
-    //     response.end(data);
-    //   });
-    //   break;
+    case '/':
+      fs.readFile(__dirname + '/testovich.html', function (err, data) {
+        let headers = {
+          'Content-Type': 'text/html'
+        };
 
-    // handling requests from client with route /api/user
+        response.writeHead(200, headers);
+        response.end(data);
+      });
+      break;
+
     case '/api/user':
-      // if request is a POST, then the user is sending a user
       if (currentMethod === 'POST') {
-        // reading the body of the request
         request.on('data', function (chunk) {
           requestBody += chunk.toString();
         });
-
-        // once the body of the request was loaded
         request.on('end', function () {
 
           // saving the user sent on the request body
@@ -50,9 +45,8 @@ server.on('request', function (request, response) {
         });
       }
 
-      //   // if request is a GET, then the client is requesting
-      // // to see the user stored.
-      //
+        // if request is a GET, then the client is requesting
+      // to see the user stored.
       else if (currentMethod === 'GET') {
         let headers = {
           'Content-Type': 'application/json'
@@ -61,20 +55,12 @@ server.on('request', function (request, response) {
         response.writeHead(200, headers);
         response.end(JSON.stringify(userStoredInMemory));
       }
-
-      else if (currentMethod === 'GET') {
-        let headers = {
-          'Content-Type': 'text/plain'
-        };
-        // let aParam =
-        response.writeHead(200, headers);
-        response.end('KEKEKEKEK');
-      }
       break;
   }
 });
 
+
+
 server.listen(7080, function () {
   console.log('server up and running at 7080 port blyat');
 });
-

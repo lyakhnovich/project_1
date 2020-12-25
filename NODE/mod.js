@@ -1,22 +1,21 @@
-function CreateConnection() {
-  // this.connect = () => {
-  //   console.log(this);
-  // };
-  this.connect = function () {
-    console.log('connect!');
-  };
-}
+// let x = 10
+//
+// function test() {
+//   console.log('test = ', x);
+// }
+// // module.exports.number = x;
+// module.exports.test = test();
 
-function testConnection() {
-  console.log('test connection...');
-  new CreateConnection().connect();
-}
+//***************************Module***************************//
 
+//***************************ModuleExports***************************//
+// let number = 19;
+// function hello() {
+//   console.log('hello pidr!');
+// }
+// module.exports = {
+//   variable: number,
+//   sayHello: hello
+// };
 
-if(module.parent) {
-  module.exports = CreateConnection;
-}
-else {
-  testConnection();
-}
-
+//***************************Parent***************************//

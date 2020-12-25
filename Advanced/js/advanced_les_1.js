@@ -19,32 +19,31 @@
 //
 // //добавить свойство в переменную simpleStr невозможно
 // simpleStr.customProperty2 = 123;
-// //document.write(simpleStr.customProperty2);
-//
-//
+// document.write(simpleStr.customProperty2);
+
 // //////////////////////////////Конструкторы и прототипы///////////////////////////х////у/////й
-//
-// //Функция-конструктор - функция создает пустой объект и опр. его свойства и методы.
-// //Функции-конструкторы - эквивалент типов данных(классов) в ООП
-//
-// //Конструктор Object()
-// document.write('<hr/>');
-//
-// var point = new Object();
-//
-// point.x = 10;
-// point.y = 15;
-//
-// document.write('Значение свойства x: ' + point.x + "<br/>");
-// document.write('Значение свойства y: ' + point.y + "<br/>");
-//
-// //Конструктор Date()
-// document.write('<hr/>');
-//
-// var myDate = new Date();
-//
-// document.write('Текущая дата и время: ' + myDate + "<br/>");
-//
+
+//Функция-конструктор - функция создает пустой объект и опр. его свойства и методы.
+//Функции-конструкторы - эквивалент типов данных(классов) в ООП
+
+//Конструктор Object()
+document.write('<hr/>');
+
+let point = new Object();
+
+point.x = 10;
+point.y = 15;
+
+document.write('Значение свойства x: ' + point.x + "<br/>");
+document.write('Значение свойства y: ' + point.y + "<br/>");
+
+//Конструктор Date()
+document.write('<hr/>');
+
+let myDate = new Date();
+
+document.write('Текущая дата и время: ' + myDate + "<br/>");
+
 // //Конструктор Array()
 // document.write('<hr/>');
 //
@@ -326,224 +325,224 @@
 // document.write('<hr/>');
 
 /////////////////////////////////метод toString - объект в строковое представление
-function Rectangle4(w, h) {
-  this.width = w;
-  this.height = h;
-}
-
-Rectangle4.prototype.getArea = function() {
-  return this.width * this.height;
-}
-
-//переопределение метода toString из Object
-Rectangle4.prototype.toString = function () {
-  return 'Прямоугольник W: ' + this.width + ' H: ' + this.height;
-}
-
-var rect1 = new Rectangle4(100, 200);
-var rect2 = new Rectangle4(400, 300);
-
-document.write(rect1 + '<br/>');
-document.write(rect2.toString() + '<br/>');
-
-
-
-document.write('<hr/>');
-
-/////////////////////////////////метод valueOf
-function Rectangle5(w, h) {
-  this.width = w;
-  this.height = h;
-}
-
-Rectangle5.prototype.getArea = function () {
-  return this.width * this.height
-}
-
-//переопределение метода toString из Object
-Rectangle5.prototype.toString = function () {
-  return "Прямоугольник W: " + this.width + " H: " + this.height
-}
-
-//переопределение метода  valueOf из Object
-Rectangle5.prototype.valueOf = function () {
-  return this.getArea();
-}
-
-var rect1 = new Rectangle5(100, 200);
-var rect2 = new Rectangle5(400, 300);
-
-document.write(rect1 + "<br/>"); //по умолчанию вызывается метод valueOf
-document.write(rect2.toString() + "<br/>");
-
-document.write("<br/>values<br/>");
-
-document.write(rect1.valueOf() + "<br/>");
-document.write(rect2.valueOf() + "<br/>");
-document.write(rect1 + rect2);
-
-
-document.write('<hr/>');
-
-/////////////////////////////////метод hasOwnProperty
-function Rectangle6(w, h) {
-  this.width = w;
-  this.height = h;
-}
-
-Rectangle6.prototype.getArea = function () {
-  return this.width * this.height
-}
-
-Rectangle6.prototype.name = 'Rectangle666';
-
-var rect1 = new Rectangle6(100, 200);
-
-//hasOwnProperty метод из Object с его помощью можно проверить существует ли свойство у конкретного объекта
-document.write("hasOwnProperty('width') " + rect1.hasOwnProperty("width") + "<br/>");
-document.write("hasOwnProperty('name') " + rect1.hasOwnProperty("name") + "<br/>");
-
-//с помощью ключевого слова in можно проверить наличие свойства и в объекте и в прототипах
-document.write("'width' in rect1 " + ("width" in rect1) + "<br/>");
-document.write("'name' in rect1 " + ("name" in rect1) + "<br/>");
-
-
-
-document.write('<hr/>');
-/////////////////////////////////метод equals_method_before
-function Rectangle7(w, h) {
-  this.width = w;
-  this.height = h;
-}
-
-Rectangle7.prototype.getArea = function () {
-  return this.width * this.height
-}
-
-//переопределение метода toString из Object
-Rectangle7.prototype.toString = function () {
-  return "Прямоугольник W: " + this.width + " H: " + this.height
-}
-
-//переопределение метода  valueOf из Object
-Rectangle7.prototype.valueOf = function () {
-  return this.getArea();
-}
-
-// объекты имеют одинаковые значения!!!
-var rect1 = new Rectangle7(100, 200);
-var rect2 = new Rectangle7(100, 200);
-
-// оператор сравнения проверяет равенство ссылок(!!!) а не равенство значений свойств объектов
-var res = rect1 == rect2;
-document.write("rect1 == rect2 -> " + res);
-
-var rect3 = rect1; //rect1 и rect3 ссылки на один и тот же объект в памяти
-res = rect3 == rect1;
-document.write("<br/><br/>rect3 == rect1 -> " + res);
-
-
-
-document.write('<hr/>');
-/////////////////////////////////метод equals_method_after
-function Rectangle8(w, h) {
-  this.width = w;
-  this.height = h;
-}
-
-Rectangle8.prototype.getArea = function () {
-  return this.width * this.height
-}
-
-//переопределение метода toString из Object
-Rectangle8.prototype.toString = function () {
-  return "Прямоугольник W: " + this.width + " H: " + this.height
-}
-
-//переопределение метода  valueOf из Object
-Rectangle8.prototype.valueOf = function () {
-  return this.getArea();
-}
-
-//метод для проверки равенства объектов
-
-Rectangle8.prototype.equals = function (otherObj) {
-  if (this.width === otherObj.width && this.height === otherObj.height) {
-    return true;
-  }
-  return false;
-}
-
-// объекты имеют одинаковые значения!!!
-var rect1 = new Rectangle8(100, 200);
-var rect2 = new Rectangle8(100, 200);
-
-// проверка равенства объектов с помощью метода equals
-var res = rect1.equals(rect2);
-document.write("rect1 == rect2 -> " + res);
-
-var rect3 = rect1; //rect1 и rect3 ссылки на один и тот же объект в памяти
-res = rect3 == rect1;
-document.write("<br/><br/>rect3 == rect1 -> " + res);
-
-document.write('<hr/>');
-
-
-/////////////////////////////////метод compareTo
-function Rectangle9(w, h) {
-  this.width = w;
-  this.height = h;
-}
-
-Rectangle9.prototype.getArea = function () {
-  return this.width * this.height
-}
-
-//переопределение метода toString из Object
-Rectangle9.prototype.toString = function () {
-  return "Прямоугольник W: " + this.width + " H: " + this.height
-}
-
-//переопределение метода  valueOf из Object
-Rectangle9.prototype.valueOf = function () {
-  return this.getArea();
-}
-
-//метод для проверки равенства объектов
-
-Rectangle9.prototype.equals = function (otherObj) {
-  if (this.width === otherObj.width && this.height === otherObj.height) {
-    return true;
-  }
-  return false;
-}
-
-// метод для сравнения объектов
-// если текущий объект больше чем тот который передан в параметр - возвращаем значение > 0
-// если текущий объект меньше чем тот который передан в параметр - возвращаем значение > 0
-// если объекты равны возвращаем 0
-
-Rectangle9.prototype.compareTo = function(otherObject) {
-  if(this.getArea() > otherObject.getArea()) {
-    return 1;
-  }
-  else {
-    return 0;
-  }
-
-  return this.getArea() - otherObject.getArea();
-}
-
-// объекты имеют одинаковые значения!!!
-var rect1 = new Rectangle9(100, 200);
-var rect2 = new Rectangle9(100, 200);
+// function Rectangle4(w, h) {
+//   this.width = w;
+//   this.height = h;
+// }
+//
+// Rectangle4.prototype.getArea = function() {
+//   return this.width * this.height;
+// };
+//
+// //переопределение метода toString из Object
+// Rectangle4.prototype.toString = function () {
+//   return 'Прямоугольник W: ' + this.width + ' H: ' + this.height;
+// };
+//
+// var rect1 = new Rectangle4(100, 200);
+// var rect2 = new Rectangle4(400, 300);
+//
+// document.write(rect1 + '<br/>');
+// document.write(rect2.toString() + '<br/>');
+//
+//
+//
+// document.write('<hr/>');
+//
+// /////////////////////////////////метод valueOf
+// function Rectangle5(w, h) {
+//   this.width = w;
+//   this.height = h;
+// }
+//
+// Rectangle5.prototype.getArea = function () {
+//   return this.width * this.height
+// };
+//
+// //переопределение метода toString из Object
+// Rectangle5.prototype.toString = function () {
+//   return "Прямоугольник W: " + this.width + " H: " + this.height
+// };
+//
+// //переопределение метода  valueOf из Object
+// Rectangle5.prototype.valueOf = function () {
+//   return this.getArea();
+// };
+//
+// var rect1 = new Rectangle5(100, 200);
+// var rect2 = new Rectangle5(400, 300);
+//
+// document.write(rect1 + "<br/>"); //по умолчанию вызывается метод valueOf
+// document.write(rect2.toString() + "<br/>");
+//
+// document.write("<br/>values<br/>");
+//
+// document.write(rect1.valueOf() + "<br/>");
+// document.write(rect2.valueOf() + "<br/>");
+// document.write(rect1 + rect2);
+//
+//
+// document.write('<hr/>');
+//
+// /////////////////////////////////метод hasOwnProperty
+// function Rectangle6(w, h) {
+//   this.width = w;
+//   this.height = h;
+// }
+//
+// Rectangle6.prototype.getArea = function () {
+//   return this.width * this.height
+// }
+//
+// Rectangle6.prototype.name = 'Rectangle666';
+//
+// var rect1 = new Rectangle6(100, 200);
+//
+// //hasOwnProperty метод из Object с его помощью можно проверить существует ли свойство у конкретного объекта
+// document.write("hasOwnProperty('width') " + rect1.hasOwnProperty("width") + "<br/>");
+// document.write("hasOwnProperty('name') " + rect1.hasOwnProperty("name") + "<br/>");
+//
+// //с помощью ключевого слова in можно проверить наличие свойства и в объекте и в прототипах
+// document.write("'width' in rect1 " + ("width" in rect1) + "<br/>");
+// document.write("'name' in rect1 " + ("name" in rect1) + "<br/>");
+//
+//
+//
+// document.write('<hr/>');
+// /////////////////////////////////метод equals_method_before
+// function Rectangle7(w, h) {
+//   this.width = w;
+//   this.height = h;
+// }
+//
+// Rectangle7.prototype.getArea = function () {
+//   return this.width * this.height
+// };
+//
+// //переопределение метода toString из Object
+// Rectangle7.prototype.toString = function () {
+//   return "Прямоугольник W: " + this.width + " H: " + this.height
+// };
+//
+// //переопределение метода  valueOf из Object
+// Rectangle7.prototype.valueOf = function () {
+//   return this.getArea();
+// };
+//
+// // объекты имеют одинаковые значения!!!
+// var rect1 = new Rectangle7(100, 200);
+// var rect2 = new Rectangle7(100, 200);
+//
+// // оператор сравнения проверяет равенство ссылок(!!!) а не равенство значений свойств объектов
+// var res = rect1 == rect2;
+// document.write("rect1 == rect2 -> " + res);
+//
+// var rect3 = rect1; //rect1 и rect3 ссылки на один и тот же объект в памяти
+// res = rect3 == rect1;
+// document.write("<br/><br/>rect3 == rect1 -> " + res);
+//
+//
+//
+// document.write('<hr/>');
+// /////////////////////////////////метод equals_method_after
+// function Rectangle8(w, h) {
+//   this.width = w;
+//   this.height = h;
+// }
+//
+// Rectangle8.prototype.getArea = function () {
+//   return this.width * this.height
+// };
+//
+// //переопределение метода toString из Object
+// Rectangle8.prototype.toString = function () {
+//   return "Прямоугольник W: " + this.width + " H: " + this.height
+// };
+//
+// //переопределение метода  valueOf из Object
+// Rectangle8.prototype.valueOf = function () {
+//   return this.getArea();
+// };
+//
+// //метод для проверки равенства объектов
+//
+// Rectangle8.prototype.equals = function (otherObj) {
+//   if (this.width === otherObj.width && this.height === otherObj.height) {
+//     return true;
+//   }
+//   return false;
+// }
+//
+// // объекты имеют одинаковые значения!!!
+// var rect1 = new Rectangle8(100, 200);
+// var rect2 = new Rectangle8(100, 200);
+//
+// // проверка равенства объектов с помощью метода equals
+// var res = rect1.equals(rect2);
+// document.write("rect1 == rect2 -> " + res);
+//
+// var rect3 = rect1; //rect1 и rect3 ссылки на один и тот же объект в памяти
+// res = rect3 == rect1;
+// document.write("<br/><br/>rect3 == rect1 -> " + res);
+//
+// document.write('<hr/>');
+//
+//
+// /////////////////////////////////метод compareTo
+// function Rectangle9(w, h) {
+//   this.width = w;
+//   this.height = h;
+// }
+//
+// Rectangle9.prototype.getArea = function () {
+//   return this.width * this.height
+// };
+//
+// //переопределение метода toString из Object
+// Rectangle9.prototype.toString = function () {
+//   return "Прямоугольник W: " + this.width + " H: " + this.height
+// };
+//
+// //переопределение метода  valueOf из Object
+// Rectangle9.prototype.valueOf = function () {
+//   return this.getArea();
+// };
+//
+// //метод для проверки равенства объектов
+//
+// Rectangle9.prototype.equals = function (otherObj) {
+//   if (this.width === otherObj.width && this.height === otherObj.height) {
+//     return true;
+//   }
+//   return false;
+// };
+//
+// // метод для сравнения объектов
+// // если текущий объект больше чем тот который передан в параметр - возвращаем значение > 0
+// // если текущий объект меньше чем тот который передан в параметр - возвращаем значение > 0
+// // если объекты равны возвращаем 0
+//
+// Rectangle9.prototype.compareTo = function(otherObject) {
+//   if(this.getArea() > otherObject.getArea()) {
+//     return 1;
+//   }
+//   else {
+//     return 0;
+//   }
+//
+//   return this.getArea() - otherObject.getArea();
+// };
+//
+// // объекты имеют одинаковые значения!!!
+// var rect1 = new Rectangle9(100, 200);
+// var rect2 = new Rectangle9(100, 200);
 
 //при наличии метода valueOf, который возвращает простое значение
 
 
 
 
-document.write('<hr/>');
+// document.write('<hr/>');
 
 // function Max(a, b, c) {
 //
