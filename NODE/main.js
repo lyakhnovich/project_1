@@ -52,5 +52,14 @@
 *
 * */
 
-let http = require('./dbConnection');
-console.log(http);
+//***************************dbConnection***************************//
+// let http = require('./dbConnection');
+// console.log(http);
+
+//***************************Caching***************************//
+let user = require('./cache');
+
+user.sayHello();
+require('./sample');
+user.sayHello();
+
