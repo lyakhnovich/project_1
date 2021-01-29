@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>События</title>
+</head>
+<body>
+<input type="button" name="button1" value="click me" onclick="alert('hello')"/>
+
+<input type="button" name="button1" value="click me2" onclick="if(window.counter) counter++; else counter = 1; this.value = counter;"/>
+
+<form>
+  <input type="text" name="firstName"/>
+  <br/>
+  <input type="reset" onclick="return confirm('are u sure??')"/>
+  <input type="submit" onclick="validate()"/>
+</form>
+</body>
+<script src="Advanced/js/advanced_les_6.js"></script>
+</html>
