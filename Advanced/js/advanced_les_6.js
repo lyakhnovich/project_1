@@ -2,15 +2,20 @@ function validate() {
   alert('validate');
 }
 
-// window.onmousedown = function () {
-//   console.log('lol kek cheburek..');
-// };
 
-$('#test').onmousedown = function () {
-  console.log('pizda');
-};
+$('#clickme').on('click', function () {
 
-$('a').css({color: 'green'});
+  $('#clickme').css({color: 'red'});
+  console.log('lol');
+})
+
+
+$('a').on('click', function(e) {
+  // e.preventDefault();
+  console.log('lol');
+  return false;
+});
+
 
 
 
