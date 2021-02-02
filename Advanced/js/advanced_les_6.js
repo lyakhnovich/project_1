@@ -32,16 +32,35 @@
 // }
 
 
-window.onload = loadHandler2;
+// window.onload = loadHandler2;
+//
+// function loadHandler2() {
+//   let e = document.getElementById('input1');
+//
+//   e.onclick = function () {
+//     this.value = 'clicked2!';
+//     $('#input1').css({color: 'red'});
+//   }
+// }
 
-function loadHandler2() {
-  let e = document.getElementById('input1');
+// window.onload = function () {
+//
+//   let pArr = document.getElementsByTagName('p');
+//
+//   for (let i = 0; i < pArr.length; i++) {
+//     pArr[i].onclick = function () {
+//       this.style.backgroundColor = "red";
+//     }
+//   }
+//
+// }
 
-  e.onclick = function () {
-    this.value = 'clicked2!';
-    $('#input1').css({color: 'red'});
-  }
-}
+//DOM level2
+
+
+
+
+
 
 
 
