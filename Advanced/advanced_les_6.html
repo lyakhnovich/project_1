@@ -4,19 +4,32 @@
   <meta charset="UTF-8">
   <title>События</title>
   <script src="../js/jquery-3.5.1.js"></script>
+  <link rel="stylesheet" href="css/advances_les_6.css">
 </head>
 <body>
-<input id="clickme" type="button" name="button1" value="click me"/>
+<!--<input id="clickme" type="button" name="button1" value="click me"/>-->
 
-<input type="button" name="button1" value="click me2" onclick="if(window.counter) counter++; else counter = 1; this.value = counter;"/>
+<!--<input type="button" name="button1" value="click me2" onclick="if(window.counter) counter++; else counter = 1; this.value = counter;"/>-->
 
-<form>
-  <input type="text" name="firstName"/>
-  <br/>
-  <input type="reset" onclick="return confirm('are u sure??')"/>
-  <input type="submit" onclick="validate()"/>
-  <a id="hui" href="http://google.com" target="_blank">гугол</a>
-</form>
+<!--<form>-->
+<!--  <input type="text" name="firstName"/>-->
+<!--  <br/>-->
+<!--  <input type="reset" onclick="return confirm('are u sure??')"/>-->
+<!--  <input type="submit" onclick="validate()"/>-->
+<!--  <a id="hui" href="http://google.com" target="_blank">гугол</a>-->
+<!--</form>-->
+
+<!--<p id="p1">-->
+<!--  click me!-->
+<!--</p>-->
+
+<!--<p id="p2">-->
+<!--  click me!-->
+<!--</p>-->
+
+<input type="button" value="click me!" onclick="this.value = 'clicked!'"/>
+<input type="button" id="input1" value="click me!!">
+
 </body>
 <script src="js/advanced_les_6.js"></script>
 </html>
