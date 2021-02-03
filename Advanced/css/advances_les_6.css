@@ -5,3 +5,17 @@ p {
   width: 50px;
   margin: 10px;
 }
+
+/*div {*/
+/*  border: 3px solid gray;*/
+/*  padding: 50px;*/
+/*  background-color: white;*/
+/*}*/
+
+#wrapper p {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  float: left;
+  margin: 10px;
+}
