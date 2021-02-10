@@ -45,23 +45,87 @@
 // }
 
 // MouseEventInterfaceDOM
+// window.addEventListener('load', init, false);
+//
+// function init() {
+//   let div = document.getElementsByTagName('div')[0];
+//   div.addEventListener('mousemove', handler, false);
+// }
+//
+// function handler(e) {
+//   let message = '';
+//   message += e.button + '<br>';                 // 0 - левая клавиша, 1 - средняя, 2 - правая
+//   message += 'Alt: ' + e.altKey + '<br>';       // true если клавиша Alt зажата
+//   message += 'Ctrl: ' + e.ctrlKey + '<br>';     // true если клавиша Ctrl зажата
+//   message += 'Shift: ' + e.shiftKey + '<br>';   // true если клавиша Shift зажата
+//   message += 'X: ' + e.clientX + '<br>';        // координаты относительно левого верхнего угла документа
+//   message += 'Y: ' + e.clientY + '<br>';        // координаты относительно левого верхнего угла документа
+//   message += 'screen X: ' + e.screenX + '<br>';        // координаты относительно экрана'
+//   message += 'screen Y: ' + e.screenY + '<br>';        // координаты относительно экрана'
+//   document.getElementById('output').innerHTML = message;
+// }
 
 
+// Mouse Hover
+// window.onload = function () {
+//   let p = document.getElementsByTagName('p')[0];
+//
+//   p.onmouseover = function () {
+//     this.style.backgroundColor = 'green';
+//   }
+//
+//   p.onmouseout = function () {
+//     this.style.backgroundColor = 'yellow';
+//   }
+//
+// }
 
+// MouseEvents
+// window.onload = function () {
+//
+//   let div1 = document.getElementById('div1');
+//   let div2 = document.getElementById('div2');
+//   let div3 = document.getElementById('div3');
+//
+//
+//   div1.onmousedown = function (e) {
+//
+//     if(!e) e = window.event;
+//
+//     // e.layerX - для фирокс
+//     this.innerHTML = 'событие onmouse<b>down<b> X: ' + (e.offsetX === undefined ? e.layerX : e.offsetX)
+//     + 'Y: ' +  (e.offsetY === undefined ? e.layerY : e.offsetY);
+//   }
+//
+//   div2.onmousemove = function (e) {
+//     this.innerHTML = 'событие onmouse<b>move<b> X: ' + e.offsetX + 'Y: ' + e.offsetY;
+//   }
+//
+//   div3.onmouseup = function (e) {
+//     this.innerHTML = 'событие onmouse<b>up<b> X: ' + e.offsetX + 'Y: ' + e.offsetY;
+//   }
+// }
 
+// Keyboard
+window.onload = function () {
+  let main = document.getElementById('main');
 
+  main.onkeydown = function () {
+    print('onkeydown event');
+  }
 
+  main.onkeyup = function () {
+    print('onkeyup event');
+  }
 
+  main.onkeypress = function () {
+    print('onkeypress event');
+  }
 
-
-
-
-
-
-
-
-
-
+  function print(message) {
+    document.getElementById('output').innerHTML += message + '<br />'
+  }
+}
 
 
 
