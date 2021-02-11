@@ -128,27 +128,49 @@
 // }
 
 // KeyInfo
+// window.onload = function () {
+//   let main = document.getElementById('main');
+//
+//   main.onkeydown = function (e) {
+//     clear();
+//     print('alt = ' + e.altKey);
+//     print('ctrl = ' + e.ctrlKey);
+//     print('shift = ' + e.shiftKey);
+//     print('charCode = ' + e.charCode);
+//     print('keyCode = ' + e.keyCode);
+//   };
+//
+//   function print(message) {
+//     document.getElementById('output').innerHTML += message + '<br/>';
+//   }
+//
+//   function clear() {
+//     document.getElementById('output').innerHTML = '';
+//   }
+// }
+
+// CharCode
 window.onload = function () {
-  let main = document.getElementById('main');
 
-  main.onkeydown = function (e) {
-    clear();
-    print('alt = ' + e.altKey);
-    print('ctrl = ' + e.ctrlKey);
-    print('shift = ' + e.shiftKey);
-    print('charCode = ' + e.charCode);
-    print('keyCode = ' + e.keyCode);
-  };
+  document.getElementById('main').onkeypress = function (e) {
+    main.onkeypress = function (e) { //KEYPRESS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      clear();
+      print('alt = ' + e.altKey);
+      print('ctrl = ' + e.ctrlKey);
+      print('shift = ' + e.shiftKey);
+      print('charCode = ' + String.fromCharCode(e.charCode));
+      print('keyCode = ' + e.keyCode);
+    };
 
-  function print(message) {
-    document.getElementById('output').innerHTML += message + '<br/>';
-  }
-  
-  function clear() {
-    document.getElementById('output').innerHTML = '';
+    function print(message) {
+      document.getElementById('output').innerHTML += message + '<br/>';
+    }
+
+    function clear() {
+      document.getElementById('output').innerHTML = '';
+    }
   }
 }
-
 
 
 
