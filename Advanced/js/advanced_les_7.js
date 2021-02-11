@@ -107,26 +107,47 @@
 // }
 
 // Keyboard
+// window.onload = function () {
+//   let main = document.getElementById('main');
+//
+//   main.onkeydown = function () {
+//     print('onkeydown event');
+//   }
+//
+//   main.onkeyup = function () {
+//     print('onkeyup event');
+//   }
+//
+//   main.onkeypress = function () {
+//     print('onkeypress event');
+//   }
+//
+//   function print(message) {
+//     document.getElementById('output').innerHTML += message + '<br />'
+//   }
+// }
+
+// KeyInfo
 window.onload = function () {
   let main = document.getElementById('main');
 
-  main.onkeydown = function () {
-    print('onkeydown event');
-  }
-
-  main.onkeyup = function () {
-    print('onkeyup event');
-  }
-
-  main.onkeypress = function () {
-    print('onkeypress event');
-  }
+  main.onkeydown = function (e) {
+    clear();
+    print('alt = ' + e.altKey);
+    print('ctrl = ' + e.ctrlKey);
+    print('shift = ' + e.shiftKey);
+    print('charCode = ' + e.charCode);
+    print('keyCode = ' + e.keyCode);
+  };
 
   function print(message) {
-    document.getElementById('output').innerHTML += message + '<br />'
+    document.getElementById('output').innerHTML += message + '<br/>';
+  }
+  
+  function clear() {
+    document.getElementById('output').innerHTML = '';
   }
 }
-
 
 
 
