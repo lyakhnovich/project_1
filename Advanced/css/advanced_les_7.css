@@ -40,8 +40,20 @@
 
 /*CharCode*/
 
+/*Sample: inputFilter*/
+body {
+  font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif;
+}
 
+label {
+  width: 150px;
+  float: left;
+}
 
+input + span {
+  visibility: hidden;
+  color: red;
+}
 
 
 

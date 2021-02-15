@@ -32,7 +32,21 @@
 <!--<p id="output"></p>-->
 
 <!--CharCode-->
-<p id="output"></p>
+<!--<p id="output"></p>-->
+
+<!--Sample: inputFilter-->
+<p>
+  <label>Имя</label>
+  <input type="text" name="firstName" data-chars-allowed="абвгдеёжзиклмнопрстуфхцчшщьыъэюя" data-message-id="firstNameError">
+  <span id="firstNameError">допускаются только буквы русского алфавита</span>
+</p>
+<p>
+  <label>Почторый индекс</label>
+  <input type="text" name="zip" data-chars-allowed="1234567890" data-message-id="zipError"/>
+  <span id="zipError">допускаются только цифры</span>
+</p>
+
+
 
 </body>
 <script src="js/advanced_les_7.js"></script>

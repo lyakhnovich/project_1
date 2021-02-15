@@ -150,27 +150,29 @@
 // }
 
 // CharCode
-window.onload = function () {
+// window.onload = function () {
+//
+//   document.getElementById('main').onkeypress = function (e) {
+//     main.onkeypress = function (e) { //KEYPRESS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//       clear();
+//       print('alt = ' + e.altKey);
+//       print('ctrl = ' + e.ctrlKey);
+//       print('shift = ' + e.shiftKey);
+//       print('charCode = ' + String.fromCharCode(e.charCode));
+//       print('keyCode = ' + e.keyCode);
+//     };
+//
+//     function print(message) {
+//       document.getElementById('output').innerHTML += message + '<br/>';
+//     }
+//
+//     function clear() {
+//       document.getElementById('output').innerHTML = '';
+//     }
+//   }
+// };
 
-  document.getElementById('main').onkeypress = function (e) {
-    main.onkeypress = function (e) { //KEYPRESS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      clear();
-      print('alt = ' + e.altKey);
-      print('ctrl = ' + e.ctrlKey);
-      print('shift = ' + e.shiftKey);
-      print('charCode = ' + String.fromCharCode(e.charCode));
-      print('keyCode = ' + e.keyCode);
-    };
-
-    function print(message) {
-      document.getElementById('output').innerHTML += message + '<br/>';
-    }
-
-    function clear() {
-      document.getElementById('output').innerHTML = '';
-    }
-  }
-}
+// Sample: inputFilter
 
 
 
