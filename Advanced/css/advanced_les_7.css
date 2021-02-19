@@ -50,6 +50,7 @@ label {
   float: left;
 }
 
+/*стиль для span, которые расположены в разметке сразу за input*/
 input + span {
   visibility: hidden;
   color: red;

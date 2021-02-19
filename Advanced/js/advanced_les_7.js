@@ -173,7 +173,49 @@
 // };
 
 // Sample: inputFilter
+window.addEventListener('load', init, false);
 
+function init() {
+  let inputs = document.getElementsByTagName('input');
+
+  for(let i = 0; i < inputs.length; i++) {
+    let e = inputs[i];
+
+    if (e.type != 'text') continue;
+
+    if (e.dataset.charsAllowed == undefined) continue;
+
+    e.addEventListener("keypress", keyFilter, false);
+  }
+
+  function keyFilter(e) {
+
+    if (!e) e = window.event;
+
+    if (e.charCode == 0 || e.charCode < 32) return true;
+
+    let allowedText = e.target.dataset.charsAllowed;
+    let element = e.target.dataset.messageId;
+
+    let symbol = String.fromCharCode(e.charCode).toLowerCase();
+
+    if (allowedText.search(symbol) === -1) {
+      if (element) {
+        element = document.getElementById(element);
+        element.style.visibility = 'visible';
+      }
+      e.preventDefault();
+      return false;
+    }
+    else {
+      if (element) {
+        element = document.getElementById(element);
+        element.style.visibility = 'hidden';
+      }
+      return true;
+    }
+  }
+}
 
 
 
