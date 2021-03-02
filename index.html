@@ -1,88 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>index</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!--  <script src="js/jquery-3.5.1.js"></script>-->
 
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZAGLUSHKA</title>
+  <!--  <link rel="stylesheet" href="assets/css/style.css">-->
 </head>
+
 <body>
-<div>
-  <form id="userForm">
-    <input id="inputValue" name="inputValue"/><br/><br/>
-    <input id="inputValue2" name="inputValue2"/><br/><br/>
-    <input id="inputValue3" name="inputValue3"/><br/><br/>
-    <br/>
-    <input id="buttonPost" type="button" value="Post"/>
-  </form>
-</div>
-<br/>
-<div>
-  <button id="buttonGet">Get</button>
-</div>
 
-<!-------------------------------------------------------------------------->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>-->
-<script>
-  $(document).ready(function () {
+<!-- modify this form HTML and place wherever you want your form -->
 
-    // ********** POST **********
+<form
+    action="https://formspree.io/f/mleoyeqg"
+    method="POST"
+>
+  <label>
+    Your email:
+    <input type="text" name="_replyto">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
 
-    $('#buttonPost').on('click', function (e) { // e - объект?
-      // создание массива postData со всеми значениями введенными во все инпуты. Ключ - имя инпута, значение - что введено в инпут.
-      let postData = {
-        inputValue: $('input[name=inputValue]').val(),
-        inputValue2: $('input[name=inputValue2]').val(),
-        inputValue3: $('input[name=inputValue3]').val()
-      };
+  <!-- your other form fields go here -->
 
-      $.ajax({
-        type: 'POST',
-        url: '/api/user',
-        // dataType: 'json',
-        cache: true,
-        data: postData, // получившийся массив данных
-        success: function (data) {
-          console.log(postData);
-        },
-        error: function (err) {
-          console.warn('Error in ajax:', err);
-        }
-      })
-        .done(function (data) { // метод .done добавляет обработчик или обработчики, которые будут вызваны при успешном выполнении).
-          // Присваивание пустоты(.val('')) полю input. Т.е. очистка поля input
-          $('input[name=inputValue]').val('');
-          $('input[name=inputValue2]').val('');
-          $('input[name=inputValue3]').val('');
-          console.log(data + ' ты лох');
-        });
-      // отменяем действие события по умолчанию
-      e.preventDefault();
-    });
+  <button type="submit">Send</button>
+</form>
 
 
-    // ********** GET **********
-    $('#buttonGet').on('click', function (event) {
-      // создание массива postData со всеми значениями введенными во все инпуты. Ключ - имя инпута, значение - что введено в инпут.
-      // let postData = {
-      //   inputValue: $('input[name=inputValue]').val(),
-      //   inputValue2: $('input[name=inputValue2]').val(),
-      //   inputValue3: $('input[name=inputValue3]').val()
-      // };
-
-      $.ajax({
-        type: 'GET',
-        url: '/api/user',
-        // dataType: 'json',
-        // data: postData
-      })
-        .done(function (data) {
-          console.log(JSON.stringify(data));
-        });
-    });
-
-  });
-</script>
 </body>
+
 </html>

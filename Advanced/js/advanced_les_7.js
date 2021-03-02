@@ -181,9 +181,9 @@ function init() {
   for(let i = 0; i < inputs.length; i++) {
     let e = inputs[i];
 
-    if (e.type != 'text') continue;
+    if (e.type !== 'text') continue;
 
-    if (e.dataset.charsAllowed == undefined) continue;
+    if (e.dataset.charsAllowed === undefined) continue;
 
     e.addEventListener("keypress", keyFilter, false);
   }
@@ -192,7 +192,7 @@ function init() {
 
     if (!e) e = window.event;
 
-    if (e.charCode == 0 || e.charCode < 32) return true;
+    if (e.charCode === 0 || e.charCode < 32) return true;
 
     let allowedText = e.target.dataset.charsAllowed;
     let element = e.target.dataset.messageId;

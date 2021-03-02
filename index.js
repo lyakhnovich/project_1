@@ -1,71 +1,53 @@
-let http = require('http');
-let url = require('url');
-let querystring = require('querystring');
-let fs = require('fs');
+var express = require('express');
+var path = require('path');
+var app = express();
+var bodyParser = require('body-parser');
+var nodemailer = require("nodemailer");
+var smtpTransport = require('nodemailer-smtp-transport');
 
-let server = http.createServer();
 
-let userStoredInMemory = {};
+app.use(bodyParser.urlencoded({ extended: false })); app.use(bodyParser.json())
 
-// listening requests from clients
-server.on('request', function (request, response) {
-  let currentRoute = url.format(request.url);
-  let currentMethod = request.method;
-  let requestBody = '';
+app.set('port', 3000);
 
-  switch (currentRoute) {
-    // serving the html index to client
-    case '/':
-      fs.readFile(__dirname + '/index.html', function (err, data) {
-        let headers = {
-          'Content-Type': 'text/html'
-        };
+app.use(express.static(path.join(__dirname, 'public')));
 
-        response.writeHead(200, headers);
-        response.end(data);
-      });
-
-      break;
-
-    // handling requests from client with route /api/user
-    case '/api/user':
-      // if request is a POST, then the user is sending a user
-      if (currentMethod === 'POST') {
-        // reading the body of the request
-        request.on('data', function (chunk) {
-          requestBody += chunk.toString();
-        });
-
-        // once the body of the request was loaded
-        request.on('end', function () {
-
-          // saving the user sent on the request body
-          userStoredInMemory = querystring.parse(requestBody);
-
-          // responding to the user
-          let headers = {
-            'Content-Type': 'text/plain'
-          };
-          response.writeHead(200, headers);
-          // возвращаяет DATA
-          response.end('Testovich');
-        });
-      }
-
-        // if request is a GET, then the client is requesting
-      // to see the user stored.
-      else if (currentMethod === 'GET') {
-        let headers = {
-          'Content-Type': 'application/json'
-        };
-
-        response.writeHead(200, headers);
-        response.end(JSON.stringify(userStoredInMemory));
-      }
-      break;
-  }
+var server = app.listen(app.get('port'), function() {
+  var port = server.address().port;
+  console.log('Magic happens on port ' + port);
 });
 
-server.listen(8080, function () {
-  console.log('server up and running at 8080 port blyat');
+let transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'waaggghhhh@gmail.com',
+    pass: '4709German',
+  },
 });
+
+transporter.sendMail({
+  from: '"waaggghhhh" <waaggghhhh@gmail.com>',
+  to: 'lyakhnovich.german@gmail.com',
+  subject: 'TEST',
+  text: 'KEK',
+});
+
+// app.post('/send-email', function(req, res) {
+//   var mailOptions = {
+//     from: '"waaggghhhh" <waaggghhhh@gmail.com>', // sender address
+//     to: "lyakhnovich.german@gmail.com", // list of receivers
+//     subject: 'Request ', // Subject line
+//     text: req.body.to // plaintext body
+//
+//   };
+//   smtpTransport.sendMail(mailOptions, function(error, info) {
+//     if (error) {
+//       return console.log(error);
+//     }
+//     console.log('Message sent: ' + info.response);
+//   });
+//
+//   res.redirect("/index.html");
+// });
+
+
