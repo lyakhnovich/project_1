@@ -4,6 +4,14 @@
   padding: 0;
 }
 
+.color-white * {
+  color: #fff;
+}
+
+div {
+  border: 1px solid rgba(255, 255, 255, .2);
+}
+
 html,
 body {
   height: 100%;
@@ -26,6 +34,16 @@ body {
 /*                 */
 /*    2.CLASSES*/
 /*                 */
+
+.fixed-middle {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 .body-bg {
   background-color: #3a3dff;
 }
@@ -35,7 +53,6 @@ body {
 }
 
 .main-body {
-  top: 50%;
   position: fixed;
   left: 0;
   right: 0;
@@ -78,7 +95,7 @@ body {
 }
 
 .padding-big {
-  padding: 50px;
+  padding: 50px 0;
 }
 
 
