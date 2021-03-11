@@ -1,3 +1,92 @@
-div {
-  display: block;
+/*1. GENERAL*/
+* {
+  margin: 0;
+  padding: 0;
 }
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+@font-face {
+  font-family: ModernDOS; /* Имя шрифта */
+  src: url(../fonts/ModernDOS8x16.ttf) /* Путь к файлу со шрифтом */
+}
+body {
+  color: #444;
+  font-family: 'ModernDOS', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+}
+
+/*                 */
+/*    2.CLASSES*/
+/*                 */
+.body-bg {
+  background-color: #3a3dff;
+}
+
+.form-inline {
+  position: relative;
+}
+
+.main-body {
+  top: 50%;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.tab-container {
+  height: 100%;
+  position: relative;
+}
+
+.tab-controller {
+  padding: 32px 35px;
+  position: absolute;
+  top: 50%;
+  border: 1px solid rgba(255, 255, 255, .2);
+}
+
+.tab-content {
+  max-width: 630px;
+  margin: 0 auto;
+}
+
+.input {
+  width: 100%;
+  /*background: transparent;*/
+  height: 45px;
+  padding: 20px 25px;
+}
+
+.padding-big {
+  padding: 50px;
+}
+
+
+/* 3. HEADER*/
+.main-header {
+  padding-top: 20px;
+  color: yellow;
+  font-size: 26px;
+}
+
+
