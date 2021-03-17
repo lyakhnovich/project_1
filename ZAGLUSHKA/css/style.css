@@ -8,9 +8,9 @@
   color: #fff;
 }
 
-div {
-  border: 1px solid rgba(255, 255, 255, .2);
-}
+/*div {*/
+/*  border: 1px solid rgba(255, 255, 255, .2);*/
+/*}*/
 
 html,
 body {
@@ -45,11 +45,22 @@ body {
 }
 
 .body-bg {
-  background-color: #3a3dff;
+  background-color: rgba(0, 0, 0, 0.72);
 }
 
 .form-inline {
   position: relative;
+}
+
+.form-inline .btn {
+  position: absolute;
+}
+
+.btn {
+  width: 200px;
+  height: 55px;
+  right: 0;
+  color: black;
 }
 
 .main-body {
@@ -89,13 +100,18 @@ body {
 
 .input {
   width: 100%;
-  /*background: transparent;*/
-  height: 45px;
+  background: transparent;
+  height: 55px;
   padding: 20px 25px;
 }
 
 .padding-big {
   padding: 50px 0;
+}
+
+.about-tab p {
+  margin-bottom: 25px;
+  font-size: 14px;
 }
 
 
