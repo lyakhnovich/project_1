@@ -3,20 +3,28 @@ body {
 }
 
 .container {
-  margin-top: 10px;
+  /*margin-top: 10px;*/
   background: yellow;
+  color: white;
+}
+
+.container-fluid {
+  /*margin-top: 10px;*/
+  background: yellow;
+  color: white;
 }
 
 .col-12 {
-  margin-top: 20px;
+  /*margin-top: 20px;*/
 }
 
 .carousel-indicators li:hover {
   cursor: pointer;
 }
+
 .row {
-  margin-bottom: 30px;
-  min-height: 20px
+  /*margin-bottom: 30px;*/
+  /*min-height: 100px*/
 }
 span {
   background: #f5f5f5;
