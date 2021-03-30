@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "mail test": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "babel-core": "^6.11.4",
@@ -10,9 +9,26 @@
     "webpack": "^1.13.1"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2",
     "express": "^4.17.1",
     "node-core": "^1.0.6",
     "nodemailer": "^6.4.18",
     "nodemailer-smtp-transport": "^2.7.4"
-  }
+  },
+  "name": "project_1",
+  "version": "1.0.0",
+  "main": "like_button.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lyakhnovich/project_1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lyakhnovich/project_1/issues"
+  },
+  "homepage": "https://github.com/lyakhnovich/project_1#readme",
+  "description": ""
 }

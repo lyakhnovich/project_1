@@ -1,33 +1,15 @@
-body {
-  font-size: 14px;
-}
-
 .container {
-  /*margin-top: 10px;*/
-  background: yellow;
-  color: white;
-}
-
-.container-fluid {
-  /*margin-top: 10px;*/
-  background: yellow;
-  color: white;
-}
-
-.col-12 {
-  /*margin-top: 20px;*/
-}
-
-.carousel-indicators li:hover {
-  cursor: pointer;
+  background: #d34768;
 }
 
 .row {
-  /*margin-bottom: 30px;*/
-  /*min-height: 100px*/
+  background: #e3de4d;
+  height: 300px;
 }
-span {
-  background: #f5f5f5;
+
+.row div {
+  text-align: center;
+  height: 50px;
 }
 
 .row>div:nth-of-type(odd){
