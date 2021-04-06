@@ -1,31 +1,56 @@
-'use strict';
-
-function formatName(user) {
-  return user.firstName + ' ' + user.lastName;
+function formatDate(date) {
+  return date.toLocaleDateString();
 }
 
-function getGreeting(user) {
-  if (user) {
-    return React.createElement(
-      'h1',
-      null,
-      '\u0417\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439, ',
-      formatName(user),
-      '!'
-    );
-  }
+function Avatar(props) {
+  return React.createElement("img", {
+    className: "Avatar",
+    src: props.user.avatarUrl,
+    alt: props.user.name
+  });
+}
+
+function UserInfo(props) {
   return React.createElement(
-    'h1',
-    null,
-    '\u0417\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439, \u043D\u0435\u0437\u043D\u0430\u043A\u043E\u043C\u0435\u0446.'
+    "div",
+    { className: "UserInfo" },
+    React.createElement(Avatar, { user: props.user }),
+    React.createElement(
+      "div",
+      { className: "UserInfo-name" },
+      props.user.name
+    )
   );
 }
 
-var user = {
-  firstName: 'LOH',
-  lastName: 'KEKOV'
+function Comment(props) {
+  return React.createElement(
+    "div",
+    { className: "Comment" },
+    React.createElement(UserInfo, { user: props.author }),
+    React.createElement(
+      "div",
+      { className: "Comment-text" },
+      props.text
+    ),
+    React.createElement(
+      "div",
+      { className: "Comment-date" },
+      formatDate(props.date)
+    )
+  );
+}
+
+var comment = {
+  date: new Date(),
+  text: 'I hope you enjoy learning React!',
+  author: {
+    name: 'Hello Kitty',
+    avatarUrl: 'https://placekitten.com/g/64/64'
+  }
 };
-
-var element = getGreeting();
-
-ReactDOM.render(element, document.getElementById('root'));
+ReactDOM.render(React.createElement(Comment, {
+  date: comment.date,
+  text: comment.text,
+  author: comment.author
+}), document.getElementById('root'));
